@@ -1,11 +1,6 @@
+import Scaf from "./components/scaf/Scaf";
 function App() {
-  return (
-    <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn sdfdsf
-      </p>
-    </>
-  );
+  return <Scaf></Scaf>;
 }
 
 export default App;
