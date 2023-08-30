@@ -1,6 +1,7 @@
-import Scaf from "./components/scaf/Scaf";
+import Scaffolding from "./components/Scaffolding";
+
 function App() {
-  return <Scaf></Scaf>;
+  return <Scaffolding></Scaffolding>;
 }
 
 export default App;
