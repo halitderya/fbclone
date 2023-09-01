@@ -10,6 +10,7 @@ import friendsicon from "../../assets/friends-icon.svg";
 import videoicon from "../../assets/video-icon.svg";
 import groupsicon from "../../assets/groups-icon.svg";
 import gaminicon from "../../assets/gaming-icon.svg";
+import Searchba from "../../components/Inputs";
 
 const TopMenu = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ function TopMenuFunction() {
     <TopMenu>
       <FirstDiv>
         <ButtonCircleFull $image={facebooklogo}></ButtonCircleFull>
+        <Searchba></Searchba>
       </FirstDiv>
       <SecondDiv>
         <MiddleButton $image={homeicon}></MiddleButton>
