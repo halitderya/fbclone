@@ -10,20 +10,8 @@ const ButtonSquare = styled.button<{ $kind?: string }>`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-const ButtonDanger = styled(ButtonSquare)`
-  background-color: red;
-  color: black;
-`;
-const ButtonWarning = styled(ButtonSquare)`
-  background-color: orange;
-  color: white;
-`;
-const ButtonNormal = styled(ButtonSquare)`
-  background-color: blue;
-  color: white;
-`;
 const ButtonCircleFull = styled.button<{ $image: string }>`
-  background-color: #f0f2f5;
+  background-color: ${(props) => props.theme.lightgray};
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -59,11 +47,4 @@ const MiddleButton = styled.button<{ $image: string }>`
   }
 `;
 
-export {
-  ButtonNormal,
-  ButtonDanger,
-  ButtonWarning,
-  ButtonCircleFull,
-  ButtonCircle,
-  MiddleButton,
-};
+export { ButtonCircleFull, ButtonCircle, MiddleButton };

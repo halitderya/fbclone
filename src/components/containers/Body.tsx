@@ -4,8 +4,8 @@ const Body = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  //  border: 3px dashed gray;
+  //border: 3px dashed gray;
   min-height: 400px;
-  padding: 10px;
+  padding: 0px;
 `;
 export default Body;

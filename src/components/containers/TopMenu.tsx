@@ -10,18 +10,24 @@ import friendsicon from "../../assets/friends-icon.svg";
 import videoicon from "../../assets/video-icon.svg";
 import groupsicon from "../../assets/groups-icon.svg";
 import gaminicon from "../../assets/gaming-icon.svg";
-import Searchba from "../../components/Inputs";
+import Searchbar from "../../components/Inputs";
 
 const TopMenu = styled.div`
+  background-color: ${(props) => props.theme.white};
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 40px;
+  height: 50px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px ${(props) => props.theme.shadowgray};
   //  border: 4px dotted purple;
 `;
 const FirstDiv = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 const SecondDiv = styled(FirstDiv)``;
 const ThirdDiv = styled(FirstDiv)``;
@@ -30,7 +36,7 @@ function TopMenuFunction() {
     <TopMenu>
       <FirstDiv>
         <ButtonCircleFull $image={facebooklogo}></ButtonCircleFull>
-        <Searchba></Searchba>
+        <Searchbar></Searchbar>
       </FirstDiv>
       <SecondDiv>
         <MiddleButton $image={homeicon}></MiddleButton>

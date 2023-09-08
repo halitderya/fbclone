@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import logo from "../../assets/facebook-logo.svg";
-import {
-  ButtonDanger,
-  ButtonNormal,
-  ButtonWarning,
-  ButtonCircleFull,
-} from "../Buttons";
+import {} from "../Buttons";
 const MidColumn = styled.div`
   // border: 3px dashed green;
   width: 58%;

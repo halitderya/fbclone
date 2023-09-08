@@ -1,7 +1,6 @@
 import Scaffolding from "./components/Scaffolding";
-
 function App() {
-  return <Scaffolding></Scaffolding>;
+  return <Scaffolding />;
 }
 
 export default App;
