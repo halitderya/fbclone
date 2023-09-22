@@ -1,24 +1,19 @@
 import styled from "styled-components";
-import sprite from "../assets/sprite_sheet.png";
-import { useState, useEffect, SyntheticEvent } from "react";
+import { useState, SyntheticEvent } from "react";
 
 interface ShortcutsType {
   text: string;
   image?: string;
   offset?: string;
   issprite?: boolean;
-  ishidden?: boolean;
   id?: string;
+  isprofile?: boolean;
 
   click?: (event: SyntheticEvent) => void;
 }
 
-//const [hidden, setHidden] = useState<boolean>(false);
-
-const ShortCutDiv = styled.div<{ $ishidden?: boolean }>`
-  // border: 1px dotted black;
-
-  display: ${(props) => (props.$ishidden ? "none" : "flex")};
+const ShortCutDiv = styled.div`
+  display: flex;
   flex-direction: row;
   width: 100%;
   box-sizing: border-box;
@@ -38,50 +33,34 @@ const ShortCutIconBase = styled.div`
   border-radius: 50%;
   margin: 2px;
 `;
-const ShortCutIconProfile = styled(ShortCutIconBase)<{ $image?: string }>`
-  background-image: url(${(props) => props.$image});
-  background-position: center;
+
+const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean }>`
+  background-image: ${(props) => (props.$issprite ? `url(${sprite})` : `url(${props.$image})`)};
+  background-position-y: ${(props) => (props.$issprite ? props.$offset : "")};
+
   background-repeat: no-repeat;
   background-size: 36px;
 `;
-const ShortCutIcon = styled(ShortCutIconBase)<{
-  $image?: string;
-  $offset?: string;
-}>`
-  background: url(${sprite}) ${(props) => props.$offset};
-  background-size: 36px;
-`;
+
 const ShortCutText = styled.label`
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 5px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `;
 
 function ShortCutProfileComponent(props: ShortcutsType) {
-  const toggleClick = (event: any) => {
-    console.log("shortcuts :" + (event.target as HTMLDivElement).id);
-    setHidden(!hidden);
-  };
-
-  const [hidden, setHidden] = useState<boolean>(false);
-
-  if (!props.issprite) {
-    if (!hidden) {
-      return (
-        <ShortCutDiv id={props.id} onClick={(e) => toggleClick(e)} $ishidden={props.ishidden}>
-          <ShortCutIconProfile id={props.id} $image={props.image}></ShortCutIconProfile>
-          <ShortCutText id={props.id}>{props.text}</ShortCutText>
-        </ShortCutDiv>
-      );
-    }
-  } else {
-    return (
-      <ShortCutDiv id={props.id} onClick={toggleClick}>
-        <ShortCutIcon id={props.id} $offset={props.offset} $image={props.image}></ShortCutIcon>
-        <ShortCutText id={props.id}>{props.text}</ShortCutText>
-      </ShortCutDiv>
-    );
-  }
+  return (
+    <ShortCutDiv id={props.id} onClick={props.click}>
+      <ShortCutIcon $issprite={props.issprite} $offset={props.offset} id={props.id} $image={props.image}></ShortCutIcon>
+      <ShortCutText id={props.id}>{props.text}</ShortCutText>
+    </ShortCutDiv>
+  );
 }
 
 export default ShortCutProfileComponent;

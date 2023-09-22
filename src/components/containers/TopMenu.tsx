@@ -1,16 +1,8 @@
 import styled from "styled-components";
 import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../Buttons";
-import facebooklogo from "../../assets/facebook-logo.svg";
-import logomessenger from "../../assets/facebook-messenger-logo.svg";
-import bellicon from "../../assets/facebook-bell-icon.svg";
-import ninedotsicon from "../../assets/facebook-ninedots-icon.svg";
-import avatar from "../../assets/user_avatar.jpg";
-import homeicon from "../../assets/home-icon.svg";
-import friendsicon from "../../assets/friends-icon.svg";
-import videoicon from "../../assets/video-icon.svg";
-import groupsicon from "../../assets/groups-icon.svg";
-import gaminicon from "../../assets/gaming-icon.svg";
 import Searchbar from "../../components/Inputs";
+import * as topmenuicons from "../../assets/topmenu-icons/index";
+import avatar from "../../assets/shortcut-icons/user_avatar.jpg";
 
 const TopMenu = styled.div`
   background-color: ${(props) => props.theme.white};
@@ -35,20 +27,20 @@ function TopMenuFunction() {
   return (
     <TopMenu>
       <FirstDiv>
-        <ButtonCircleFull $image={facebooklogo}></ButtonCircleFull>
+        <ButtonCircleFull $image={topmenuicons.flogo}></ButtonCircleFull>
         <Searchbar></Searchbar>
       </FirstDiv>
       <SecondDiv>
-        <MiddleButton $image={homeicon}></MiddleButton>
-        <MiddleButton $image={friendsicon}></MiddleButton>
-        <MiddleButton $image={videoicon}></MiddleButton>
-        <MiddleButton $image={groupsicon}></MiddleButton>
-        <MiddleButton $image={gaminicon}></MiddleButton>
+        <MiddleButton $image={topmenuicons.homeicon}></MiddleButton>
+        <MiddleButton $image={topmenuicons.friendsicon}></MiddleButton>
+        <MiddleButton $image={topmenuicons.videoicon}></MiddleButton>
+        <MiddleButton $image={topmenuicons.groupsicon}></MiddleButton>
+        <MiddleButton $image={topmenuicons.gaminicon}></MiddleButton>
       </SecondDiv>
       <ThirdDiv>
-        <ButtonCircle $image={logomessenger}></ButtonCircle>
-        <ButtonCircle $image={bellicon}></ButtonCircle>
-        <ButtonCircle $image={ninedotsicon}></ButtonCircle>
+        <ButtonCircle $image={topmenuicons.logomessenger}></ButtonCircle>
+        <ButtonCircle $image={topmenuicons.bellicon}></ButtonCircle>
+        <ButtonCircle $image={topmenuicons.ninedotsicon}></ButtonCircle>
         <ButtonCircleFull $image={avatar}></ButtonCircleFull>
       </ThirdDiv>
     </TopMenu>

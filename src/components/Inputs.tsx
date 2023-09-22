@@ -43,22 +43,8 @@ function SearchBarComponent() {
     <DivContainer>
       <Spanned>
         <Magnify viewBox="0 0 16 16">
-          <circle
-            cx="5.5"
-            cy="5.5"
-            r="4.5"
-            stroke="#65676b"
-            stroke-width="1"
-            fill="none"
-          />
-          <line
-            x1="9"
-            y1="9"
-            x2="13"
-            y2="13"
-            stroke="#65676b"
-            stroke-width="1"
-          />
+          <circle cx="5.5" cy="5.5" r="4.5" stroke="#65676b" strokeWidth="1" fill="none" />
+          <line x1="9" y1="9" x2="13" y2="13" stroke="#65676b" strokeWidth="1" />
         </Magnify>
         <SearchInput placeholder="Search on Facebook..."></SearchInput>
       </Spanned>

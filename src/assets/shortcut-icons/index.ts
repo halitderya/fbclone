@@ -8,3 +8,7 @@ export { default as gaming } from './icon-gaming.png';
 export { default as meta } from './icon-meta.png';
 export { default as news } from './icon-news.png';
 export { default as orders } from './icon-orders.png';
+export {default as sprite} from "./sprite_sheet.png";
+export {default as avatar} from "./user_avatar.jpg";
+export {default as arrow} from "./down-arrow.svg"
+
