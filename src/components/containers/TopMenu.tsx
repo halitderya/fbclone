@@ -13,6 +13,7 @@ const TopMenu = styled.div`
   justify-content: space-between;
   height: 50px;
   border-radius: 4px;
+  margin-bottom: 20px;
   box-shadow: 0px 2px 1px ${(props) => props.theme.shadowgray};
   //  border: 4px dotted purple;
 `;

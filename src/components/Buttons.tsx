@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const ButtonSquare = styled.button<{ $kind?: string }>`
+/* const ButtonSquare = styled.button<{ $kind?: string }>`
   color: #ffffff;
   width: auto;
   height: 38px;
@@ -9,7 +9,7 @@ const ButtonSquare = styled.button<{ $kind?: string }>`
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
 `;
-
+ */
 const ButtonCircleFull = styled.button<{ $image: string }>`
   background-color: ${(props) => props.theme.lightgray};
   width: 36px;

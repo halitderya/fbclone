@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//import magnify from "../assets/magnify-icon.svg";
 
 const SearchInput = styled.input`
   border-width: 0px;

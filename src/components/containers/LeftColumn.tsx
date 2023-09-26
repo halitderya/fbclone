@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import ShortCut from "../Shortcuts";
-import useravatar from "../../assets/user_avatar.jpg";
-import downarrow from "../../assets/down-arrow.svg";
+
 import * as icons from "../../assets/shortcut-icons";
 import { SyntheticEvent, useState } from "react";
 
@@ -27,7 +26,7 @@ function LeftColumnComponent() {
       <ShortCut issprite={true} click={toggleClick} offset="-180px" text="Saved"></ShortCut>
       <ShortCut issprite={true} click={toggleClick} offset="-36px" text="Groups"></ShortCut>
       <ShortCut issprite={true} click={toggleClick} offset="-504px" text="Video"></ShortCut>
-      <ShortCut click={(e) => toggleClick(e)} image={icons.arrow} id="seemore" text="See More"></ShortCut>
+      <ShortCut click={(e) => toggleClick(e)} image={icons.arrow} id="seemore" hidden={hidden ? "hidden" : ""} text="See More"></ShortCut>
       {!hidden && (
         <>
           <ShortCut image={icons.adc} text="Ad Centre"></ShortCut>

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { useState, SyntheticEvent } from "react";
-
-interface ShortcutsType {
+import sprite from "../assets/shortcut-icons/sprite_sheet.png";
+export interface ShortcutsType {
   text: string;
   image?: string;
   offset?: string;
   issprite?: boolean;
   id?: string;
   isprofile?: boolean;
+  hidden?: boolean;
 
   click?: (event: SyntheticEvent) => void;
 }
@@ -34,12 +35,15 @@ const ShortCutIconBase = styled.div`
   margin: 2px;
 `;
 
-const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean }>`
+const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: boolean }>`
   background-image: ${(props) => (props.$issprite ? `url(${sprite})` : `url(${props.$image})`)};
   background-position-y: ${(props) => (props.$issprite ? props.$offset : "")};
 
   background-repeat: no-repeat;
   background-size: 36px;
+
+  transform: ${(props) => (props.$hidden ? "rotate(180deg)" : "rotate(0deg)")};
+  transition: transform 0.3s ease;
 `;
 
 const ShortCutText = styled.label`
@@ -57,7 +61,7 @@ const ShortCutText = styled.label`
 function ShortCutProfileComponent(props: ShortcutsType) {
   return (
     <ShortCutDiv id={props.id} onClick={props.click}>
-      <ShortCutIcon $issprite={props.issprite} $offset={props.offset} id={props.id} $image={props.image}></ShortCutIcon>
+      <ShortCutIcon $issprite={props.issprite} $offset={props.offset} id={props.id} $hidden={props.hidden} $image={props.image}></ShortCutIcon>
       <ShortCutText id={props.id}>{props.text}</ShortCutText>
     </ShortCutDiv>
   );

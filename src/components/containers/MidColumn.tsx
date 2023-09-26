@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import {} from "../Buttons";
+import StoryContainer from "./MidColumn/Story/StoryContainer";
+import PostContainer from "./MidColumn/Post/PostMasterContainer";
 const MidColumn = styled.div`
-  // border: 3px dashed green;
-  width: 58%;
+  //border: 1px dashed green;
+  width: 40%;
 `;
 
 function MidColumnComponent() {
   return (
     <MidColumn>
-      {/*       <ButtonDanger>Danger</ButtonDanger>
-      <ButtonWarning>Warning</ButtonWarning>
-      <ButtonNormal>Normal</ButtonNormal>
-      <ButtonCircleFull $image={logo}></ButtonCircleFull> */}
+      <StoryContainer></StoryContainer>
+
+      <PostContainer></PostContainer>
     </MidColumn>
   );
 }
