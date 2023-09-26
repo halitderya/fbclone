@@ -5,3 +5,4 @@ const PostPP = styled.div``;
 const PostTimeStamp = styled.label``;
 const PostExit = styled.button``;
 const PostSeemore = styled.button``;
+const PostTitle = styled.label``;
