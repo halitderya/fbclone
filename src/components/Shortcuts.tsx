@@ -9,6 +9,7 @@ export interface ShortcutsType {
   id?: string;
   isprofile?: boolean;
   hidden?: boolean;
+  class?: string;
 
   click?: (event: SyntheticEvent) => void;
 }
@@ -60,7 +61,7 @@ const ShortCutText = styled.label`
 
 function ShortCutProfileComponent(props: ShortcutsType) {
   return (
-    <ShortCutDiv id={props.id} onClick={props.click}>
+    <ShortCutDiv className={props.class} id={props.id} onClick={props.click}>
       <ShortCutIcon $issprite={props.issprite} $offset={props.offset} id={props.id} $hidden={props.hidden} $image={props.image}></ShortCutIcon>
       <ShortCutText id={props.id}>{props.text}</ShortCutText>
     </ShortCutDiv>

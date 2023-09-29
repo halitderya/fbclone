@@ -16,13 +16,14 @@ function Scaffolding() {
     <ThemeProvider theme={theme}>
       <Scaffoldin>
         <MasterContainer $divwidth={100} $divpadding={10}>
-          <TopMenu></TopMenu>
+          {/*           <TopMenu></TopMenu>
+           */}{" "}
           <Body>
-            <LeftColumn></LeftColumn>
+            {/*             <LeftColumn></LeftColumn>
+             */}{" "}
             <MidColumn></MidColumn>
             <RightColumn></RightColumn>
           </Body>
-
           <Footer></Footer>
         </MasterContainer>
       </Scaffoldin>

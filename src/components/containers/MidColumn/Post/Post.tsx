@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-const PostMain = styled.div``;
-
-const PostControlContainer = styled.div``;
+const Post = styled.div`
+  border: 1px red solid;
+  height: 400px;
+`;
 
 const PostMediaContainer = styled.div``;
-const PostFooterContainer = styled.div``;
+
+export default function PostContent() {
+  return <Post></Post>;
+}

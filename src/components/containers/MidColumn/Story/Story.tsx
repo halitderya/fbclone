@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import PPCircle from "./../../../particles/PPCircle";
 export interface StoryType {
   text: string;
   storyimage: string;
@@ -24,15 +24,7 @@ const StoryMain = styled.div`
   margin-right: 10px;
   width: max-content;
 `;
-const StoryPP = styled.div<{ $ppimage?: string }>`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 
-  background-color: red;
-  background-image: url(${(props) => props.$ppimage});
-  background-size: 100%;
-`;
 const StoryBG = styled.div<{ $storyimage: string }>`
   background-image: url(${(props) => props.$storyimage});
   padding: 5px;
@@ -57,7 +49,7 @@ export function Story(props: StoryType) {
   return (
     <StoryMain>
       <StoryBG $storyimage={props.storyimage}>
-        <StoryPP $ppimage={props.ppimage}></StoryPP>
+        <PPCircle ppimage={props.ppimage}></PPCircle>
         <StoryText>{props.text}</StoryText>
       </StoryBG>
     </StoryMain>

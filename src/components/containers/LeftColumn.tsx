@@ -12,8 +12,8 @@ const LeftColumn = styled.div`
 
 function LeftColumnComponent() {
   const toggleClick = (event: SyntheticEvent) => {
-    const etr = event.target as HTMLDivElement;
-    if (etr.id === "seemore") {
+    const EventTarget = event.target as HTMLDivElement;
+    if (EventTarget.id === "seemore") {
       setHidden(!hidden);
     }
   };
