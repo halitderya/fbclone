@@ -10,9 +10,9 @@ const MidColumn = styled.div`
 function MidColumnComponent() {
   return (
     <MidColumn>
-      <StoryContainer></StoryContainer>
+      <StoryContainer data-cy="story-container"></StoryContainer>
 
-      <PostContainer></PostContainer>
+      <PostContainer data-cy="post-container"></PostContainer>
     </MidColumn>
   );
 }

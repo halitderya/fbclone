@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Post from "./Post";
 import PostHeader from "./PostHeaderContainer";
-import PostFooter from "./PostFooterContainer";
+import PostFooter from "./PostFooter/PostFooterContainer";
 const PostContainer = styled.div`
   border: 1px red solid;
   width: 100%;
@@ -10,9 +10,9 @@ const PostContainer = styled.div`
 export default function PostContainerComponent() {
   return (
     <>
-      <PostContainer>
+      <PostContainer data-cy="postcontainer">
         <PostHeader></PostHeader>
-        <Post></Post>
+        <Post data-cy="post"></Post>
         <PostFooter></PostFooter>
       </PostContainer>
     </>

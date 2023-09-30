@@ -11,5 +11,5 @@ const PostExit = styled.button``;
 const PostSeemore = styled.button``;
 const PostTitle = styled.label``;
 export default function PostHeaderContainer() {
-  return <PostHeader></PostHeader>;
+  return <PostHeader data-cy="postheader"></PostHeader>;
 }
