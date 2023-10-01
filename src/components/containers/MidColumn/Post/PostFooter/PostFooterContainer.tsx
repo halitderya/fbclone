@@ -1,17 +1,23 @@
 import styled from "styled-components";
-import PostFooterHeader from "./PostFooterHeader";
+import PostFooterHeader from "./PostFooterReactions";
 import PostFooterMediacontrols from "./PostFooterMediaControls";
+import PostFooterText from "./PostFooterText";
 
 const PostFooterContainer = styled.div`
-  border: 2px red dotted;
-  height: 50px;
+  height: 160px;
 `;
 
+const PostFooterLine = styled.hr`
+  margin-left: 20px;
+  margin-right: 20px;
+`;
 export default function PostFooterComponent() {
   return (
     <>
-      <PostFooterContainer data-cy="footercontainer">
+      <PostFooterContainer>
+        <PostFooterText></PostFooterText>
         <PostFooterHeader></PostFooterHeader>
+        <PostFooterLine></PostFooterLine>
         <PostFooterMediacontrols></PostFooterMediacontrols>
       </PostFooterContainer>
     </>

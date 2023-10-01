@@ -1,18 +1,25 @@
 import styled from "styled-components";
-import Post from "./Post";
-import PostHeader from "./PostHeaderContainer";
+import PostContent from "./PostContent/PostContent";
+import PostHeader from "./PostHeader/PostHeaderContainer";
 import PostFooter from "./PostFooter/PostFooterContainer";
 const PostContainer = styled.div`
-  border: 1px red solid;
   width: 100%;
-  height: 600px;
+  background-color: ${(props) => props.theme.white};
+  border-radius: 5px;
+  box-shadow: 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 2px dotted red;
 `;
+interface PostContainerType {
+  images: string[];
+}
 export default function PostContainerComponent() {
   return (
     <>
-      <PostContainer data-cy="postcontainer">
+      <PostContainer>
         <PostHeader></PostHeader>
-        <Post data-cy="post"></Post>
+        <PostContent></PostContent>
         <PostFooter></PostFooter>
       </PostContainer>
     </>
