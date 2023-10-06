@@ -1,0 +1,11 @@
+{
+    "name": "John Doe",
+    "vegetarian": false,
+    "birthDate": "1985-06-02",
+    "password":"12345",
+    "userpp":"../user_avatar.jpg",
+    "personalData": {
+      "age": 34
+    },
+    "postalCode": "12345"
+  }

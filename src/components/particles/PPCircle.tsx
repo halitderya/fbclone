@@ -17,7 +17,7 @@ const PPCircle = styled.div<{ $ppimage?: string }>`
 export default function PPCircleComponent(props: PPCircletype) {
   const [number, setNumber] = useState(0);
   const clicked = () => {
-    setNumber(number + 1);
+    setNumber((prevnumber) => prevnumber + 1);
   };
 
   return (

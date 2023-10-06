@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import PPCircle from "./../../../particles/PPCircle";
 export interface StoryType {
-  text: string;
-  storyimage: string;
-  ppimage: string;
+  text?: string;
+  storyimage?: string;
+  ppimage?: string;
 }
 
 const StoryMain = styled.div`
