@@ -2,26 +2,33 @@ import styled from "styled-components";
 import {} from "../Buttons";
 import StoryContainer from "./MidColumn/Story/StoryContainer";
 import PostContainer from "./MidColumn/Post/PostMasterContainer";
-import { useContext } from "react";
-import { PostContext, PostProvider } from "../../Contexts/PostContext";
-import PostType from "../../../public/FakeAPI/Post/Type";
-
+import { useEffect, useState } from "react";
+import PostsData from "../../../public/FakeAPI/Post/Type";
 const MidColumn = styled.div`
-  //border: 1px dashed green;
   width: 40%;
 `;
 
+const PostsCollection = () => {
+  const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
+  useEffect(() => {
+    fetch("../../../public/FakeAPI/Post/Post.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setPagePosts(data);
+      });
+  }, [setPagePosts]);
+
+  return PagePosts.Posts.map((post) => {
+    return <PostContainer SinglePost={post} key={post.ID}></PostContainer>;
+  });
+};
+
 export default function MidColumnComponent() {
-  const postsData: PostType = useContext(PostContext);
-  console.log(PostContext);
   return (
     <MidColumn>
       <StoryContainer></StoryContainer>
-      <PostProvider>
-        {postsData.Posts.map((_, index) => (
-          <PostContainer key={index} />
-        ))}
-      </PostProvider>
+
+      <PostsCollection></PostsCollection>
     </MidColumn>
   );
 }

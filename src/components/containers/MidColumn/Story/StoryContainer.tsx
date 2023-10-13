@@ -30,7 +30,7 @@ export default function StoryContainerFunction() {
 
   return (
     <StoryContainer>
-      <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} />
+      <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} ppimage={ppimage} />
       <Story text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, saepe?" storyimage={storyimage} ppimage={ppimage} />
       <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} ppimage={ppimage} />
       <Story text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, saepe?" storyimage={storyimage} ppimage={ppimage} />

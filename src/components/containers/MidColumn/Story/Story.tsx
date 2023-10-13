@@ -25,7 +25,7 @@ const StoryMain = styled.div`
   width: max-content;
 `;
 
-const StoryBG = styled.div<{ $storyimage: string }>`
+const StoryBG = styled.div<{ $storyimage?: string }>`
   background-image: url(${(props) => props.$storyimage});
   padding: 5px;
   display: flex;

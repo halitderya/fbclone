@@ -3,75 +3,75 @@
         {
             "Poster": {
                 "username": "Alice Williams",
-                "userpp": "../../assets/post-files/randomperson1.jpeg",
+                "userpp": "src/assets/post-files/randomperson1.jpeg",
                 "PostDate": "2023-01-04 09:12:45"
             },
-            "ID": "01",
+            "ID": 1,
             "PostHeader": "First Day at My New Job!",
-            "PostImage": "https://picsum.photos/800/600",
+            "PostImage": "https://picsum.photos/id/54/800/600",
             "PostFooter": {
                 "PostFooterText": "So excited to begin this new journey. Wish me luck! ❤️",
-                "CommentCount": 16,
+                "comments": ["Amazing!", "Congratulations!", "Best of luck in your new job.", "Thanks for sharing this!", "Must be an exciting day for you!"],
                 "ShareCount": 2
             }
         },
         {
             "Poster": {
                 "username": "John Smith",
-                "userpp": "../../assets/post-files/randomperson2.jpeg",
+                "userpp": "src/assets/post-files/randomperson2.jpeg",
                 "PostDate": "2023-01-04 10:24:30"
             },
-            "ID": "02",
+            "ID": 2,
             "PostHeader": "Spectacular Sunset at Brighton Beach",
-            "PostImage": "https://picsum.photos/800/600",
+            "PostImage": "https://picsum.photos/id/46/800/600",
             "PostFooter": {
                 "PostFooterText": "Nature's beauty never fails to amaze me! 🌅",
-                "CommentCount": 8,
+                "comments": ["That view is breathtaking!", "Nature's wonders...", "I wish I was there!", "Great capture!", "This soothes me."],
                 "ShareCount": 4
             }
         },
         {
             "Poster": {
                 "username": "Rachel Green",
-                "userpp": "../../assets/post-files/randomperson3.jpeg",
+                "userpp": "src/assets/post-files/randomperson3.jpeg",
                 "PostDate": "2023-01-04 11:00:00"
             },
-            "ID": "03",
+            "ID": 3,
             "PostHeader": "Homemade Blueberry Muffins!",
-            "PostImage": "https://picsum.photos/800/600",
+            "PostImage": "https://picsum.photos/id/24/800/600",
             "PostFooter": {
                 "PostFooterText": "Baking therapy. Who wants the recipe? 🧁",
-                "CommentCount": 12,
+                "comments": ["Looks delicious!", "Would love the recipe!", "I'm getting hungry now.", "Baking is indeed therapeutic.", "Blueberries are my favorite!", "This is a must-try for me."],
                 "ShareCount": 3
             }
         },
         {
             "Poster": {
                 "username": "Daniel Brown",
-                "userpp": "../../assets/post-files/randomperson4.jpeg",
+                "userpp": "src/assets/post-files/randomperson4.jpeg",
                 "PostDate": "2023-01-04 14:45:23"
             },
-            "ID": "04",
+            "ID": 4,
             "PostHeader": "Hiking Adventures at Yosemite",
-            "PostImage": "https://picsum.photos/800/600",
+            "PostImage": "https://picsum.photos/id/123/800/600",
             "PostFooter": {
                 "PostFooterText": "The mountains are calling, and I must go. ⛰️",
-                "CommentCount": 20,
+                "comments": ["Wow, that's a dream destination!", "Hiking is always a good idea.", "Stay safe and enjoy the view!", "Yosemite is on my bucket list.", "The beauty of the mountains!", "Adventurous day, isn't it?"],
                 "ShareCount": 6
             }
         },
         {
             "Poster": {
                 "username": "Sophia Turner",
-                "userpp": "../../assets/post-files/randomperson5.jpeg",
+                "userpp": "src/assets/post-files/randomperson5.jpeg",
                 "PostDate": "2023-01-04 15:30:50"
             },
-            "ID": "05",
+            "ID": 5,
             "PostHeader": "Art Gallery Visit",
-            "PostImage": "https://picsum.photos/800/600",
+            "PostImage": "https://picsum.photos/id/125/800/600",
             "PostFooter": {
                 "PostFooterText": "Immersed in the world of colors and imagination. 🎨",
-                "CommentCount": 10,
+                "comments": ["Art is life.", "The colors are mesmerizing.", "Would love to visit this gallery!", "Artworks always fascinate me.", "Thanks for taking us along virtually!"],
                 "ShareCount": 5
             }
         }
