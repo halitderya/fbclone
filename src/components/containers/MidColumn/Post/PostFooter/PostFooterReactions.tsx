@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-const PostFooterReactions = styled.div`
-  height: 40px;
-`;
+const PostFooterReactions = styled.div``;
 
 export default function PostFooterReactionsComponent() {
-  return <PostFooterReactions>FooterReactions</PostFooterReactions>;
+  return <PostFooterReactions>:) :) :) 15</PostFooterReactions>;
 }

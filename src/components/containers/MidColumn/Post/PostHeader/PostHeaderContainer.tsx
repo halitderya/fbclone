@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import PostHeaderType from "./PostHeaderType";
 import PPCircle from "../../../../particles/PPCircle";
 
 const PostHeaderComponent = styled.div`

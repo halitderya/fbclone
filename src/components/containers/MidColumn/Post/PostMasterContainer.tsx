@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import PostContent from "./PostContent/PostContent";
 import PostHeader from "./PostHeader/PostHeaderContainer";
-import PostFooter from "./PostFooter/PostFooterContainer";
-import { SinglePost } from "../../../../../public/FakeAPI/Post/Type";
+import PostFooter, { IPostFooterProps } from "./PostFooter/PostFooterContainer";
+import { Post } from "../../../../../public/FakeAPI/Post/Type";
 
 const PostContainer = styled.div`
   width: 100%;
@@ -11,22 +11,21 @@ const PostContainer = styled.div`
   box-shadow: 1px;
   margin-top: 5px;
   margin-bottom: 5px;
-  border: 2px dotted red;
 `;
 
-export default function PostContainerComponent({ SinglePost }: SinglePost) {
+export default function PostContainerComponent(props: { post: Post }) {
   return (
     <>
       <PostContainer>
         <PostHeader
           PostHeaderProps={{
-            PostHeaderText: SinglePost.PostHeader,
-            username: SinglePost.Poster.username,
-            userpp: SinglePost.Poster.userpp,
-            PostDate: SinglePost.Poster.PostDate,
+            PostHeaderText: props.post.PostHeader,
+            username: props.post.Poster.username,
+            userpp: props.post.Poster.userpp,
+            PostDate: props.post.Poster.PostDate,
           }}
         />
-        <PostContent postimagepath={SinglePost.PostImage}></PostContent>
+        <PostContent postimagepath={props.post.PostImage}></PostContent>
         <PostFooter></PostFooter>
       </PostContainer>
     </>

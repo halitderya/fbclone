@@ -19,7 +19,7 @@ const PostsCollection = () => {
   }, [setPagePosts]);
 
   return PagePosts.Posts.map((post) => {
-    return <PostContainer SinglePost={post} key={post.ID}></PostContainer>;
+    return <PostContainer post={post} key={post.ID}></PostContainer>;
   });
 };
 
