@@ -13,9 +13,7 @@ const PostsCollection = () => {
   useEffect(() => {
     fetch("../../../public/FakeAPI/Post/Post.json")
       .then((res) => res.json())
-      .then((data) => {
-        setPagePosts(data);
-      });
+      .then((data) => setPagePosts(data));
   }, [setPagePosts]);
 
   return PagePosts.Posts.map((post) => {
@@ -25,7 +23,7 @@ const PostsCollection = () => {
 
 export default function MidColumnComponent() {
   return (
-    <MidColumn>
+    <MidColumn className="MidColumn">
       <StoryContainer></StoryContainer>
 
       <PostsCollection></PostsCollection>

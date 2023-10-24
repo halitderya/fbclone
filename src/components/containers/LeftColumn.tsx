@@ -3,8 +3,6 @@ import ShortCut from "../Shortcuts";
 
 import * as icons from "../../assets/shortcut-icons";
 import { SyntheticEvent, useState } from "react";
-import { useContext } from "react";
-import { UserContext } from "../../Contexts/UserContext";
 
 const LeftColumn = styled.div`
   width: 18%;

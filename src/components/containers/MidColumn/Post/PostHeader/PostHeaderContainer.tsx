@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import PPCircle from "../../../../particles/PPCircle";
+import worldicon from "../../../../../assets/post-files/world-icon.svg";
+import { PostHeaderProps } from "../../../../../../public/FakeAPI/Post/Type";
 
 const PostHeaderComponent = styled.div`
   padding: 10px;
@@ -15,9 +17,24 @@ const PostHeaderFirstBox = styled.div`
   padding-top: 3px;
   justify-content: space-between;
 `;
-const PostTimeStampContainer = styled.label``;
-const PostTimeStampIcon = styled.label``;
-const PostTimeStamp = styled.label``;
+const PostTimeStampContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const PostTimeStampIcon = styled.div<{ $icon: string }>`
+  background-image: url(${(props) => props.$icon});
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+  height: 16px;
+  width: 16px;
+`;
+const PostTimeStamp = styled.label`
+  color: ${(props) => props.theme.darkgray};
+  font-family: sans-serif;
+
+  font-size: 14px;
+`;
 const PostHeaderLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,23 +68,52 @@ const FirstLine = styled.div`
   flex-direction: row;
   margin-bottom: 10px;
 `;
-export default function PostHeaderContainer(PostHeader: PostHeaderType) {
+function timeSince(date: string) {
+  const converteddate = new Date(date).getTime();
+
+  const seconds = Math.floor((new Date().getTime() - converteddate) / 1000);
+
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + " years";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+}
+
+export default function PostHeaderContainer(props: PostHeaderProps) {
   return (
     <>
       <PostHeaderComponent className="headercomponent">
         <PostHeaderLeftContainer className="PostHeaderLeftContainer">
           <FirstLine className="FirstLine">
-            <PPCircle ppimage={PostHeader.PostHeaderProps.userpp} />
+            <PPCircle ppimage={props.Poster.photo} />
             <PostHeaderFirstBox className="PostHeaderFirstBox">
-              <PostPoster>{PostHeader.PostHeaderProps.username}</PostPoster>
+              <PostPoster>{props.Poster.name}</PostPoster>
               <PostTimeStampContainer>
-                <PostTimeStamp>{PostHeader.PostHeaderProps.PostDate}</PostTimeStamp>
-                <PostTimeStampIcon>X</PostTimeStampIcon>
+                <PostTimeStamp>{timeSince(props.PostDate)} ago </PostTimeStamp>
+                <PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></PostTimeStampIcon>
               </PostTimeStampContainer>
             </PostHeaderFirstBox>
           </FirstLine>
 
-          <PostHeaderText>{PostHeader.PostHeaderProps.PostHeaderText}</PostHeaderText>
+          <PostHeaderText>{props.PostHeaderText}</PostHeaderText>
         </PostHeaderLeftContainer>
 
         <PostHeaderRightContainer>

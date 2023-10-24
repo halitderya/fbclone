@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import PostFooterHeader from "./PostFooterHeader";
 import PostFooterMediacontrols from "./PostFooterMediaControls";
-import { Comment, Post } from "../../../../../../public/FakeAPI/Post/Type";
+import { PostFooterProps } from "../../../../../../public/FakeAPI/Post/Type";
 
 const PostFooterContainer = styled.div`
   height: 80px;
-  border: 2px dotted red;
+  padding: 10px;
 `;
 
 const PostFooterLine = styled.hr`
@@ -13,16 +13,11 @@ const PostFooterLine = styled.hr`
   margin-right: 20px;
 `;
 
-export interface IPostFooterProps {
-  PostFooterText: string;
-  comments: Comment[];
-}
-
-export default function PostFooterComponent(props: { props: IPostFooterProps }) {
+export default function PostFooterComponent(props: PostFooterProps) {
   return (
     <>
       <PostFooterContainer>
-        <PostFooterHeader post={post}></PostFooterHeader>
+        <PostFooterHeader Comments={props.Comments} PostFooterText={props.PostFooterText} Reactions={props.Reactions}></PostFooterHeader>
         <PostFooterLine></PostFooterLine>
         <PostFooterMediacontrols></PostFooterMediacontrols>
       </PostFooterContainer>

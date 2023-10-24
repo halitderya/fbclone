@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState, SyntheticEvent } from "react";
+import { SyntheticEvent } from "react";
 import sprite from "../assets/shortcut-icons/sprite_sheet.png";
 export interface ShortcutsType {
   text: string;

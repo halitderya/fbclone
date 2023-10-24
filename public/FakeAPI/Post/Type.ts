@@ -1,34 +1,47 @@
-export interface Comment {
-    person: {
-        name: string;
-        photo: string;
-    };
-    text: string;
+interface User{
+    name:string;
+    photo:string;
 }
 
-export interface Post {
-    Poster: {
-        username: string;
-        userpp: string;
-        PostDate: string;
-    };
-    ID: number;
-    PostHeader: string;
-    PostImage: string;
-    PostFooter: {
-        PostFooterText: string;
-        comments: Comment[];
-        ShareCount: number;
-    };
+export interface Comment {
+  Commentor:User;
+CommentText: string;
 }
-export interface PostFooter{
-Footer:PostFooter
+
+interface Reaction{
+    Reaction:number;
+    Reactor:User;
 }
+
+export interface PostHeaderProps{
+Poster:User;
+PostHeaderText:string;
+PostDate:string;
+
+}
+
+export interface PostContentProps{
+
+    PostImage:string;
+
+}
+
+export interface PostFooterProps{
+    PostFooterText:string;
+    Comments?:Comment[];
+    Reactions?:Reaction[];
+
+
+}
+
+export interface Post{
+    ID:number;
+    PostHeaderProps:PostHeaderProps;
+    PostContentProps:PostContentProps;
+    PostFooterProps:PostFooterProps;
+}
+
 
 export default interface PostsData {
     Posts: Post[];
 }
-
-/* export interface SinglePost {
-    SinglePost: Post;
-} */
