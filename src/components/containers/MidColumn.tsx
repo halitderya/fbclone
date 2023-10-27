@@ -3,13 +3,15 @@ import {} from "../Buttons";
 import StoryContainer from "./MidColumn/Story/StoryContainer";
 import PostContainer from "./MidColumn/Post/PostMasterContainer";
 import { useEffect, useState } from "react";
-import PostsData from "../../../public/FakeAPI/Post/Type";
+import PostsData from "../../../public/FakeAPI/Post/PostType";
 const MidColumn = styled.div`
-  width: 40%;
+  width: 50%;
+  border: 1px dashed blue;
 `;
 
 const PostsCollection = () => {
   const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
+
   useEffect(() => {
     fetch("../../../public/FakeAPI/Post/Post.json")
       .then((res) => res.json())

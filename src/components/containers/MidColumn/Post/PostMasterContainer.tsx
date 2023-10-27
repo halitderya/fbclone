@@ -2,7 +2,8 @@ import styled from "styled-components";
 import PostContent from "./PostContent/PostContent";
 import PostHeader from "./PostHeader/PostHeaderContainer";
 import PostFooter from "./PostFooter/PostFooterContainer";
-import { Post } from "../../../../../public/FakeAPI/Post/Type";
+import { Post } from "../../../../../public/FakeAPI/Post/PostType";
+import { useState } from "react";
 
 const PostContainer = styled.div`
   width: 100%;
@@ -16,12 +17,20 @@ const PostContainer = styled.div`
 `;
 
 export default function PostContainerComponent(props: { post: Post }) {
+  const [view, setView] = useState<boolean>(false);
+
+  function ToggleViewFunction() {
+    setView(!view);
+    console.log("view: ", view);
+  }
+  const NewPostFooter = { ...props.post.PostFooterProps, ToggleView: ToggleViewFunction };
+
   return (
     <>
       <PostContainer>
         <PostHeader {...props.post.PostHeaderProps} />
         <PostContent {...props.post.PostContentProps}></PostContent>
-        <PostFooter {...props.post.PostFooterProps}></PostFooter>
+        <PostFooter {...NewPostFooter}></PostFooter>
       </PostContainer>
     </>
   );

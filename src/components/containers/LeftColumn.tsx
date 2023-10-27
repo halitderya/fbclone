@@ -5,9 +5,10 @@ import * as icons from "../../assets/shortcut-icons";
 import { SyntheticEvent, useState } from "react";
 
 const LeftColumn = styled.div`
-  width: 18%;
+  width: 23%;
   float: left;
-  padding-top: 20px;
+  padding-top: 10px;
+  border: 1px dashed blue;
 `;
 
 function LeftColumnComponent() {

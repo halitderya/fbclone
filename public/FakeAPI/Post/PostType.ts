@@ -30,7 +30,7 @@ export interface PostFooterProps{
     PostFooterText:string;
     Comments?:Comment[];
     Reactions?:Reaction[];
-
+    ToggleView:() => void;
 
 }
 
@@ -39,6 +39,7 @@ export interface Post{
     PostHeaderProps:PostHeaderProps;
     PostContentProps:PostContentProps;
     PostFooterProps:PostFooterProps;
+    
 }
 
 

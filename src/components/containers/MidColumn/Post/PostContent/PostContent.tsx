@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PostContentProps } from "../../../../../../public/FakeAPI/Post/Type";
+import { PostContentProps } from "../../../../../../public/FakeAPI/Post/PostType";
 
 const PostContent = styled.div`
   background-position: center;

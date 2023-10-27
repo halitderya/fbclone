@@ -8,7 +8,7 @@ export interface ShortcutsType {
   issprite?: boolean;
   id?: string;
   isprofile?: boolean;
-  hidden?: boolean;
+  hidden?: string;
   class?: string;
 
   click?: (event: SyntheticEvent) => void;
@@ -36,7 +36,7 @@ const ShortCutIconBase = styled.div`
   margin: 2px;
 `;
 
-const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: boolean }>`
+const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: string }>`
   background-image: ${(props) => (props.$issprite ? `url(${sprite})` : `url(${props.$image})`)};
   background-position-y: ${(props) => (props.$issprite ? props.$offset : "")};
 
@@ -48,7 +48,7 @@ const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: strin
 `;
 
 const ShortCutText = styled.label`
-  font-size: 14px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 5px;
   -webkit-user-select: none;

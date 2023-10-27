@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Comment } from "../../../../../../public/FakeAPI/Post/Type";
+import { Comment } from "../../../../../../public/FakeAPI/Post/PostType";
 
 const PostFooterCommentFloodContainer = styled.div<{ $display?: boolean }>`
   border: 2px solid orange;
@@ -25,7 +25,6 @@ export default function PostFooterCommentContainerFC() {
         <PostCommentor>halit derya: </PostCommentor>
         <PostComment>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, incidunt culpa veniam cum explicabo quaerat!</PostComment>
       </PostCommentSpan>
-      <brk></brk>
       <PostCommentSpan>
         <PostCommentor>halit derya: </PostCommentor>
         <PostComment>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptate aliquid culpa ipsa labore ab nam eaque blanditiis neque ipsam, pariatur, natus officia mollitia explicabo?</PostComment>

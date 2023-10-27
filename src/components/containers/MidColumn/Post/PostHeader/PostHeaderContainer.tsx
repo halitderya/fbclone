@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PPCircle from "../../../../particles/PPCircle";
 import worldicon from "../../../../../assets/post-files/world-icon.svg";
-import { PostHeaderProps } from "../../../../../../public/FakeAPI/Post/Type";
+import { PostHeaderProps } from "../../../../../../public/FakeAPI/Post/PostType";
 
 const PostHeaderComponent = styled.div`
   padding: 10px;
