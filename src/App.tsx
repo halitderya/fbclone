@@ -1,7 +1,8 @@
 import Scaffolding from "./components/Scaffolding";
 import { useEffect, useState } from "react";
 import { UserContext } from "./Contexts/UserContext";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/login";
 function App() {
   const [userInfo, setUserInfo] = useState({});
 
@@ -15,7 +16,12 @@ function App() {
 
   return (
     <UserContext.Provider value={userInfo}>
-      <Scaffolding />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Scaffolding />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </UserContext.Provider>
   );
 }

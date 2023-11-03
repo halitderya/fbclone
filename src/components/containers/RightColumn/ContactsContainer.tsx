@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import IPeople from "../../../../public/FakeAPI/People/People";
 import styled from "styled-components";
 import ShortCut from "../../Shortcuts";
@@ -7,6 +7,8 @@ const ContactsContainer = styled.div`
   font-weight: 400;
   width: inherit;
   position: absolute;
+  height: 70%;
+  overflow-y: auto;
 `;
 const Contact = styled(ShortCut)`
   position: absolute;
@@ -15,7 +17,6 @@ const Contact = styled(ShortCut)`
 const ContactsHeader = styled.div`
   height: 30px;
   width: 100%;
-  border: 1px red solid;
   display: flex;
 `;
 const ContactsLabel = styled.label`

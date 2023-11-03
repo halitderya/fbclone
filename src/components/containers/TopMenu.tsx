@@ -3,6 +3,7 @@ import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../Buttons";
 import Searchbar from "../../components/Inputs";
 import * as topmenuicons from "../../assets/topmenu-icons/index";
 import avatar from "../../assets/shortcut-icons/user_avatar.jpg";
+import { Outlet, Link } from "react-router-dom";
 
 const TopMenu = styled.div`
   background-color: ${(props) => props.theme.white};
@@ -28,7 +29,7 @@ function TopMenuFunction() {
   return (
     <TopMenu>
       <FirstDiv>
-        <ButtonCircleFull $image={topmenuicons.flogo}></ButtonCircleFull>
+        <ButtonCircleFull to="./" $image={topmenuicons.flogo}></ButtonCircleFull>
         <Searchbar></Searchbar>
       </FirstDiv>
       <SecondDiv>
@@ -39,10 +40,10 @@ function TopMenuFunction() {
         <MiddleButton $image={topmenuicons.gaminicon}></MiddleButton>
       </SecondDiv>
       <ThirdDiv>
-        <ButtonCircle $image={topmenuicons.logomessenger}></ButtonCircle>
-        <ButtonCircle $image={topmenuicons.bellicon}></ButtonCircle>
-        <ButtonCircle $image={topmenuicons.ninedotsicon}></ButtonCircle>
-        <ButtonCircleFull $image={avatar}></ButtonCircleFull>
+        <ButtonCircle to="#" $image={topmenuicons.logomessenger}></ButtonCircle>
+        <ButtonCircle to="#" $image={topmenuicons.bellicon}></ButtonCircle>
+        <ButtonCircle to="#" $image={topmenuicons.ninedotsicon}></ButtonCircle>
+        <ButtonCircleFull to="#" $image={avatar}></ButtonCircleFull>
       </ThirdDiv>
     </TopMenu>
   );

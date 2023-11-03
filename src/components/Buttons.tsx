@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 /* const ButtonSquare = styled.button<{ $kind?: string }>`
   color: #ffffff;
   width: auto;
@@ -10,10 +12,10 @@ import styled from "styled-components";
   font-family: Arial, Helvetica, sans-serif;
 `;
  */
-const ButtonCircleFull = styled.button<{ $image: string }>`
+const ButtonCircleFull = styled(Link)<{ $image: string }>`
   background-color: ${(props) => props.theme.lightgray};
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background-image: url(${(props) => props.$image});
   background-size: 100%;

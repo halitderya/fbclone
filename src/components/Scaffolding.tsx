@@ -15,7 +15,7 @@ function Scaffolding() {
   return (
     <ThemeProvider theme={theme}>
       <Scaffoldin>
-        <MasterContainer $divwidth={100} $divpadding={10}>
+        <MasterContainer $divwidth={100} $divpadding={0}>
           <TopMenu></TopMenu>
           <Body>
             <LeftColumn></LeftColumn>
