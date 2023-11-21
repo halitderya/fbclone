@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ShortCut from "../Shortcuts";
+import ShortCut from "./Shortcuts";
 
 import * as icons from "../../assets/shortcut-icons";
 import { SyntheticEvent, useState } from "react";

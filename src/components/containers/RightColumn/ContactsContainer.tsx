@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import IPeople from "../../../../public/FakeAPI/People/People";
 import styled from "styled-components";
-import ShortCut from "../../Shortcuts";
+import ShortCut from "../Shortcuts";
 
 const ContactsContainer = styled.div`
   font-weight: 400;

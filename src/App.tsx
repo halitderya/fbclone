@@ -1,4 +1,4 @@
-import Scaffolding from "./components/Scaffolding";
+import Scaffolding from "./components/containers/Scaffolding";
 import { useEffect, useState } from "react";
 import { UserContext } from "./Contexts/UserContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

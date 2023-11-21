@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SyntheticEvent } from "react";
-import sprite from "../assets/shortcut-icons/sprite_sheet.png";
+import sprite from "../../assets/shortcut-icons/sprite_sheet.png";
 export interface ShortcutsType {
   text: string;
   image?: string;

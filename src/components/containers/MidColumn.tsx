@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {} from "../Buttons";
+import {} from "../particles/Buttons";
 import StoryContainer from "./MidColumn/Story/StoryContainer";
 import PostContainer from "./MidColumn/Post/PostMasterContainer";
 import { useEffect, useState } from "react";

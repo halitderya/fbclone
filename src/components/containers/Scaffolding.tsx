@@ -1,12 +1,12 @@
-import Body from "./containers/Body";
-import LeftColumn from "./containers/LeftColumn";
-import TopMenu from "./containers/TopMenu";
-import RightColumn from "./containers/RightColumn";
-import Footer from "./containers/Footer";
-import MasterContainer from "./containers/MasterContainer";
-import MidColumn from "./containers/MidColumn";
+import Body from "./Body";
+import LeftColumn from "./LeftColumn";
+import TopMenu from "./TopMenu";
+import RightColumn from "./RightColumn";
+import Footer from "./Footer";
+import MasterContainer from "./MasterContainer";
+import MidColumn from "./MidColumn";
 import { styled, ThemeProvider } from "styled-components";
-import { theme } from "../assets/theme";
+import { theme } from "../../assets/theme";
 
 const Scaffoldin = styled.div`
   background-color: ${(props) => props.theme.lightgray};

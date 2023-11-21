@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Comment } from "../../../../../../public/FakeAPI/Post/PostType";
+import { Comment } from "../../../../../../../public/FakeAPI/Post/PostType";
 
 const PostFooterCommentFloodContainer = styled.div<{ $display?: boolean }>`
   border: 2px solid orange;
@@ -12,7 +12,6 @@ const PostCommentSpan = styled.span`
   padding-top: 10px;
   padding-bottom: 10px;
 `;
-const brk = styled.br``;
 const PostCommentor = styled.label`
   font-weight: 800;
 `;

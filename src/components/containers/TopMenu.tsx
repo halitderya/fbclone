@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../Buttons";
-import Searchbar from "../../components/Inputs";
+import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../../components/particles/Buttons";
+import Searchbar from "../particles/Inputs";
 import * as topmenuicons from "../../assets/topmenu-icons/index";
 import avatar from "../../assets/shortcut-icons/user_avatar.jpg";
-import { Outlet, Link } from "react-router-dom";
 
 const TopMenu = styled.div`
   background-color: ${(props) => props.theme.white};
