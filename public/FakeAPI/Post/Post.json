@@ -28,7 +28,12 @@
                     {"Commentor": {"name": "Samuel Adams", "photo": ""}, "CommentText": "I would love to see more of your work."},
                     {"Commentor": {"name": "Bella Turner", "photo": ""}, "CommentText": "A perfect blend of colors and emotions."}
                 ],
-                "Reactions": [{"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}]
+                "Reactions": [
+                {"Reactor": {"name": "Samuel Adams", "photo": ""}, "Reaction": 1},
+                {"Reactor": {"name": "Dylan Johnson", "photo": ""}, "Reaction": 2},
+                {"Reactor": {"name": "Samuel Adams", "photo": ""}, "Reaction": 2},
+                {"Reactor": {"name": "Madison Brown", "photo": ""}, "Reaction": 1}
+            ]
             }
         },
         {

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import {} from "../particles/Buttons";
+
 import StoryContainer from "./MidColumn/Story/StoryContainer";
 import { useEffect, useState } from "react";
 import PostsData from "../../../public/FakeAPI/Post/PostType";
-import ComPost from "./MidColumn/Post/Post";
+import Post from "./MidColumn/Post/Post";
 const MidColumn = styled.div`
   width: 50%;
   border: 1px dashed blue;
@@ -19,7 +19,7 @@ const PostsCollection = () => {
   }, [setPagePosts]);
 
   return PagePosts.Posts.map((post) => {
-    return <ComPost post={post} key={post.ID}></ComPost>;
+    return <Post post={post} key={post.ID}></Post>;
   });
 };
 //

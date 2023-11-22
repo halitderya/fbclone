@@ -4,6 +4,8 @@ import PPCircle from "../../../particles/PPCircle";
 import worldicon from "../../../../assets/post-files/world-icon.svg";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
+import { FaGrinAlt, FaHeart, FaThumbsUp } from "react-icons/fa";
+import { Children } from "react";
 
 const PostMainDiv = styled.div`
   width: 100%;
@@ -18,6 +20,11 @@ const PostMainDiv = styled.div`
 `;
 
 ///PostHeader
+const iconMap = {
+  1: <FaGrinAlt />,
+  2: <FaHeart />,
+  3: <FaThumbsUp />,
+};
 
 const PostHeaderComponent = styled.div`
   padding: 10px;
@@ -110,7 +117,13 @@ const PostFooterHeader = styled.div`
   padding: 10px;
 `;
 
-const PostFooterReactions = styled.div``;
+const PostFooterReactions = styled.div`
+  display: flex;
+  justify-items: start;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 20px;
+`;
 
 const PostFooterMediaControls = styled.div`
   height: 30px;
@@ -124,8 +137,16 @@ const PostFooterLine = styled.hr`
 const PostFooterCommentCount = styled.div``;
 ////PostFooterEnds
 
-function PostFooterReactionsComponent() {
-  return <PostFooterReactions>reactions here</PostFooterReactions>;
+function PostFooterReactionsComponent(props: { PostFooterProps: PostFooterProps }) {
+  const uniqueReactions = new Set(props.PostFooterProps.Reactions?.map((reaction) => reaction.Reaction));
+
+  const reactionComponents = Array.from(uniqueReactions).map((reactionType) => <PostFooterReactions key={reactionType}>{iconMap[reactionType as keyof typeof iconMap]}</PostFooterReactions>);
+
+  return (
+    <PostFooterReactions>
+      {reactionComponents} {props.PostFooterProps.Reactions?.length}
+    </PostFooterReactions>
+  );
 }
 
 function PostFooterMediaControlComponent() {
@@ -133,7 +154,6 @@ function PostFooterMediaControlComponent() {
 }
 
 function PostFooterCommentCountFC(props: { PostFooterProps: PostFooterProps }) {
-  console.log(props.PostFooterProps);
   return (
     <PostFooterCommentCount className="PostFooterCommentCount">
       <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.PostFooterProps.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
@@ -175,7 +195,7 @@ export default function ComPost(props: { post: Post }) {
       </PostContent>
 
       <PostFooterHeader>
-        <PostFooterReactionsComponent></PostFooterReactionsComponent>
+        <PostFooterReactionsComponent PostFooterProps={props.post.PostFooterProps}></PostFooterReactionsComponent>
         <PostFooterCommentCountFC PostFooterProps={props.post.PostFooterProps}></PostFooterCommentCountFC>
       </PostFooterHeader>
       <PostFooterContainer>
