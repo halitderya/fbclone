@@ -1,152 +1,121 @@
 {
     "Posts": [
         {
-            "ID":1,
-            "PostHeaderProps": {
-                "Poster": {
-                    "name": "Alice Williams",
-                    "photo": "src/assets/post-files/randomperson1.jpeg"
-                },
-                "PostHeaderText": "First Day at My New Job!",
-                "PostDate": "2021-01-17 14:23:52"
+      "ID": 0,
+            "Poster": {
+                "name": "Alice Williams",
+                "photo": "src/assets/post-files/randomperson1.jpeg"
             },
-            "PostContentProps": {
-                "PostImage": "https://picsum.photos/id/54/800/600"
-            },
-            "PostFooterProps": {
-                "PostFooterText": "So excited to begin this new journey. Wish me luck! ❤️",
-                "Comments": [
-                    {"Commentor": {"name": "Robert Johnson", "photo": ""}, "CommentText": "Amazing!"},
-                    {"Commentor": {"name": "Ryan Walker", "photo": ""}, "CommentText": "This is so inspiring!"},
-                    {"Commentor": {"name": "Natalie Roberts", "photo": ""}, "CommentText": "Feels like I'm there with this photo."},
-                    {"Commentor": {"name": "Dylan Johnson", "photo": ""}, "CommentText": "What a wonderful moment."},
-                    {"Commentor": {"name": "Grace Jones", "photo": ""}, "CommentText": "This photo speaks a thousand words."},
-                    {"Commentor": {"name": "Henry Miller", "photo": ""}, "CommentText": "I can't get over how beautiful this is."},
-                    {"Commentor": {"name": "Madison Brown", "photo": ""}, "CommentText": "You have a talent for capturing beauty."},
-                    {"Commentor": {"name": "Oscar Nelson", "photo": ""}, "CommentText": "Such a profound piece."},
-                    {"Commentor": {"name": "Ella Garcia", "photo": ""}, "CommentText": "This made my day."},
-                    {"Commentor": {"name": "Samuel Adams", "photo": ""}, "CommentText": "I would love to see more of your work."},
-                    {"Commentor": {"name": "Bella Turner", "photo": ""}, "CommentText": "A perfect blend of colors and emotions."}
-                ],
-                "Reactions": [
+            "PostHeaderText": "First Day at My New Job!",
+            "PostDate": "2021-01-17 14:23:52",
+            "PostImage": "https://picsum.photos/id/54/800/600",
+            "PostFooterText": "So excited to begin this new journey. Wish me luck! ❤️",
+            "Comments": [
+                {"Commentor": {"name": "Robert Johnson", "photo": ""}, "CommentText": "Amazing!"},
+                {"Commentor": {"name": "Ryan Walker", "photo": ""}, "CommentText": "This is so inspiring!"}
+            ],
+            "Reactions": [
                 {"Reactor": {"name": "Samuel Adams", "photo": ""}, "Reaction": 1},
-                {"Reactor": {"name": "Dylan Johnson", "photo": ""}, "Reaction": 2},
-                {"Reactor": {"name": "Samuel Adams", "photo": ""}, "Reaction": 2},
-                {"Reactor": {"name": "Madison Brown", "photo": ""}, "Reaction": 1}
-            ]
-            }
+                {"Reactor": {"name": "Dylan Johnson", "photo": ""}, "Reaction": 2}
+            ],
+            "ReactionToggleView": "function"
         },
         {
-            "ID":2,
-
-            "PostHeaderProps": {
-                "Poster": {
-                    "name": "John Smith",
-                    "photo": "src/assets/post-files/randomperson2.jpeg"
-                },
-                "PostHeaderText": "Spectacular Sunset at Brighton Beach",
-                "PostDate": "2021-06-23 18:05:34"
+            "ID": 1,
+            "Poster": {
+                "name": "John Smith",
+                "photo": "src/assets/post-files/randomperson2.jpeg"
             },
-            "PostContentProps": {
-                "PostImage": "https://picsum.photos/id/46/800/600"
-            },
-            "PostFooterProps": {
-                "PostFooterText": "Nature's beauty never fails to amaze me! 🌅",
-                "Comments": [
-                    {"Commentor": {"name": "Liam White", "photo": ""}, "CommentText": "That view is breathtaking!"},
-                    {"Commentor": {"name": "Lily Wilson", "photo": ""}, "CommentText": "Great capture!"},
-                    {"Commentor": {"name": "Logan Lewis", "photo": ""}, "CommentText": "Art at its finest."},
-                    {"Commentor": {"name": "Zoe Jackson", "photo": ""}, "CommentText": "Absolutely love it!"},
-                    {"Commentor": {"name": "Jack Anderson", "photo": ""}, "CommentText": "The colors are so vibrant!"},
-                    {"Commentor": {"name": "Chloe White", "photo": ""}, "CommentText": "A moment captured perfectly."}
-                
-                ],
-                "Reactions": [{"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}]
-            }
+            "PostHeaderText": "Spectacular Sunset at Brighton Beach",
+            "PostDate": "2021-06-23 18:05:34",
+            "PostImage": "https://picsum.photos/id/46/800/600",
+            "PostFooterText": "Nature's beauty never fails to amaze me! 🌅",
+            "Comments": [
+                {"Commentor": {"name": "Liam White", "photo": ""}, "CommentText": "That view is breathtaking!"},
+                {"Commentor": {"name": "Lily Wilson", "photo": ""}, "CommentText": "Great capture!"},
+                {"Commentor": {"name": "Logan Lewis", "photo": ""}, "CommentText": "Art at its finest."},
+                {"Commentor": {"name": "Zoe Jackson", "photo": ""}, "CommentText": "Absolutely love it!"},
+                {"Commentor": {"name": "Jack Anderson", "photo": ""}, "CommentText": "The colors are so vibrant!"},
+                {"Commentor": {"name": "Chloe White", "photo": ""}, "CommentText": "A moment captured perfectly."}
+            ],
+            "Reactions": [
+                {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}
+            ],
+            "ReactionToggleView": "function"
         },
 
         {
-            "ID":3,
 
-            "PostHeaderProps": {
-                "Poster": {
-                    "name": "Rachel Green",
-                    "photo": "src/assets/post-files/randomperson3.jpeg"
-                },
-                "PostHeaderText": "Homemade Blueberry Muffins!",
-                "PostDate": "2023-10-11 12:45:21"
-            },
-            "PostContentProps": {
-                "PostImage": "https://picsum.photos/id/24/800/600"
-            },
-            "PostFooterProps": {
-                "PostFooterText": "Baking therapy. Who wants the recipe? 🧁",
-                "Comments": [
-                    {"Commentor": {"name": "Lucas Walker", "photo": ""}, "CommentText": "Looks delicious!"},
-
-    {"Commentor": {"name": "Oliver Martin", "photo": ""}, "CommentText": "Such a serene place."},
-    {"Commentor": {"name": "Isabella Davis", "photo": ""}, "CommentText": "A masterpiece indeed!"},
-    {"Commentor": {"name": "Lucas Thompson", "photo": ""}, "CommentText": "I'm in love with this picture."},
-    {"Commentor": {"name": "Mia Scott", "photo": ""}, "CommentText": "What a fantastic day it must have been!"},
-    {"Commentor": {"name": "Benjamin Taylor", "photo": ""}, "CommentText": "Simply stunning!"}
-                ],
-                "Reactions": [{"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}]
-            }
+            "ID": 2,
+    "Poster": {
+        "name": "Rachel Green",
+        "photo": "src/assets/post-files/randomperson3.jpeg"
+    },
+    "PostHeaderText": "Homemade Blueberry Muffins!",
+    "PostDate": "2023-10-11 12:45:21",
+    "PostImage": "https://picsum.photos/id/24/800/600",
+    "PostFooterText": "Baking therapy. Who wants the recipe? 🧁",
+    "Comments": [
+        {"Commentor": {"name": "Lucas Walker", "photo": ""}, "CommentText": "Looks delicious!"},
+        {"Commentor": {"name": "Oliver Martin", "photo": ""}, "CommentText": "Such a serene place."},
+        {"Commentor": {"name": "Isabella Davis", "photo": ""}, "CommentText": "A masterpiece indeed!"},
+        {"Commentor": {"name": "Lucas Thompson", "photo": ""}, "CommentText": "I'm in love with this picture."},
+        {"Commentor": {"name": "Mia Scott", "photo": ""}, "CommentText": "What a fantastic day it must have been!"},
+        {"Commentor": {"name": "Benjamin Taylor", "photo": ""}, "CommentText": "Simply stunning!"}
+    ],
+    "Reactions": [
+        {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}
+    ],
+    "ReactionToggleView": "function"
         },
         {
-            "ID":4,
-
-            "PostHeaderProps": {
-                "Poster": {
-                    "name": "Daniel Brown",
-                    "photo": "src/assets/post-files/randomperson4.jpeg"
-                },
-                "PostHeaderText": "Hiking Adventures at Yosemite",
-                "PostDate": "2022-06-07 07:15:29"
+            "ID": 3,
+            "Poster": {
+                "name": "Daniel Brown",
+                "photo": "src/assets/post-files/randomperson4.jpeg"
             },
-            "PostContentProps": {
-                "PostImage": "https://picsum.photos/id/123/800/600"
-            },
-            "PostFooterProps": {
-                "PostFooterText": "The mountains are calling, and I must go. ⛰️",
-                "Comments": [
-                    {"Commentor": {"name": "Ethan Moore", "photo": ""}, "CommentText": "Wow, that's a dream destination!"},
-
-    {"Commentor": {"name": "James Harris", "photo": ""}, "CommentText": "Thanks for sharing this!"},
-    {"Commentor": {"name": "Charlotte Clark", "photo": ""}, "CommentText": "Wish I was there!"},
-    {"Commentor": {"name": "Ethan Evans", "photo": ""}, "CommentText": "Art is truly an expression of the soul."},
-    {"Commentor": {"name": "Ava Moore", "photo": ""}, "CommentText": "Keep up the good work!"},
-    {"Commentor": {"name": "William Robinson", "photo": ""}, "CommentText": "This brings back memories."}
-                ],
-                "Reactions": [{"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}]
-            }
+            "PostHeaderText": "Hiking Adventures at Yosemite",
+            "PostDate": "2022-06-07 07:15:29",
+            "PostImage": "https://picsum.photos/id/123/800/600",
+            "PostFooterText": "The mountains are calling, and I must go. ⛰️",
+            "Comments": [
+                {"Commentor": {"name": "Ethan Moore", "photo": ""}, "CommentText": "Wow, that's a dream destination!"},
+                {"Commentor": {"name": "James Harris", "photo": ""}, "CommentText": "Thanks for sharing this!"},
+                {"Commentor": {"name": "Charlotte Clark", "photo": ""}, "CommentText": "Wish I was there!"},
+                {"Commentor": {"name": "Ethan Evans", "photo": ""}, "CommentText": "Art is truly an expression of the soul."},
+                {"Commentor": {"name": "Ava Moore", "photo": ""}, "CommentText": "Keep up the good work!"},
+                {"Commentor": {"name": "William Robinson", "photo": ""}, "CommentText": "This brings back memories."}
+            ],
+            "Reactions": [
+                {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}
+            ],
+            "ReactionToggleView": "function"
         },
         {
-            "ID":5,
 
-            "PostHeaderProps": {
-                "Poster": {
-                    "name": "Sophia Turner",
-                    "photo": "src/assets/post-files/randomperson5.jpeg"
-                },
-                "PostHeaderText": "Art Gallery Visit",
-                "PostDate": "2023-01-09 20:34:56"
+            "ID": 4,
+            "Poster": {
+                "name": "Sophia Turner",
+                "photo": "src/assets/post-files/randomperson5.jpeg"
             },
-            "PostContentProps": {
-                "PostImage": "https://picsum.photos/id/125/800/600"
-            },
-            "PostFooterProps": {
-                "PostFooterText": "Immersed in the world of colors and imagination. 🎨",
-                "Comments": [
-                    {"Commentor": {"name": "Logan Garcia", "photo": ""}, "CommentText": "Art is life."},
-                    {"Commentor": {"name": "Alice Johnson", "photo": ""}, "CommentText": "Amazing photo!"},
-                    {"Commentor": {"name": "Michael Brown", "photo": ""}, "CommentText": "Congratulations on the achievement!"},
-                    {"Commentor": {"name": "Emma Wilson", "photo": ""}, "CommentText": "Looks delicious!"},
-                    {"Commentor": {"name": "David Smith", "photo": ""}, "CommentText": "Nature is truly mesmerizing."},
-                    {"Commentor": {"name": "Sophia Lee", "photo": ""}, "CommentText": "That's a breathtaking view!"}
-                ],
-                "Reactions": [{"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}]
-            }
+            "PostHeaderText": "Art Gallery Visit",
+            "PostDate": "2023-01-09 20:34:56",
+            "PostImage": "https://picsum.photos/id/125/800/600",
+            "PostFooterText": "Immersed in the world of colors and imagination. 🎨",
+            "Comments": [
+                {"Commentor": {"name": "Logan Garcia", "photo": ""}, "CommentText": "Art is life."},
+                {"Commentor": {"name": "Alice Johnson", "photo": ""}, "CommentText": "Amazing photo!"},
+                {"Commentor": {"name": "Michael Brown", "photo": ""}, "CommentText": "Congratulations on the achievement!"},
+                {"Commentor": {"name": "Emma Wilson", "photo": ""}, "CommentText": "Looks delicious!"},
+                {"Commentor": {"name": "David Smith", "photo": ""}, "CommentText": "Nature is truly mesmerizing."},
+                {"Commentor": {"name": "Sophia Lee", "photo": ""}, "CommentText": "That's a breathtaking view!"}
+            ],
+            "Reactions": [
+                {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}
+            ],
+            "ReactionToggleView": "function"
+
+
         }
     ]
 }

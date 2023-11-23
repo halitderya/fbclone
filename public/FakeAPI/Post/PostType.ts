@@ -20,26 +20,18 @@ PostDate:string;
 
 }
 
-export interface PostContentProps{
-
-    PostImage:string;
-
-}
-
-export interface PostFooterProps{
-    PostFooterText:string;
-    Comments?:Comment[];
-    Reactions?:Reaction[];
-/*     ToggleView:(e:any) => void;
- */
-}
 
 export interface Post{
     ID:number;
-    PostHeaderProps:PostHeaderProps;
-    PostContentProps:PostContentProps;
-    PostFooterProps:PostFooterProps;
-    
+    Poster:User;
+PostHeaderText:string;
+PostDate:string;
+PostImage:string;
+
+PostFooterText:string;
+Comments?:Comment[];
+Reactions?:Reaction[];
+ReactionToggleView:(e:any) => void;    
 }
 
 

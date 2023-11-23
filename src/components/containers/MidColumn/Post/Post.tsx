@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { Post, PostFooterProps } from "../../../../../public/FakeAPI/Post/PostType";
+import { Post } from "../../../../../public/FakeAPI/Post/PostType";
 import PPCircle from "../../../particles/PPCircle";
 import worldicon from "../../../../assets/post-files/world-icon.svg";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
 import { FaGrinAlt, FaHeart, FaThumbsUp } from "react-icons/fa";
-import { Children } from "react";
 
 const PostMainDiv = styled.div`
   width: 100%;
@@ -117,12 +116,15 @@ const PostFooterHeader = styled.div`
   padding: 10px;
 `;
 
-const PostFooterReactions = styled.div`
+const ReactionContainer = styled.div`
   display: flex;
   justify-items: start;
   margin-left: 2px;
   margin-right: 2px;
+`;
+const PostFooterReactions = styled.div`
   font-size: 20px;
+  pointer-events: none;
 `;
 
 const PostFooterMediaControls = styled.div`
@@ -137,15 +139,18 @@ const PostFooterLine = styled.hr`
 const PostFooterCommentCount = styled.div``;
 ////PostFooterEnds
 
-function PostFooterReactionsComponent(props: { PostFooterProps: PostFooterProps }) {
-  const uniqueReactions = new Set(props.PostFooterProps.Reactions?.map((reaction) => reaction.Reaction));
-
-  const reactionComponents = Array.from(uniqueReactions).map((reactionType) => <PostFooterReactions key={reactionType}>{iconMap[reactionType as keyof typeof iconMap]}</PostFooterReactions>);
+function PostFooterReactionsComponent(props: { Post: Post }) {
+  const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
+  const reactionComponents = Array.from(uniqueReactions).map((reactionType) => (
+    <PostFooterReactions className="Reaction" key={reactionType}>
+      {iconMap[reactionType as keyof typeof iconMap]}
+    </PostFooterReactions>
+  ));
 
   return (
-    <PostFooterReactions>
-      {reactionComponents} {props.PostFooterProps.Reactions?.length}
-    </PostFooterReactions>
+    <ReactionContainer id={props.Post.ID.toString()} onClick={props.Post.ReactionToggleView} className="ReactionContainer">
+      {reactionComponents} {props.Post.Reactions?.length}
+    </ReactionContainer>
   );
 }
 
@@ -153,11 +158,11 @@ function PostFooterMediaControlComponent() {
   return <PostFooterMediaControls>FooterMediaControls</PostFooterMediaControls>;
 }
 
-function PostFooterCommentCountFC(props: { PostFooterProps: PostFooterProps }) {
+function PostFooterCommentCountFC(props: { Post: Post }) {
   return (
     <PostFooterCommentCount className="PostFooterCommentCount">
-      <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.PostFooterProps.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
-        {props.PostFooterProps.Comments?.length.toString()} Comments
+      <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
+        {props.Post.Comments?.length.toString()} Comments
       </a>
       <Tooltip id="my-tooltip-multiline"></Tooltip>
     </PostFooterCommentCount>
@@ -170,17 +175,17 @@ export default function ComPost(props: { post: Post }) {
       <PostHeaderComponent className="headercomponent">
         <PostHeaderLeftContainer className="PostHeaderLeftContainer">
           <FirstLine className="FirstLine">
-            <PPCircle ppimage={props.post.PostHeaderProps.Poster.photo} />
+            <PPCircle ppimage={props.post.Poster.photo} />
             <PostHeaderFirstBox className="PostHeaderFirstBox">
-              <PostPoster>{props.post.PostHeaderProps.Poster.name}</PostPoster>
+              <PostPoster>{props.post.Poster.name}</PostPoster>
               <PostTimeStampContainer>
-                <PostTimeStamp>{CalculateSince(props.post.PostHeaderProps.PostDate)} ago </PostTimeStamp>
+                <PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </PostTimeStamp>
                 <PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></PostTimeStampIcon>
               </PostTimeStampContainer>
             </PostHeaderFirstBox>
           </FirstLine>
 
-          <PostHeaderText>{props.post.PostHeaderProps.PostHeaderText}</PostHeaderText>
+          <PostHeaderText>{props.post.PostHeaderText}</PostHeaderText>
         </PostHeaderLeftContainer>
 
         <PostHeaderRightContainer>
@@ -191,12 +196,12 @@ export default function ComPost(props: { post: Post }) {
         </PostHeaderRightContainer>
       </PostHeaderComponent>
       <PostContent>
-        <PostImage src={props.post.PostContentProps.PostImage}></PostImage>
+        <PostImage src={props.post.PostImage}></PostImage>
       </PostContent>
 
       <PostFooterHeader>
-        <PostFooterReactionsComponent PostFooterProps={props.post.PostFooterProps}></PostFooterReactionsComponent>
-        <PostFooterCommentCountFC PostFooterProps={props.post.PostFooterProps}></PostFooterCommentCountFC>
+        <PostFooterReactionsComponent Post={props.post}></PostFooterReactionsComponent>
+        <PostFooterCommentCountFC Post={props.post}></PostFooterCommentCountFC>
       </PostFooterHeader>
       <PostFooterContainer>
         <PostFooterLine></PostFooterLine>
