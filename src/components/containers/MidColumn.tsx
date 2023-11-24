@@ -10,19 +10,30 @@ const MidColumn = styled.div`
   border: 1px dashed blue;
 `;
 
-const ReactionDialog = styled.dialog<{ $show?: boolean }>`
+const ReactionDialog = styled.dialog`
   display: flex;
-  display: ${(props) => (props.$show ? "none" : "flex")};
   height: 300px;
   width: 300px;
   background-color: rgba(255, 255, 255, 0.8);
 `;
 
+interface DialogReturnType {
+  show?: boolean;
+  post?: Post;
+}
+
+function DialogReturn(props: DialogReturnType) {
+  console.log("DialogReturn Worked", props.show, props.post);
+
+  if (!props?.show) {
+    return null;
+  }
+  return <ReactionDialog>{props.post?.PostHeaderText}</ReactionDialog>;
+}
+
 const PostsCollection = () => {
   const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
-
-  const [ReactionShow, setReactionShow] = useState<boolean>(false);
-
+  const [currentPost, setCurrentPost] = useState<Post | undefined>(undefined);
   useEffect(() => {
     fetch("../../../public/FakeAPI/Post/Post.json")
       .then((res) => res.json())
@@ -32,21 +43,24 @@ const PostsCollection = () => {
           ReactionToggleView: reactiontoggleView,
         }));
         setPagePosts({ Posts: updatedPosts });
-      });
-  }, [PagePosts]);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const reactiontoggleView = (e: MouseEvent) => {
-    console.log("toggle triggered", (e.target as HTMLDivElement).id);
-    const current = Number((e.target as HTMLDivElement).id);
-
-    PagePosts.Posts[current].Reactions?.forEach((x) => console.log(x.Reactor.name));
-    setReactionShow(!ReactionShow);
-
-    console.log(ReactionShow);
+    const postId = Number((e.target as HTMLDivElement).getAttribute("id"));
+    console.log("Pageposts: ", PagePosts);
+    setCurrentPost(PagePosts.Posts[postId]);
   };
-  return PagePosts.Posts.map((post) => {
-    return <ComPost post={post} key={post.ID}></ComPost>;
-  });
+
+  return (
+    <>
+      {currentPost && <DialogReturn post={currentPost} show={true} />}
+      {PagePosts.Posts.map((post) => (
+        <ComPost post={post} key={post.ID}></ComPost>
+      ))}
+    </>
+  );
 };
 
 //
@@ -54,7 +68,6 @@ export default function MidColumnComponent() {
   return (
     <MidColumn className="MidColumn">
       <StoryContainer></StoryContainer>
-      <ReactionDialog />
       <PostsCollection></PostsCollection>
     </MidColumn>
   );
