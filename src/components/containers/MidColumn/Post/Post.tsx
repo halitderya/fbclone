@@ -5,6 +5,7 @@ import worldicon from "../../../../assets/post-files/world-icon.svg";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
 import { FaGrinAlt, FaHeart, FaThumbsUp } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
 
 const PostMainDiv = styled.div`
   width: 100%;
@@ -135,12 +136,47 @@ const PostFooterLine = styled.hr`
   margin-left: 20px;
   margin-right: 20px;
 `;
+const ReactionDialog = styled.dialog`
+  display: flex;
+  height: 300px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
+`;
 
 const PostFooterCommentCount = styled.div``;
 ////PostFooterEnds
 
-function PostFooterReactionsComponent(props: { Post: Post }) {
+function ReactionContainerToggle(props: { post?: Post; show: boolean; setShow: (show: boolean) => void }) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
+        props.setShow(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [props]);
+
+  if (!props.post || !props.show) {
+    return null;
+  }
+
+  return (
+    <ReactionDialog ref={dialogRef}>
+      {props.post.PostHeaderText}
+      {props.post.Poster.name}
+    </ReactionDialog>
+  );
+}
+
+function PostFooterReactionsComponent(props: { Post: Post; onToggleReaction: (show: boolean) => void }) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
+
   const reactionComponents = Array.from(uniqueReactions).map((reactionType) => (
     <PostFooterReactions className="Reaction" key={reactionType}>
       {iconMap[reactionType as keyof typeof iconMap]}
@@ -148,14 +184,10 @@ function PostFooterReactionsComponent(props: { Post: Post }) {
   ));
 
   return (
-    <ReactionContainer id={props.Post.ID.toString()} onClick={props.Post.ReactionToggleView} className="ReactionContainer">
+    <ReactionContainer id={props.Post.ID.toString()} onClick={() => props.onToggleReaction(true)} className="ReactionContainer">
       {reactionComponents} {props.Post.Reactions?.length}
     </ReactionContainer>
   );
-}
-
-function PostFooterMediaControlComponent() {
-  return <PostFooterMediaControls>FooterMediaControls</PostFooterMediaControls>;
 }
 
 function PostFooterCommentCountFC(props: { Post: Post }) {
@@ -170,43 +202,48 @@ function PostFooterCommentCountFC(props: { Post: Post }) {
 }
 
 export default function ComPost(props: { post: Post }) {
+  const [showReactionDialog, setShowReactionDialog] = useState(false);
+
   return (
-    <PostMainDiv>
-      <PostHeaderComponent className="headercomponent">
-        <PostHeaderLeftContainer className="PostHeaderLeftContainer">
-          <FirstLine className="FirstLine">
-            <PPCircle ppimage={props.post.Poster.photo} />
-            <PostHeaderFirstBox className="PostHeaderFirstBox">
-              <PostPoster>{props.post.Poster.name}</PostPoster>
-              <PostTimeStampContainer>
-                <PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </PostTimeStamp>
-                <PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></PostTimeStampIcon>
-              </PostTimeStampContainer>
-            </PostHeaderFirstBox>
-          </FirstLine>
+    <>
+      <ReactionContainerToggle setShow={setShowReactionDialog} post={props.post} show={showReactionDialog} />
+      <PostMainDiv>
+        <PostHeaderComponent className="headercomponent">
+          <PostHeaderLeftContainer className="PostHeaderLeftContainer">
+            <FirstLine className="FirstLine">
+              <PPCircle ppimage={props.post.Poster.photo} />
+              <PostHeaderFirstBox className="PostHeaderFirstBox">
+                <PostPoster>{props.post.Poster.name}</PostPoster>
+                <PostTimeStampContainer>
+                  <PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </PostTimeStamp>
+                  <PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></PostTimeStampIcon>
+                </PostTimeStampContainer>
+              </PostHeaderFirstBox>
+            </FirstLine>
 
-          <PostHeaderText>{props.post.PostHeaderText}</PostHeaderText>
-        </PostHeaderLeftContainer>
+            <PostHeaderText>{props.post.PostHeaderText}</PostHeaderText>
+          </PostHeaderLeftContainer>
 
-        <PostHeaderRightContainer>
-          <PostHeaderControls>
-            <SeeMore>...</SeeMore>
-            <PostExit>x</PostExit>
-          </PostHeaderControls>
-        </PostHeaderRightContainer>
-      </PostHeaderComponent>
-      <PostContent>
-        <PostImage src={props.post.PostImage}></PostImage>
-      </PostContent>
+          <PostHeaderRightContainer>
+            <PostHeaderControls>
+              <SeeMore>...</SeeMore>
+              <PostExit>x</PostExit>
+            </PostHeaderControls>
+          </PostHeaderRightContainer>
+        </PostHeaderComponent>
+        <PostContent>
+          <PostImage src={props.post.PostImage}></PostImage>
+        </PostContent>
 
-      <PostFooterHeader>
-        <PostFooterReactionsComponent Post={props.post}></PostFooterReactionsComponent>
-        <PostFooterCommentCountFC Post={props.post}></PostFooterCommentCountFC>
-      </PostFooterHeader>
-      <PostFooterContainer>
-        <PostFooterLine></PostFooterLine>
-        <PostFooterMediaControlComponent></PostFooterMediaControlComponent>
-      </PostFooterContainer>
-    </PostMainDiv>
+        <PostFooterHeader>
+          <PostFooterReactionsComponent onToggleReaction={(show) => setShowReactionDialog(show)} Post={props.post}></PostFooterReactionsComponent>
+          <PostFooterCommentCountFC Post={props.post}></PostFooterCommentCountFC>
+        </PostFooterHeader>
+        <PostFooterContainer>
+          <PostFooterLine></PostFooterLine>
+          <PostFooterMediaControls></PostFooterMediaControls>
+        </PostFooterContainer>
+      </PostMainDiv>
+    </>
   );
 }

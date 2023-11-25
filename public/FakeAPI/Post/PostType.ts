@@ -31,7 +31,6 @@ PostImage:string;
 PostFooterText:string;
 Comments?:Comment[];
 Reactions?:Reaction[];
-ReactionToggleView:(e:any) => void;    
 }
 
 
