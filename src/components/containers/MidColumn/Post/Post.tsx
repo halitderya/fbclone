@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Post } from "../../../../../public/FakeAPI/Post/PostType";
 import PPCircle from "../../../particles/PPCircle";
 import worldicon from "../../../../assets/post-files/world-icon.svg";
@@ -13,10 +12,28 @@ const iconMap = {
   3: <FaThumbsUp />,
 };
 
-const PostFooterCommentCount = styled.div``;
 ////PostFooterEnds
+function PostFooterCommentCountFC(props: { Post: Post }) {
+  return (
+    <style.PostFooterCommentCount className="PostFooterCommentCount">
+      <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
+        {props.Post.Comments?.length.toString()} Comments
+      </a>
+      <Tooltip id="my-tooltip-multiline"></Tooltip>
+    </style.PostFooterCommentCount>
+  );
+}
+interface ReactionWindowFCProps {
+  post?: Post;
+  show: boolean;
+  setShow: (show: boolean) => void;
+}
+interface PostFooterReactionsComponentProps {
+  Post: Post;
+  onToggleReaction: (show: boolean) => void;
+}
 
-function ReactionContainerToggle(props: { post?: Post; show: boolean; setShow: (show: boolean) => void }) {
+function ReactionWindowFC(props: ReactionWindowFCProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -36,12 +53,11 @@ function ReactionContainerToggle(props: { post?: Post; show: boolean; setShow: (
     return null;
   }
 
-  return <style.ReactionDialog ref={dialogRef}>)</style.ReactionDialog>;
+  return <style.ReactionWindow ref={dialogRef}></style.ReactionWindow>;
 }
 
-function PostFooterReactionsComponent(props: { Post: Post; onToggleReaction: (show: boolean) => void }) {
+function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
-
   const reactionComponents = Array.from(uniqueReactions).map((reactionType) => (
     <style.PostFooterReactions className="Reaction" key={reactionType}>
       {iconMap[reactionType as keyof typeof iconMap]}
@@ -55,23 +71,12 @@ function PostFooterReactionsComponent(props: { Post: Post; onToggleReaction: (sh
   );
 }
 
-function PostFooterCommentCountFC(props: { Post: Post }) {
-  return (
-    <PostFooterCommentCount className="PostFooterCommentCount">
-      <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
-        {props.Post.Comments?.length.toString()} Comments
-      </a>
-      <Tooltip id="my-tooltip-multiline"></Tooltip>
-    </PostFooterCommentCount>
-  );
-}
-
 export default function ComPost(props: { post: Post }) {
   const [showReactionDialog, setShowReactionDialog] = useState(false);
 
   return (
     <>
-      <ReactionContainerToggle setShow={setShowReactionDialog} post={props.post} show={showReactionDialog} />
+      <ReactionWindowFC post={props.post} setShow={setShowReactionDialog} show={showReactionDialog} />
       <style.PostMainDiv>
         <style.PostHeaderComponent className="headercomponent">
           <style.PostHeaderLeftContainer className="PostHeaderLeftContainer">

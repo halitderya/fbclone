@@ -124,7 +124,7 @@ export const PostFooterLine = styled.hr`
   margin-left: 20px;
   margin-right: 20px;
 `;
-export const ReactionDialog = styled.dialog`
+export const ReactionWindow = styled.dialog`
   display: flex;
   height: 300px;
   width: 300px;
