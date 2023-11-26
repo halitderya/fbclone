@@ -6,142 +6,12 @@ import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
 import { FaGrinAlt, FaHeart, FaThumbsUp } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
-
-const PostMainDiv = styled.div`
-  width: 100%;
-  background-color: ${(props) => props.theme.white};
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.2);
-
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: 1px dotted red;
-`;
-
-///PostHeader
+import * as style from "./PostStyles";
 const iconMap = {
   1: <FaGrinAlt />,
   2: <FaHeart />,
   3: <FaThumbsUp />,
 };
-
-const PostHeaderComponent = styled.div`
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-`;
-const PostHeaderFirstBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  padding-bottom: 3px;
-  padding-top: 3px;
-  justify-content: space-between;
-`;
-const PostTimeStampContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const PostTimeStampIcon = styled.div<{ $icon: string }>`
-  background-image: url(${(props) => props.$icon});
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-left: 10px;
-  height: 16px;
-  width: 16px;
-`;
-const PostTimeStamp = styled.label`
-  color: ${(props) => props.theme.darkgray};
-  font-family: sans-serif;
-
-  font-size: 14px;
-`;
-const PostHeaderLeftContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const PostHeaderRightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const PostHeaderText = styled.div`
-  font-weight: 200;
-  font-style: normal;
-
-  font-family: Arial, Helvetica, sans-serif;
-`;
-const PostHeaderControls = styled.div``;
-const SeeMore = styled.button`
-  border: 0;
-  background-color: #ffffff;
-  font-size: 24px;
-  font-weight: 500;
-  color: gray;
-`;
-
-const PostExit = styled(SeeMore)``;
-const PostPoster = styled.label`
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-`;
-const FirstLine = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-`;
-
-////PostHeaderEnd
-
-////PostContent
-
-const PostContent = styled.div`
-  background-position: center;
-`;
-const PostImage = styled.img`
-  width: 100%;
-  height: auto;
-`;
-////PostContentEnd
-
-////PostFooterStarts
-
-const PostFooterContainer = styled.div`
-  height: 80px;
-  padding: 10px;
-`;
-const PostFooterHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-`;
-
-const ReactionContainer = styled.div`
-  display: flex;
-  justify-items: start;
-  margin-left: 2px;
-  margin-right: 2px;
-`;
-const PostFooterReactions = styled.div`
-  font-size: 20px;
-  pointer-events: none;
-`;
-
-const PostFooterMediaControls = styled.div`
-  height: 30px;
-`;
-
-const PostFooterLine = styled.hr`
-  margin-left: 20px;
-  margin-right: 20px;
-`;
-const ReactionDialog = styled.dialog`
-  display: flex;
-  height: 300px;
-  width: 300px;
-  background-color: rgba(255, 255, 255, 0.8);
-`;
 
 const PostFooterCommentCount = styled.div``;
 ////PostFooterEnds
@@ -166,27 +36,22 @@ function ReactionContainerToggle(props: { post?: Post; show: boolean; setShow: (
     return null;
   }
 
-  return (
-    <ReactionDialog ref={dialogRef}>
-      {props.post.PostHeaderText}
-      {props.post.Poster.name}
-    </ReactionDialog>
-  );
+  return <style.ReactionDialog ref={dialogRef}>)</style.ReactionDialog>;
 }
 
 function PostFooterReactionsComponent(props: { Post: Post; onToggleReaction: (show: boolean) => void }) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
 
   const reactionComponents = Array.from(uniqueReactions).map((reactionType) => (
-    <PostFooterReactions className="Reaction" key={reactionType}>
+    <style.PostFooterReactions className="Reaction" key={reactionType}>
       {iconMap[reactionType as keyof typeof iconMap]}
-    </PostFooterReactions>
+    </style.PostFooterReactions>
   ));
 
   return (
-    <ReactionContainer id={props.Post.ID.toString()} onClick={() => props.onToggleReaction(true)} className="ReactionContainer">
+    <style.ReactionContainer id={props.Post.ID.toString()} onClick={() => props.onToggleReaction(true)} className="ReactionContainer">
       {reactionComponents} {props.Post.Reactions?.length}
-    </ReactionContainer>
+    </style.ReactionContainer>
   );
 }
 
@@ -207,43 +72,43 @@ export default function ComPost(props: { post: Post }) {
   return (
     <>
       <ReactionContainerToggle setShow={setShowReactionDialog} post={props.post} show={showReactionDialog} />
-      <PostMainDiv>
-        <PostHeaderComponent className="headercomponent">
-          <PostHeaderLeftContainer className="PostHeaderLeftContainer">
-            <FirstLine className="FirstLine">
+      <style.PostMainDiv>
+        <style.PostHeaderComponent className="headercomponent">
+          <style.PostHeaderLeftContainer className="PostHeaderLeftContainer">
+            <style.FirstLine className="FirstLine">
               <PPCircle ppimage={props.post.Poster.photo} />
-              <PostHeaderFirstBox className="PostHeaderFirstBox">
-                <PostPoster>{props.post.Poster.name}</PostPoster>
-                <PostTimeStampContainer>
-                  <PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </PostTimeStamp>
-                  <PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></PostTimeStampIcon>
-                </PostTimeStampContainer>
-              </PostHeaderFirstBox>
-            </FirstLine>
+              <style.PostHeaderFirstBox className="PostHeaderFirstBox">
+                <style.PostPoster>{props.post.Poster.name}</style.PostPoster>
+                <style.PostTimeStampContainer>
+                  <style.PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </style.PostTimeStamp>
+                  <style.PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></style.PostTimeStampIcon>
+                </style.PostTimeStampContainer>
+              </style.PostHeaderFirstBox>
+            </style.FirstLine>
 
-            <PostHeaderText>{props.post.PostHeaderText}</PostHeaderText>
-          </PostHeaderLeftContainer>
+            <style.PostHeaderText>{props.post.PostHeaderText}</style.PostHeaderText>
+          </style.PostHeaderLeftContainer>
 
-          <PostHeaderRightContainer>
-            <PostHeaderControls>
-              <SeeMore>...</SeeMore>
-              <PostExit>x</PostExit>
-            </PostHeaderControls>
-          </PostHeaderRightContainer>
-        </PostHeaderComponent>
-        <PostContent>
-          <PostImage src={props.post.PostImage}></PostImage>
-        </PostContent>
+          <style.PostHeaderRightContainer>
+            <style.PostHeaderControls>
+              <style.SeeMore>...</style.SeeMore>
+              <style.PostExit>x</style.PostExit>
+            </style.PostHeaderControls>
+          </style.PostHeaderRightContainer>
+        </style.PostHeaderComponent>
+        <style.PostContent>
+          <style.PostImage src={props.post.PostImage}></style.PostImage>
+        </style.PostContent>
 
-        <PostFooterHeader>
+        <style.PostFooterHeader>
           <PostFooterReactionsComponent onToggleReaction={(show) => setShowReactionDialog(show)} Post={props.post}></PostFooterReactionsComponent>
           <PostFooterCommentCountFC Post={props.post}></PostFooterCommentCountFC>
-        </PostFooterHeader>
-        <PostFooterContainer>
-          <PostFooterLine></PostFooterLine>
-          <PostFooterMediaControls></PostFooterMediaControls>
-        </PostFooterContainer>
-      </PostMainDiv>
+        </style.PostFooterHeader>
+        <style.PostFooterContainer>
+          <style.PostFooterLine></style.PostFooterLine>
+          <style.PostFooterMediaControls></style.PostFooterMediaControls>
+        </style.PostFooterContainer>
+      </style.PostMainDiv>
     </>
   );
 }
