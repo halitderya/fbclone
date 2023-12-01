@@ -8,7 +8,7 @@ export interface Comment {
 CommentText: string;
 }
 
-interface Reaction{
+export interface Reaction{
     Reaction:number;
     Reactor:User;
 }

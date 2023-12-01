@@ -9,7 +9,6 @@ export const PostMainDiv = styled.div`
 
   margin-top: 10px;
   margin-bottom: 20px;
-  border: 1px dotted red;
 `;
 
 ///PostHeader
@@ -109,7 +108,7 @@ export const ReactionContainer = styled.div`
   display: flex;
   justify-items: start;
   margin-left: 2px;
-  margin-right: 2px;
+  margin-right: 10px;
 `;
 export const PostFooterReactions = styled.div`
   font-size: 20px;
@@ -124,11 +123,75 @@ export const PostFooterLine = styled.hr`
   margin-left: 20px;
   margin-right: 20px;
 `;
+export const PostFooterCommentCount = styled.div``;
 export const ReactionWindow = styled.dialog`
   display: flex;
-  height: 300px;
-  width: 300px;
-  background-color: rgba(255, 255, 255, 0.8);
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+  background-color: rgba(255, 255, 255);
+  margin-top: 100px;
+
+  //border: none;
+`;
+export const ReactionWindowHeader = styled.div`
+  flex-direction: row;
+  display: flex;
+  height: 60px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24px;
 `;
 
-export const PostFooterCommentCount = styled.div``;
+export const ReactionLineContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`;
+export const Reaction = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+`;
+export const Reactor = styled.div`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  width: 50%;
+`;
+export const ReactionHeaderCountContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+`;
+export const AddFriend = styled.button`
+  width: 100px;
+  height: 30px;
+  background-color: #80808063;
+  border-radius: 10%;
+  margin: 5px;
+  border: none;
+  padding: 2px;
+`;
+export const SvgIcon = styled.div<{ $icon: string; $size: string }>`
+  background-image: url(${(props) => props.$icon});
+
+  height: ${(props) => (props.$size === "small" ? "20px" : "30px")};
+  width: ${(props) => (props.$size === "small" ? "20px" : "30px")};
+
+  margin-left: 2px;
+  margin-right: 2px;
+
+  background-repeat: no-repeat;
+`;
+export const Text = styled.div<{ $fontsize: string }>`
+  margin-left: 5px;
+  font-size: ${(props) => props.$fontsize};
+  color: gray;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+`;

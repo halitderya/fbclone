@@ -1,25 +1,29 @@
-import { Post } from "../../../../../public/FakeAPI/Post/PostType";
+import { Post, Reaction } from "../../../../../public/FakeAPI/Post/PostType";
 import PPCircle from "../../../particles/PPCircle";
-import worldicon from "../../../../assets/post-files/world-icon.svg";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
-import { FaGrinAlt, FaHeart, FaThumbsUp } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
+import { v1 as uuidv1 } from "uuid";
+import * as reactionicons from "../../../../assets/post-files/index";
 import * as style from "./PostStyles";
+import StringtoSvg from "./StringtoSvg";
 const iconMap = {
-  1: <FaGrinAlt />,
-  2: <FaHeart />,
-  3: <FaThumbsUp />,
+  1: reactionicons.like,
+  2: reactionicons.angry,
+  3: reactionicons.care,
+  4: reactionicons.love,
 };
 
 ////PostFooterEnds
 function PostFooterCommentCountFC(props: { Post: Post }) {
   return (
     <style.PostFooterCommentCount className="PostFooterCommentCount">
-      <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
-        {props.Post.Comments?.length.toString()} Comments
-      </a>
-      <Tooltip id="my-tooltip-multiline"></Tooltip>
+      <style.Text $fontsize="16px">
+        <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
+          {props.Post.Comments?.length.toString()} Comments
+        </a>
+        <Tooltip id="my-tooltip-multiline"></Tooltip>
+      </style.Text>
     </style.PostFooterCommentCount>
   );
 }
@@ -32,6 +36,8 @@ interface PostFooterReactionsComponentProps {
   Post: Post;
   onToggleReaction: (show: boolean) => void;
 }
+
+//////////////WINDOW///////////////////
 
 function ReactionWindowFC(props: ReactionWindowFCProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -53,20 +59,62 @@ function ReactionWindowFC(props: ReactionWindowFCProps) {
     return null;
   }
 
-  return <style.ReactionWindow ref={dialogRef}></style.ReactionWindow>;
+  function countReactions(reactions: Reaction[]): { [key: number]: number } {
+    const counts: { [key: number]: number } = {};
+
+    for (const reaction of reactions) {
+      if (counts[reaction.Reaction]) {
+        counts[reaction.Reaction]++;
+      } else {
+        counts[reaction.Reaction] = 1;
+      }
+    }
+
+    return counts;
+  }
+
+  const whats = countReactions(props.post.Reactions!);
+
+  const uniquereactions = Array.from(new Set(props.post.Reactions?.map((reaction) => reaction.Reaction)));
+
+  return (
+    <style.ReactionWindow ref={dialogRef}>
+      {/* Header here */}
+      <style.ReactionWindowHeader>
+        {uniquereactions.map((x) => (
+          <style.ReactionContainer className="Reaction" key={uuidv1()}>
+            <StringtoSvg size="big" path={iconMap[x as keyof typeof iconMap].toString()}></StringtoSvg>
+            <style.Text $fontsize="20px">{whats[x]}</style.Text>
+          </style.ReactionContainer>
+        ))}
+      </style.ReactionWindowHeader>
+      {/* Header here */}
+
+      {props.post.Reactions?.map((x) => (
+        <style.ReactionLineContainer key={uuidv1()}>
+          <style.Reaction>
+            <StringtoSvg size="small" path={iconMap[x.Reaction as keyof typeof iconMap].toString()}></StringtoSvg>
+          </style.Reaction>
+          <style.Reactor>{x.Reactor.name}</style.Reactor>
+          <style.AddFriend>Add Friend</style.AddFriend>
+        </style.ReactionLineContainer>
+      ))}
+    </style.ReactionWindow>
+  );
 }
+//////////////WINDOW ENDS ///////////////////
 
 function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
-  const reactionComponents = Array.from(uniqueReactions).map((reactionType) => (
+  const ReactionComponents = Array.from(uniqueReactions).map((reactionType) => (
     <style.PostFooterReactions className="Reaction" key={reactionType}>
-      {iconMap[reactionType as keyof typeof iconMap]}
+      <StringtoSvg size="small" path={iconMap[reactionType as keyof typeof iconMap].toString()}></StringtoSvg>
     </style.PostFooterReactions>
   ));
 
   return (
     <style.ReactionContainer id={props.Post.ID.toString()} onClick={() => props.onToggleReaction(true)} className="ReactionContainer">
-      {reactionComponents} {props.Post.Reactions?.length}
+      {ReactionComponents} <style.Text $fontsize="16px">{props.Post.Reactions?.length}</style.Text>
     </style.ReactionContainer>
   );
 }
@@ -77,6 +125,7 @@ export default function ComPost(props: { post: Post }) {
   return (
     <>
       <ReactionWindowFC post={props.post} setShow={setShowReactionDialog} show={showReactionDialog} />
+
       <style.PostMainDiv>
         <style.PostHeaderComponent className="headercomponent">
           <style.PostHeaderLeftContainer className="PostHeaderLeftContainer">
@@ -86,7 +135,7 @@ export default function ComPost(props: { post: Post }) {
                 <style.PostPoster>{props.post.Poster.name}</style.PostPoster>
                 <style.PostTimeStampContainer>
                   <style.PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </style.PostTimeStamp>
-                  <style.PostTimeStampIcon className="PostTimeStampIcon" $icon={worldicon}></style.PostTimeStampIcon>
+                  <style.PostTimeStampIcon className="PostTimeStampIcon" $icon={reactionicons.worldicon}></style.PostTimeStampIcon>
                 </style.PostTimeStampContainer>
               </style.PostHeaderFirstBox>
             </style.FirstLine>

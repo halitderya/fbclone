@@ -15,8 +15,15 @@
                 {"Commentor": {"name": "Ryan Walker", "photo": ""}, "CommentText": "This is so inspiring!"}
             ],
             "Reactions": [
-                {"Reactor": {"name": "Samuel Adams", "photo": ""}, "Reaction": 1},
-                {"Reactor": {"name": "Dylan Johnson", "photo": ""}, "Reaction": 2}
+
+                 {"Reactor": {"name": "Leonardo da Vinci", "photo": ""}, "Reaction": 1},
+                 {"Reactor": {"name": "Michelangelo Buonarroti", "photo": ""}, "Reaction": 2},
+                {"Reactor": {"name": "Rembrandt van Rijn", "photo": ""}, "Reaction": 1},
+                {"Reactor": {"name": "Johannes Vermeer", "photo": ""}, "Reaction": 2},
+                {"Reactor": {"name": "Gustav Klimt", "photo": ""}, "Reaction": 1},
+                {"Reactor": {"name": "Edgar Degas", "photo": ""}, "Reaction": 3},
+                {"Reactor": {"name": "Pablo Picasso", "photo": ""}, "Reaction": 3},
+                {"Reactor": {"name": "Frida Kahlo", "photo": ""}, "Reaction": 3}
             ],
             "ReactionToggleView": "function"
         },
