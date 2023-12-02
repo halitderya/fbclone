@@ -1,18 +1,12 @@
-import { Post, Reaction } from "../../../../../public/FakeAPI/Post/PostType";
+import { Post } from "../../../../../public/FakeAPI/Post/PostType";
+import ReactionWindowFC, { PostFooterReactionsComponentProps, iconMap } from "./PostReactionWIndow";
 import PPCircle from "../../../particles/PPCircle";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
-import { useEffect, useRef, useState } from "react";
-import { v1 as uuidv1 } from "uuid";
+import { useState } from "react";
 import * as reactionicons from "../../../../assets/post-files/index";
 import * as style from "./PostStyles";
 import StringtoSvg from "./StringtoSvg";
-const iconMap = {
-  1: reactionicons.like,
-  2: reactionicons.angry,
-  3: reactionicons.care,
-  4: reactionicons.love,
-};
 
 ////PostFooterEnds
 function PostFooterCommentCountFC(props: { Post: Post }) {
@@ -27,95 +21,6 @@ function PostFooterCommentCountFC(props: { Post: Post }) {
     </style.PostFooterCommentCount>
   );
 }
-interface ReactionWindowFCProps {
-  post?: Post;
-  show: boolean;
-  setShow: (show: boolean) => void;
-}
-interface PostFooterReactionsComponentProps {
-  Post: Post;
-  onToggleReaction: (show: boolean) => void;
-}
-
-//////////////WINDOW///////////////////
-
-function ReactionWindowFC(props: ReactionWindowFCProps) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
-        props.setShow(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [props]);
-
-  if (!props.post || !props.show) {
-    return null;
-  }
-
-  function countReactions(reactions: Reaction[]): { [key: number]: number } {
-    const counts: { [key: number]: number } = {};
-
-    for (const reaction of reactions) {
-      if (counts[reaction.Reaction]) {
-        counts[reaction.Reaction]++;
-      } else {
-        counts[reaction.Reaction] = 1;
-      }
-    }
-
-    return counts;
-  }
-
-  const whats = countReactions(props.post.Reactions!);
-
-  const uniquereactions = Array.from(new Set(props.post.Reactions?.map((reaction) => reaction.Reaction)));
-
-  interface AvatarwithReactionProps {
-    pppath: string;
-    reactionpath: string;
-  }
-  const AvatarwithReaction = (props: AvatarwithReactionProps) => {
-    return (
-      <style.AvatarwithReactionContainer>
-        <PPCircle ppimage={props.pppath}></PPCircle>
-        <style.StringtoSvgOverlay $icon={props.reactionpath}></style.StringtoSvgOverlay>
-      </style.AvatarwithReactionContainer>
-    );
-  };
-
-  return (
-    <style.ReactionWindow ref={dialogRef}>
-      {/* Header here */}
-      <style.ReactionWindowHeader>
-        {uniquereactions.map((x) => (
-          <style.ReactionContainer className="Reaction" key={uuidv1()}>
-            <StringtoSvg size="big" path={iconMap[x as keyof typeof iconMap].toString()}></StringtoSvg>
-            <style.Text $fontsize="20px">{whats[x]}</style.Text>
-          </style.ReactionContainer>
-        ))}
-      </style.ReactionWindowHeader>
-      {/* Header here */}
-
-      {props.post.Reactions?.map((x) => (
-        <style.ReactionLineContainer key={uuidv1()}>
-          <style.Reaction>
-            <AvatarwithReaction pppath={x.Reactor.photo} reactionpath={iconMap[x.Reaction as keyof typeof iconMap].toString()}></AvatarwithReaction>
-          </style.Reaction>
-          <style.Reactor>{x.Reactor.name}</style.Reactor>
-          <style.AddFriend>Add Friend</style.AddFriend>
-        </style.ReactionLineContainer>
-      ))}
-    </style.ReactionWindow>
-  );
-}
-//////////////WINDOW ENDS ///////////////////
 
 function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
