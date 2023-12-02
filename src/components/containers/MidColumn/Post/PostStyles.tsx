@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import StringtoSvg from "./StringtoSvg";
 
 export const PostMainDiv = styled.div`
   width: 100%;
@@ -131,16 +132,17 @@ export const ReactionWindow = styled.dialog`
   width: 500px;
   background-color: rgba(255, 255, 255);
   margin-top: 100px;
-
-  //border: none;
+  border: none;
+  border-radius: 10px;
 `;
 export const ReactionWindowHeader = styled.div`
   flex-direction: row;
   display: flex;
-  height: 60px;
+  height: 70px;
   justify-content: flex-start;
   align-items: center;
   font-size: 24px;
+  margin-bottom: 10px;
 `;
 
 export const ReactionLineContainer = styled.div`
@@ -148,6 +150,7 @@ export const ReactionLineContainer = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 5px;
   align-items: center;
 `;
 export const Reaction = styled.div`
@@ -194,4 +197,23 @@ export const Text = styled.div<{ $fontsize: string }>`
   font-size: ${(props) => props.$fontsize};
   color: gray;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+`;
+export const StringtoSvgOverlay = styled.div<{ $icon: string }>`
+  background-image: url(${(props) => props.$icon});
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: blue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+`;
+export const AvatarwithReactionContainer = styled.div`
+  position: relative;
+  display: inline-block;
 `;

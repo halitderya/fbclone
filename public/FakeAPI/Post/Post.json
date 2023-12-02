@@ -16,14 +16,14 @@
             ],
             "Reactions": [
 
-                 {"Reactor": {"name": "Leonardo da Vinci", "photo": ""}, "Reaction": 1},
-                 {"Reactor": {"name": "Michelangelo Buonarroti", "photo": ""}, "Reaction": 2},
-                {"Reactor": {"name": "Rembrandt van Rijn", "photo": ""}, "Reaction": 1},
-                {"Reactor": {"name": "Johannes Vermeer", "photo": ""}, "Reaction": 2},
-                {"Reactor": {"name": "Gustav Klimt", "photo": ""}, "Reaction": 1},
-                {"Reactor": {"name": "Edgar Degas", "photo": ""}, "Reaction": 3},
-                {"Reactor": {"name": "Pablo Picasso", "photo": ""}, "Reaction": 3},
-                {"Reactor": {"name": "Frida Kahlo", "photo": ""}, "Reaction": 3}
+                 {"Reactor": {"name": "Leonardo da Vinci", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 1},
+                 {"Reactor": {"name": "Michelangelo Buonarroti", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Rembrandt van Rijn", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Johannes Vermeer", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Gustav Klimt", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Edgar Degas", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Pablo Picasso", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Frida Kahlo", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 3}
             ],
             "ReactionToggleView": "function"
         },

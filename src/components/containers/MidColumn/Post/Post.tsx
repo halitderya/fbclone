@@ -77,6 +77,19 @@ function ReactionWindowFC(props: ReactionWindowFCProps) {
 
   const uniquereactions = Array.from(new Set(props.post.Reactions?.map((reaction) => reaction.Reaction)));
 
+  interface AvatarwithReactionProps {
+    pppath: string;
+    reactionpath: string;
+  }
+  const AvatarwithReaction = (props: AvatarwithReactionProps) => {
+    return (
+      <style.AvatarwithReactionContainer>
+        <PPCircle ppimage={props.pppath}></PPCircle>
+        <style.StringtoSvgOverlay $icon={props.reactionpath}></style.StringtoSvgOverlay>
+      </style.AvatarwithReactionContainer>
+    );
+  };
+
   return (
     <style.ReactionWindow ref={dialogRef}>
       {/* Header here */}
@@ -93,7 +106,7 @@ function ReactionWindowFC(props: ReactionWindowFCProps) {
       {props.post.Reactions?.map((x) => (
         <style.ReactionLineContainer key={uuidv1()}>
           <style.Reaction>
-            <StringtoSvg size="small" path={iconMap[x.Reaction as keyof typeof iconMap].toString()}></StringtoSvg>
+            <AvatarwithReaction pppath={x.Reactor.photo} reactionpath={iconMap[x.Reaction as keyof typeof iconMap].toString()}></AvatarwithReaction>
           </style.Reaction>
           <style.Reactor>{x.Reactor.name}</style.Reactor>
           <style.AddFriend>Add Friend</style.AddFriend>
