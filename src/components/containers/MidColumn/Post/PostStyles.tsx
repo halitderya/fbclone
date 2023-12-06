@@ -217,3 +217,7 @@ export const AvatarwithReactionContainer = styled.div`
   position: relative;
   display: inline-block;
 `;
+export const ReactionWindowSeperator = styled.hr`
+  width: 100%;
+  margin-bottom: 10px;
+`;

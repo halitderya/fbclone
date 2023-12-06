@@ -85,6 +85,7 @@ export default function ReactionWindowFC(props: ReactionWindowFCProps) {
         ))}
       </style.ReactionWindowHeader>
       {/* Header here */}
+      <style.ReactionWindowSeperator />
 
       {props.post.Reactions?.map((x) => (
         <style.ReactionLineContainer key={uuidv1()}>
