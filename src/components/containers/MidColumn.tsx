@@ -5,35 +5,38 @@ import { useEffect, useState } from "react";
 import PostsData, { Post } from "../../../public/FakeAPI/Post/PostType";
 import ComPost from "./MidColumn/Post/Post";
 
-const MidColumn = styled.div`
+const MidColumn = styled.div<{ $overflow: string }>`
   width: 50%;
-  border: 1px dashed blue;
+  overflow: ${(props) => props.$overflow};
+  height: 100vh;
 `;
-
-const PostsCollection = () => {
-  const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
-  useEffect(() => {
-    fetch("../../../public/FakeAPI/Post/Post.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setPagePosts(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  return (
-    <>
-      {PagePosts.Posts.map((post: Post) => (
-        <ComPost key={post.ID} post={post}></ComPost>
-      ))}
-    </>
-  );
-};
 
 //
 export default function MidColumnComponent() {
+  const [OverFlow, setOverFlow] = useState<string>("auto");
+
+  const PostsCollection = () => {
+    const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
+    useEffect(() => {
+      fetch("../../../public/FakeAPI/Post/Post.json")
+        .then((res) => res.json())
+        .then((data) => {
+          setPagePosts(data);
+        })
+        .catch((err) => console.log(err));
+    }, []);
+
+    return (
+      <>
+        {PagePosts.Posts.map((post: Post) => (
+          <ComPost setOverFlow={setOverFlow} isModalView={false} key={post.ID} post={post}></ComPost>
+        ))}
+      </>
+    );
+  };
+  console.log("overflow from midcolumn: ", OverFlow);
   return (
-    <MidColumn className="MidColumn">
+    <MidColumn $overflow={OverFlow} className="MidColumn">
       <StoryContainer></StoryContainer>
       <PostsCollection></PostsCollection>
     </MidColumn>

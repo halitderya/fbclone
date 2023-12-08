@@ -23,11 +23,11 @@ export interface PostFooterReactionsComponentProps {
 }
 
 export default function ReactionWindowFC(props: ReactionWindowFCProps) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
+  const reactiondialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
+      if (reactiondialogRef.current && !reactiondialogRef.current.contains(event.target as Node)) {
         props.setShow(false);
       }
     }
@@ -74,7 +74,7 @@ export default function ReactionWindowFC(props: ReactionWindowFCProps) {
   };
 
   return (
-    <style.ReactionWindow ref={dialogRef}>
+    <style.ReactionWindow ref={reactiondialogRef}>
       {/* Header here */}
       <style.ReactionWindowHeader>
         {uniquereactions.map((x) => (

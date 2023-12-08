@@ -5,7 +5,7 @@ import * as icons from "../../assets/shortcut-icons";
 import { SyntheticEvent, useState } from "react";
 
 const LeftColumn = styled.div`
-  width: 23%;
+  width: 30%;
   float: left;
   padding-top: 10px;
   border: 1px dashed blue;
