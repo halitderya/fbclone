@@ -7,9 +7,10 @@ export const PostMainDiv = styled.div`
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.2);
-
   margin-top: 10px;
   margin-bottom: 20px;
+  border: 2px solid black;
+  height: fit-content;
 `;
 
 ///PostHeader
@@ -131,6 +132,9 @@ export const Dialog = styled.dialog<{ $show: boolean }>`
   height: 600px;
   width: 600px;
   display: ${(props) => (props.$show ? "flex" : "none")};
+  position: ${(props) => (props.$show ? "fixed" : "absolute")};
+  width: ${(props) => (props.$show ? "700px" : "600px")};
+  z-index: 1;
   border: none;
   border-radius: 10px;
   position: absolute;
@@ -141,8 +145,6 @@ export const Dialog = styled.dialog<{ $show: boolean }>`
 export const ReactionWindow = styled.dialog`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 10%;
   height: 500px;
   width: 500px;
   background-color: rgba(255, 255, 255);

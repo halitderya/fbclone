@@ -66,7 +66,7 @@ export default function ComPost(props: ComPostProps) {
     <>
       <ReactionWindowFC post={props.post} setShow={setShowReactionDialog} show={showReactionDialog} />
       <PostModalFC Post={props.post} setShow={setShowModal} show={showModal} />
-      <style.PostMainDiv>
+      <style.PostMainDiv className="PostMainDiv">
         <style.PostHeaderComponent className="headercomponent">
           <style.PostHeaderLeftContainer className="PostHeaderLeftContainer">
             <style.FirstLine className="FirstLine">
@@ -90,8 +90,8 @@ export default function ComPost(props: ComPostProps) {
             </style.PostHeaderControls>
           </style.PostHeaderRightContainer>
         </style.PostHeaderComponent>
-        <style.PostContent>
-          <style.PostImage src={props.post.PostImage}></style.PostImage>
+        <style.PostContent className="PostContainer">
+          <style.PostImage className="PostImage" src={props.post.PostImage}></style.PostImage>
         </style.PostContent>
         {!props.isModalView ? (
           <style.PostFooterHeader>
@@ -100,30 +100,32 @@ export default function ComPost(props: ComPostProps) {
           </style.PostFooterHeader>
         ) : null}
 
-        <style.PostFooterContainer>
+        <style.PostFooterContainer className="footercontainer">
           {!props.isModalView ? (
             <>
               <style.PostFooterLine></style.PostFooterLine>
               <style.PostFooterMediaControls></style.PostFooterMediaControls>
             </>
           ) : (
-            props.post.Comments?.map((comment) => {
-              return (
-                <style.CommentContainer key={uuidv1()}>
-                  <PPCircle ppimage={comment.Commentor.photo}></PPCircle>
+            <div className="comments-wrapper">
+              {props.post.Comments?.map((comment) => {
+                return (
+                  <style.CommentContainer className="commentcontainer" key={uuidv1()}>
+                    <PPCircle ppimage={comment.Commentor.photo}></PPCircle>
 
-                  <style.CommentBubble>
-                    <style.Text $weight={800} $colour="darkgray" $fontsize="18px">
-                      {comment.Commentor.name}
-                    </style.Text>
+                    <style.CommentBubble>
+                      <style.Text $weight={800} $colour="darkgray" $fontsize="18px">
+                        {comment.Commentor.name}
+                      </style.Text>
 
-                    <style.Text $weight={200} $colour="darkgray" $fontsize="16px">
-                      {comment.CommentText}
-                    </style.Text>
-                  </style.CommentBubble>
-                </style.CommentContainer>
-              );
-            })
+                      <style.Text $weight={200} $colour="darkgray" $fontsize="16px">
+                        {comment.CommentText}
+                      </style.Text>
+                    </style.CommentBubble>
+                  </style.CommentContainer>
+                );
+              })}
+            </div>
           )}
         </style.PostFooterContainer>
       </style.PostMainDiv>
