@@ -96,8 +96,10 @@ export const PostImage = styled.img`
 ////PostFooterStarts
 
 export const PostFooterContainer = styled.div`
-  height: 80px;
+  height: auto;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 `;
 export const PostFooterHeader = styled.div`
   display: flex;
@@ -125,13 +127,25 @@ export const PostFooterLine = styled.hr`
   margin-right: 20px;
 `;
 export const PostFooterCommentCount = styled.div``;
+export const Dialog = styled.dialog<{ $show: boolean }>`
+  height: 600px;
+  width: 600px;
+  display: ${(props) => (props.$show ? "flex" : "none")};
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  overflow: auto;
+`;
+
 export const ReactionWindow = styled.dialog`
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 10%;
   height: 500px;
   width: 500px;
   background-color: rgba(255, 255, 255);
-  margin-top: 100px;
   border: none;
   border-radius: 10px;
 `;
@@ -192,10 +206,15 @@ export const SvgIcon = styled.div<{ $icon: string; $size: string }>`
 
   background-repeat: no-repeat;
 `;
-export const Text = styled.div<{ $fontsize: string }>`
+export const Text = styled.div<{ $fontsize: string; $colour: string; $weight: number }>`
   margin-left: 5px;
+  user-select: none;
+  margin-bottom: 2px;
+  font-weight: ${(props) => props.$weight};
+
   font-size: ${(props) => props.$fontsize};
-  color: gray;
+  color: ${(props) => props.theme[props.$colour]};
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 `;
 export const StringtoSvgOverlay = styled.div<{ $icon: string }>`
@@ -220,4 +239,22 @@ export const AvatarwithReactionContainer = styled.div`
 export const ReactionWindowSeperator = styled.hr`
   width: 100%;
   margin-bottom: 10px;
+`;
+export const CommentContainer = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+`;
+
+export const Comment = styled.div``;
+export const CommentBubble = styled.div`
+  height: auto;
+  min-height: 100px;
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 10px;
+  width: 80%;
+  background-color: ${(props) => props.theme.lightgray};
 `;

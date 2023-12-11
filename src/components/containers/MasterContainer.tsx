@@ -6,7 +6,6 @@ const MasterContainer = styled.div<{
   width: ${(props) => props.$divwidth}%;
   // border: 5px solid black;
   box-sizing: border-box;
-
   padding: ${(props) => props.$divpadding}px;
 `;
 

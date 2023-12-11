@@ -7,33 +7,45 @@ import ComPost from "./MidColumn/Post/Post";
 
 const MidColumn = styled.div`
   width: 50%;
-  border: 1px dashed blue;
+  height: 100vh;
+  overflow: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
-
-const PostsCollection = () => {
-  const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
-  useEffect(() => {
-    fetch("../../../public/FakeAPI/Post/Post.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setPagePosts(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  return (
-    <>
-      {PagePosts.Posts.map((post: Post) => (
-        <ComPost key={post.ID} post={post}></ComPost>
-      ))}
-    </>
-  );
-};
 
 //
 export default function MidColumnComponent() {
+  const PostsCollection = () => {
+    const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
+    useEffect(() => {
+      fetch("../../../public/FakeAPI/Post/Post.json")
+        .then((res) => res.json())
+        .then((data) => {
+          setPagePosts(data);
+        })
+        .catch((err) => console.log(err));
+    }, []);
+
+    return (
+      <>
+        {PagePosts.Posts.map((post: Post) => (
+          <ComPost isModalView={false} key={post.ID} post={post}></ComPost>
+        ))}
+      </>
+    );
+  };
   return (
-    <MidColumn className="MidColumn">
+    <MidColumn id="MidColumn" className="MidColumn">
       <StoryContainer></StoryContainer>
       <PostsCollection></PostsCollection>
     </MidColumn>

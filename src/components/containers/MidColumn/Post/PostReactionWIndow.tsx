@@ -23,11 +23,11 @@ export interface PostFooterReactionsComponentProps {
 }
 
 export default function ReactionWindowFC(props: ReactionWindowFCProps) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
+  const reactiondialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
+      if (reactiondialogRef.current && !reactiondialogRef.current.contains(event.target as Node)) {
         props.setShow(false);
       }
     }
@@ -74,13 +74,15 @@ export default function ReactionWindowFC(props: ReactionWindowFCProps) {
   };
 
   return (
-    <style.ReactionWindow ref={dialogRef}>
+    <style.ReactionWindow className="ReactionWindow" ref={reactiondialogRef}>
       {/* Header here */}
       <style.ReactionWindowHeader>
         {uniquereactions.map((x) => (
           <style.ReactionContainer className="Reaction" key={uuidv1()}>
             <StringtoSvg size="big" path={iconMap[x as keyof typeof iconMap].toString()}></StringtoSvg>
-            <style.Text $fontsize="20px">{whats[x]}</style.Text>
+            <style.Text $colour="darkgray" $weight={400} $fontsize="20px">
+              {whats[x]}
+            </style.Text>
           </style.ReactionContainer>
         ))}
       </style.ReactionWindowHeader>

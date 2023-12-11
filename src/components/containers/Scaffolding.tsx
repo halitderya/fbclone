@@ -10,6 +10,7 @@ import { theme } from "../../assets/theme";
 
 const Scaffoldin = styled.div`
   background-color: ${(props) => props.theme.lightgray};
+  overflow: hidden;
 `;
 function Scaffolding() {
   return (
