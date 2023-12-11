@@ -9,18 +9,18 @@ import * as style from "./PostStyles";
 import StringtoSvg from "./StringtoSvg";
 import PostModalFC from "./PostModal";
 import { v1 as uuidv1 } from "uuid";
+import ScrollBarToggle from "./ScrollBarToggle";
 
 ////PostFooterEnds
 interface PostFooterCommentProps {
   Post: Post;
   onToggleComment: (show: boolean) => void;
-  onsetOverFlow: (show: string) => void;
 }
 
 function PostFooterCommentCountFC(props: PostFooterCommentProps) {
   const handleClick = (set: boolean) => {
     props.onToggleComment(set);
-    props.onsetOverFlow("hidden");
+    ScrollBarToggle();
   };
 
   return (
@@ -55,7 +55,6 @@ function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) 
 
 interface ComPostProps {
   post: Post;
-  setOverFlow: (value: string) => void;
   isModalView: boolean;
 }
 
@@ -97,7 +96,7 @@ export default function ComPost(props: ComPostProps) {
         {!props.isModalView ? (
           <style.PostFooterHeader>
             <PostFooterReactionsComponent onToggleReaction={(show) => setShowReactionDialog(show)} Post={props.post} />
-            <PostFooterCommentCountFC onsetOverFlow={props.setOverFlow} onToggleComment={(show) => setShowModal(show)} Post={props.post} />
+            <PostFooterCommentCountFC onToggleComment={(show) => setShowModal(show)} Post={props.post} />
           </style.PostFooterHeader>
         ) : null}
 

@@ -127,13 +127,25 @@ export const PostFooterLine = styled.hr`
   margin-right: 20px;
 `;
 export const PostFooterCommentCount = styled.div``;
+export const Dialog = styled.dialog<{ $show: boolean }>`
+  height: 600px;
+  width: 600px;
+  display: ${(props) => (props.$show ? "flex" : "none")};
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  overflow: auto;
+`;
+
 export const ReactionWindow = styled.dialog`
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 10%;
   height: 500px;
   width: 500px;
   background-color: rgba(255, 255, 255);
-  margin-top: 100px;
   border: none;
   border-radius: 10px;
 `;

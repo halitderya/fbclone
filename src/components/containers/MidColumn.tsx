@@ -5,16 +5,26 @@ import { useEffect, useState } from "react";
 import PostsData, { Post } from "../../../public/FakeAPI/Post/PostType";
 import ComPost from "./MidColumn/Post/Post";
 
-const MidColumn = styled.div<{ $overflow: string }>`
+const MidColumn = styled.div`
   width: 50%;
-  overflow: ${(props) => props.$overflow};
   height: 100vh;
+  overflow: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 //
 export default function MidColumnComponent() {
-  const [OverFlow, setOverFlow] = useState<string>("auto");
-
   const PostsCollection = () => {
     const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
     useEffect(() => {
@@ -29,14 +39,13 @@ export default function MidColumnComponent() {
     return (
       <>
         {PagePosts.Posts.map((post: Post) => (
-          <ComPost setOverFlow={setOverFlow} isModalView={false} key={post.ID} post={post}></ComPost>
+          <ComPost isModalView={false} key={post.ID} post={post}></ComPost>
         ))}
       </>
     );
   };
-  console.log("overflow from midcolumn: ", OverFlow);
   return (
-    <MidColumn $overflow={OverFlow} className="MidColumn">
+    <MidColumn id="MidColumn" className="MidColumn">
       <StoryContainer></StoryContainer>
       <PostsCollection></PostsCollection>
     </MidColumn>
