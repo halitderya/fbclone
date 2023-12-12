@@ -19,12 +19,13 @@ const ShortCutDiv = styled.div`
   flex-direction: row;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 10px;
-  height: 50px;
+
+  height: 60px;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding: 10px;
   &:hover {
-    background-color: #f0f2f5;
+    background-color: ${(props) => props.theme.hovergray};
   }
 `;
 
@@ -49,7 +50,9 @@ const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: strin
 
 const ShortCutText = styled.label`
   font-size: 16px;
+  font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
+  color: ${(props) => props.theme.black};
   margin-left: 5px;
   -webkit-user-select: none;
   -khtml-user-select: none;

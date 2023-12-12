@@ -1,3 +1,7 @@
+import styled from "styled-components";
+
+const LoginPage = styled.div``;
+
 export default function Login() {
-  return <div>Login page</div>;
+  return <LoginPage></LoginPage>;
 }

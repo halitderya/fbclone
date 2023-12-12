@@ -8,7 +8,10 @@ import ComPost from "./MidColumn/Post/Post";
 const MidColumn = styled.div`
   width: 50%;
   height: 100vh;
+  padding-left: 5%;
+  padding-right: 5%;
   overflow: auto;
+
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
@@ -20,6 +23,12 @@ const MidColumn = styled.div`
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+  @media (max-width: 1080px) {
+    width: 70%;
+  }
+  @media (max-width: 899px) {
+    width: 100%;
   }
 `;
 

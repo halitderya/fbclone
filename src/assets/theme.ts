@@ -3,8 +3,9 @@ export const theme = {
     darkgray: "#65676b",
     white:"#ffffff",
     stroke: "#65676b",
-    black:"#000000",
-    shadowgray:"#e7e7e7"
+    black:"#050505",
+    shadowgray:"#e7e7e7",
+    hovergray:"#e4e5e8"
 
   };
   

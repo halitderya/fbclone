@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import StringtoSvg from "./StringtoSvg";
 
 export const PostMainDiv = styled.div`
   width: 100%;
@@ -9,7 +8,6 @@ export const PostMainDiv = styled.div`
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
   margin-bottom: 20px;
-  border: 2px solid black;
   height: fit-content;
 `;
 
