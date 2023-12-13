@@ -3,7 +3,7 @@ import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../../components/p
 import Searchbar from "../particles/Inputs";
 import * as topmenuicons from "../../assets/topmenu-icons/index";
 import avatar from "../../assets/shortcut-icons/user_avatar.jpg";
-
+import { handleLogout } from "../../Auth/logout";
 const TopMenu = styled.div`
   background-color: ${(props) => props.theme.white};
   padding-top: 5px;
@@ -42,7 +42,7 @@ function TopMenuFunction() {
         <ButtonCircle to="#" $image={topmenuicons.logomessenger}></ButtonCircle>
         <ButtonCircle to="#" $image={topmenuicons.bellicon}></ButtonCircle>
         <ButtonCircle to="#" $image={topmenuicons.ninedotsicon}></ButtonCircle>
-        <ButtonCircleFull to="#" $image={avatar}></ButtonCircleFull>
+        <ButtonCircleFull onClick={handleLogout} id="profile-icon" to="#" $image={avatar}></ButtonCircleFull>
       </ThirdDiv>
     </TopMenu>
   );

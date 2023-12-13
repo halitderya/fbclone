@@ -28,7 +28,6 @@ export default function PostModalFC(props: PostModalProps) {
   }, [props]);
 
   if (!props.Post || !props.show) {
-    console.log("null returned", props.Post, props.show);
     return null;
   }
   return (

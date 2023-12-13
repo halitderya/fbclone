@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import ShortCut from "./Shortcuts";
-
+import { capitalizeFirstLetter } from "../particles/CapitalizeFirstLetter";
 import * as icons from "../../assets/shortcut-icons";
 import { SyntheticEvent, useState } from "react";
+import { auth } from "../../Auth/firebase";
 
 const LeftColumn = styled.div`
   width: 25%;
@@ -14,6 +15,8 @@ const LeftColumn = styled.div`
 `;
 
 function LeftColumnComponent() {
+  const currentuser = auth;
+
   const toggleClick = (event: SyntheticEvent) => {
     const EventTarget = event.target as HTMLDivElement;
     if (EventTarget.id === "seemore") {
@@ -23,7 +26,7 @@ function LeftColumnComponent() {
   const [hidden, setHidden] = useState<boolean>(true);
   return (
     <LeftColumn>
-      <ShortCut isprofile={true} click={toggleClick} image={icons.avatar} text="Halit Derya"></ShortCut>
+      <ShortCut isprofile={true} click={toggleClick} image={icons.avatar} text={capitalizeFirstLetter(currentuser.currentUser?.displayName?.toString())}></ShortCut>
       <ShortCut issprite={true} offset="-288px" text="Find Friends" id="findfriends"></ShortCut>
       <ShortCut issprite={true} click={toggleClick} offset="-432px" text="Memories"></ShortCut>
       <ShortCut issprite={true} click={toggleClick} offset="-180px" text="Saved"></ShortCut>

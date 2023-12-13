@@ -1,28 +1,32 @@
 import Scaffolding from "./components/containers/Scaffolding";
-import { useEffect, useState } from "react";
-import { UserContext } from "./Contexts/UserContext";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/login";
+import Signup from "./pages/signup";
+import { auth } from "../src/Auth/firebase";
+import { useEffect, useState } from "react";
+import { User } from "firebase/auth";
+
 function App() {
-  const [userInfo, setUserInfo] = useState({});
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("../public/FakeAPI/UserLogin.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setUserInfo(data);
-      });
-  }, [setUserInfo]);
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
-    <UserContext.Provider value={userInfo}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Scaffolding />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </UserContext.Provider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={currentUser ? <Scaffolding /> : <Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
