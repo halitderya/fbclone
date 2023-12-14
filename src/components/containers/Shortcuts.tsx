@@ -37,13 +37,14 @@ const ShortCutIconBase = styled.div`
   margin: 2px;
 `;
 
-const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: string }>`
+const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: string; $isprofile?: boolean }>`
   background-image: ${(props) => (props.$issprite ? `url(${sprite})` : `url(${props.$image})`)};
   background-position-y: ${(props) => (props.$issprite ? props.$offset : "")};
 
   background-repeat: no-repeat;
-  background-size: 36px;
-
+  background-size: ${(props) => (props.$isprofile ? "48px" : "36px")};
+  width: ${(props) => (props.$isprofile ? "48px" : "36px")};
+  height: ${(props) => (props.$isprofile ? "48px" : "36px")};
   transform: ${(props) => (props.$hidden ? "rotate(180deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease;
 `;
@@ -65,7 +66,7 @@ const ShortCutText = styled.label`
 function ShortCutProfileComponent(props: ShortcutsType) {
   return (
     <ShortCutDiv className={props.class} id={props.id} onClick={props.click}>
-      <ShortCutIcon $issprite={props.issprite} $offset={props.offset} id={props.id} $hidden={props.hidden} $image={props.image}></ShortCutIcon>
+      <ShortCutIcon $isprofile={props.isprofile} $issprite={props.issprite} $offset={props.offset} id={props.id} $hidden={props.hidden} $image={props.image}></ShortCutIcon>
       <ShortCutText id={props.id}>{props.text}</ShortCutText>
     </ShortCutDiv>
   );

@@ -18,7 +18,9 @@ function App() {
 
     return () => unsubscribe();
   }, []);
-
+  if (loading) {
+    return <div>Logging in...</div>;
+  }
   return (
     <BrowserRouter>
       <Routes>

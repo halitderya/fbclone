@@ -1,6 +1,6 @@
 import styled from "styled-components";
 interface PPCircletype {
-  ppimage: string;
+  ppimage?: string;
 }
 
 const PPCirclestyle = styled.div<{ $ppimage?: string }>`
@@ -9,7 +9,7 @@ const PPCirclestyle = styled.div<{ $ppimage?: string }>`
   border-radius: 50%;
 
   background-color: #0015ff;
-  // background-image: url(${(props) => props.$ppimage});
+  background-image: url(${(props) => props.$ppimage});
   background-size: 100%;
 `;
 
