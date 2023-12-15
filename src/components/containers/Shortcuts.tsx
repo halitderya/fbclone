@@ -37,7 +37,7 @@ const ShortCutIconBase = styled.div`
   margin: 2px;
 `;
 
-const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: string; $isprofile?: boolean }>`
+export const ShortCutIcon = styled(ShortCutIconBase)<{ $image?: string; $offset?: string; $issprite?: boolean; $hidden?: string; $isprofile?: boolean }>`
   background-image: ${(props) => (props.$issprite ? `url(${sprite})` : `url(${props.$image})`)};
   background-position-y: ${(props) => (props.$issprite ? props.$offset : "")};
 

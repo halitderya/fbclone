@@ -1,125 +1,124 @@
 {
-    "social_media_posts": [
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "John Doe",
-        "story_text": "Just enjoying a beautiful day! 🌞 #sunnyday",
-        "photo_link": "https://fastly.picsum.photos/id/123/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Alice Smith",
-        "story_text": "Exploring new places 🌍 #travel",
-        "photo_link": "https://fastly.picsum.photos/id/456/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Emily Johnson",
-        "story_text": "Sunday brunch with friends! 🍳 #brunch",
-        "photo_link": "https://fastly.picsum.photos/id/789/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Michael Brown",
-        "story_text": "Chilling at the beach 🏖️ #beachlife",
-        "photo_link": "https://fastly.picsum.photos/id/101/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Sophia Garcia",
-        "story_text": "Cooking up a storm in the kitchen! 🍳 #cooking",
-        "photo_link": "https://fastly.picsum.photos/id/234/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Liam Martinez",
-        "story_text": "Hiking in the mountains 🏔️ #hiking",
-        "photo_link": "https://fastly.picsum.photos/id/567/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Olivia Taylor",
-        "story_text": "Movie night with popcorn! 🍿 #movienight",
-        "photo_link": "https://fastly.picsum.photos/id/890/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Noah Wilson",
-        "story_text": "Admiring the city skyline 🌆 #cityview",
-        "photo_link": "https://fastly.picsum.photos/id/123/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Emma Davis",
-        "story_text": "Gym time 💪 #workout",
-        "photo_link": "https://fastly.picsum.photos/id/456/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "William Anderson",
-        "story_text": "Reading my favorite book 📖 #bookworm",
-        "photo_link": "https://fastly.picsum.photos/id/789/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Ava Wilson",
-        "story_text": "Coffee time with a view ☕ #coffee",
-        "photo_link": "https://fastly.picsum.photos/id/101/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "James Smith",
-        "story_text": "Playing guitar 🎸 #music",
-        "photo_link": "https://fastly.picsum.photos/id/234/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Mia Martinez",
-        "story_text": "Baking cookies 🍪 #baking",
-        "photo_link": "https://fastly.picsum.photos/id/567/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Ethan Davis",
-        "story_text": "Soccer match ⚽ #soccer",
-        "photo_link": "https://fastly.picsum.photos/id/890/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Olivia Smith",
-        "story_text": "Day at the museum 🏛️ #art",
-        "photo_link": "https://fastly.picsum.photos/id/123/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Lucas Johnson",
-        "story_text": "Road trip adventure 🚗 #roadtrip",
-        "photo_link": "https://fastly.picsum.photos/id/456/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Sophia Brown",
-        "story_text": "Gardening day 🌱 #gardening",
-        "photo_link": "https://fastly.picsum.photos/id/789/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Jackson Wilson",
-        "story_text": "Family dinner time 🍽️ #family",
-        "photo_link": "https://fastly.picsum.photos/id/101/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "Ava Garcia",
-        "story_text": "Sunset at the beach 🌅 #sunset",
-        "photo_link": "https://fastly.picsum.photos/id/234/180/300.jpg"
-      },
-      {
-        "profile_picture_link": "https://thispersondoesnotexist.com",
-        "username": "William Martinez",
-        "story_text": "Picnic in the park 🍉 #picnic",
-        "photo_link": "https://fastly.picsum.photos/id/567/180/300.jpg"
-      }
-    ]
-  }
-  
+  "stories": [
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "John Doe",
+      "storytext": "Just enjoying a beautiful day! 🌞 #sunnyday",
+      "photo": "https://fastly.picsum.photos/id/123/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Alice Smith",
+      "storytext": "Exploring new places 🌍 #travel",
+      "photo": "https://fastly.picsum.photos/id/456/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Emily Johnson",
+      "storytext": "Sunday brunch with friends! 🍳 #brunch",
+      "photo": "https://fastly.picsum.photos/id/789/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Michael Brown",
+      "storytext": "Chilling at the beach 🏖️ #beachlife",
+      "photo": "https://fastly.picsum.photos/id/101/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Sophia Garcia",
+      "storytext": "Cooking up a storm in the kitchen! 🍳 #cooking",
+      "photo": "https://fastly.picsum.photos/id/234/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Liam Martinez",
+      "storytext": "Hiking in the mountains 🏔️ #hiking",
+      "photo": "https://fastly.picsum.photos/id/567/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Olivia Taylor",
+      "storytext": "Movie night with popcorn! 🍿 #movienight",
+      "photo": "https://fastly.picsum.photos/id/890/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Noah Wilson",
+      "storytext": "Admiring the city skyline 🌆 #cityview",
+      "photo": "https://fastly.picsum.photos/id/123/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Emma Davis",
+      "storytext": "Gym time 💪 #workout",
+      "photo": "https://fastly.picsum.photos/id/456/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "William Anderson",
+      "storytext": "Reading my favorite book 📖 #bookworm",
+      "photo": "https://fastly.picsum.photos/id/789/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Ava Wilson",
+      "storytext": "Coffee time with a view ☕ #coffee",
+      "photo": "https://fastly.picsum.photos/id/101/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "James Smith",
+      "storytext": "Playing guitar 🎸 #music",
+      "photo": "https://fastly.picsum.photos/id/234/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Mia Martinez",
+      "storytext": "Baking cookies 🍪 #baking",
+      "photo": "https://fastly.picsum.photos/id/567/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Ethan Davis",
+      "storytext": "Soccer match ⚽ #soccer",
+      "photo": "https://fastly.picsum.photos/id/890/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Olivia Smith",
+      "storytext": "Day at the museum 🏛️ #art",
+      "photo": "https://fastly.picsum.photos/id/123/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Lucas Johnson",
+      "storytext": "Road trip adventure 🚗 #roadtrip",
+      "photo": "https://fastly.picsum.photos/id/456/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Sophia Brown",
+      "storytext": "Gardening day 🌱 #gardening",
+      "photo": "https://fastly.picsum.photos/id/789/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Jackson Wilson",
+      "storytext": "Family dinner time 🍽️ #family",
+      "photo": "https://fastly.picsum.photos/id/101/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "Ava Garcia",
+      "storytext": "Sunset at the beach 🌅 #sunset",
+      "photo": "https://fastly.picsum.photos/id/234/180/300.jpg"
+    },
+    {
+      "pp": "https://thispersondoesnotexist.com",
+      "username": "William Martinez",
+      "storytext": "Picnic in the park 🍉 #picnic",
+      "photo": "https://fastly.picsum.photos/id/567/180/300.jpg"
+    }
+  ]
+}

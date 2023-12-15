@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Story } from "./Story";
-import storyimage from "./storyimage.jpg";
-import ppimage from "../../../../assets/shortcut-icons/user_avatar.jpg";
+import { useEffect, useState } from "react";
 
 const StoryContainer = styled.div`
   display: flex;
@@ -11,17 +10,43 @@ const StoryContainer = styled.div`
   overflow-x: auto;
   flex-wrap: nowrap;
 `;
+export interface Story {
+  pp: string;
+  username: string;
+  storytext: string;
+  photo: string;
+}
+
+interface Stories {
+  Stories: Story[];
+}
+function FetchStories() {
+  const [stories, setStories] = useState<Stories>({ Stories: [] });
+
+  useEffect(() => {
+    fetch("../../../../../public/fakeapi/story.json")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setStories({ Stories: data });
+      });
+  }, []);
+  if (!stories || !stories.Stories || stories.Stories.length === 0) {
+    console.log("no stories");
+    return <div>No stories available</div>;
+  }
+  return (
+    <>
+      {stories.Stories.map((item: Story) => (
+        <Story key={item.username} text={item.storytext} storyimage={item.photo} ppimage={item.pp} />
+      ))}
+    </>
+  );
+}
 export default function StoryContainerFunction() {
   return (
     <StoryContainer>
-      <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, saepe?" storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, saepe?" storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, saepe?" storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet." storyimage={storyimage} ppimage={ppimage} />
-      <Story text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, saepe?" storyimage={storyimage} ppimage={ppimage} />
+      <FetchStories />
     </StoryContainer>
   );
 }

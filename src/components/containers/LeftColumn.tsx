@@ -21,13 +21,10 @@ function LeftColumnComponent() {
     const EventTarget = event.target as HTMLDivElement;
     if (EventTarget.id === "seemore") {
       setHidden(!hidden);
-    } else if (EventTarget.id === "profilepicture") {
-      console.log("profile picture clicked", currentuser.currentUser);
     }
   };
   const [hidden, setHidden] = useState<boolean>(true);
   const profilepicture = currentuser.currentUser?.photoURL?.toString();
-  console.log("user from left column", currentuser.currentUser);
   return (
     <LeftColumn>
       <ShortCut isprofile={true} id="profilepicture" click={toggleClick} image={profilepicture} text={capitalizeFirstLetter(currentuser.currentUser?.displayName?.toString())}></ShortCut>

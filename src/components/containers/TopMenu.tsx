@@ -2,8 +2,12 @@ import styled from "styled-components";
 import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../../components/particles/Buttons";
 import Searchbar from "../particles/Inputs";
 import * as topmenuicons from "../../assets/topmenu-icons/index";
-import avatar from "../../assets/shortcut-icons/user_avatar.jpg";
 import { handleLogout } from "../../Auth/logout";
+import { ShortCutIcon } from "./Shortcuts";
+import { auth } from "../../Auth/firebase";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 const TopMenu = styled.div`
   background-color: ${(props) => props.theme.white};
   padding-top: 5px;
@@ -24,7 +28,25 @@ const FirstDiv = styled.div`
 `;
 const SecondDiv = styled(FirstDiv)``;
 const ThirdDiv = styled(FirstDiv)``;
+const currentuser = auth;
+
 function TopMenuFunction() {
+  const [profilepicture, setProfilePicture] = useState<string | undefined>(currentuser.currentUser?.photoURL?.toString());
+  useEffect(() => {
+    setProfilePicture(currentuser.currentUser?.photoURL?.toString());
+  }, [currentuser.currentUser?.photoURL?.toString()]);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        alert("Error logging out: " + error.message.toString());
+      });
+  };
   return (
     <TopMenu>
       <FirstDiv>
@@ -42,7 +64,7 @@ function TopMenuFunction() {
         <ButtonCircle to="#" $image={topmenuicons.logomessenger}></ButtonCircle>
         <ButtonCircle to="#" $image={topmenuicons.bellicon}></ButtonCircle>
         <ButtonCircle to="#" $image={topmenuicons.ninedotsicon}></ButtonCircle>
-        <ButtonCircleFull onClick={handleLogout} id="profile-icon" to="#" $image={avatar}></ButtonCircleFull>
+        <ShortCutIcon $isprofile={true} id="profilepicture" onClick={handleLogout} $image={profilepicture}></ShortCutIcon>
       </ThirdDiv>
     </TopMenu>
   );
