@@ -1,124 +1,124 @@
 {
   "stories": [
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson1.jpeg",
       "username": "John Doe",
       "storytext": "Just enjoying a beautiful day! 🌞 #sunnyday",
-      "photo": "https://fastly.picsum.photos/id/123/180/300.jpg"
+      "photo": "https://picsum.photos/id/123/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson2.jpeg",
       "username": "Alice Smith",
       "storytext": "Exploring new places 🌍 #travel",
-      "photo": "https://fastly.picsum.photos/id/456/180/300.jpg"
+      "photo": "https://picsum.photos/id/456/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson3.jpeg",
       "username": "Emily Johnson",
       "storytext": "Sunday brunch with friends! 🍳 #brunch",
-      "photo": "https://fastly.picsum.photos/id/789/180/300.jpg"
+      "photo": "https://picsum.photos/id/789/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson4.jpeg",
       "username": "Michael Brown",
       "storytext": "Chilling at the beach 🏖️ #beachlife",
-      "photo": "https://fastly.picsum.photos/id/101/180/300.jpg"
+      "photo": "https://picsum.photos/id/101/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson5.jpeg",
       "username": "Sophia Garcia",
       "storytext": "Cooking up a storm in the kitchen! 🍳 #cooking",
-      "photo": "https://fastly.picsum.photos/id/234/180/300.jpg"
+      "photo": "https://picsum.photos/id/234/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson6.jpeg",
       "username": "Liam Martinez",
       "storytext": "Hiking in the mountains 🏔️ #hiking",
-      "photo": "https://fastly.picsum.photos/id/567/180/300.jpg"
+      "photo": "https://picsum.photos/id/567/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson7.jpeg",
       "username": "Olivia Taylor",
       "storytext": "Movie night with popcorn! 🍿 #movienight",
-      "photo": "https://fastly.picsum.photos/id/890/180/300.jpg"
+      "photo": "https://picsum.photos/id/890/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson8.jpeg",
       "username": "Noah Wilson",
       "storytext": "Admiring the city skyline 🌆 #cityview",
-      "photo": "https://fastly.picsum.photos/id/123/180/300.jpg"
+      "photo": "https://picsum.photos/id/123/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson9.jpeg",
       "username": "Emma Davis",
       "storytext": "Gym time 💪 #workout",
-      "photo": "https://fastly.picsum.photos/id/456/180/300.jpg"
+      "photo": "https://picsum.photos/id/456/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson10.jpeg",
       "username": "William Anderson",
       "storytext": "Reading my favorite book 📖 #bookworm",
-      "photo": "https://fastly.picsum.photos/id/789/180/300.jpg"
+      "photo": "https://picsum.photos/id/789/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson11.jpeg",
       "username": "Ava Wilson",
       "storytext": "Coffee time with a view ☕ #coffee",
-      "photo": "https://fastly.picsum.photos/id/101/180/300.jpg"
+      "photo": "https://picsum.photos/id/101/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson12.jpeg",
       "username": "James Smith",
       "storytext": "Playing guitar 🎸 #music",
-      "photo": "https://fastly.picsum.photos/id/234/180/300.jpg"
+      "photo": "https://picsum.photos/id/234/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson13.jpeg",
       "username": "Mia Martinez",
       "storytext": "Baking cookies 🍪 #baking",
-      "photo": "https://fastly.picsum.photos/id/567/180/300.jpg"
+      "photo": "https://picsum.photos/id/567/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson14.jpeg",
       "username": "Ethan Davis",
       "storytext": "Soccer match ⚽ #soccer",
-      "photo": "https://fastly.picsum.photos/id/890/180/300.jpg"
+      "photo": "https://picsum.photos/id/890/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson15.jpeg",
       "username": "Olivia Smith",
       "storytext": "Day at the museum 🏛️ #art",
-      "photo": "https://fastly.picsum.photos/id/123/180/300.jpg"
+      "photo": "https://picsum.photos/id/123/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson16.jpeg",
       "username": "Lucas Johnson",
       "storytext": "Road trip adventure 🚗 #roadtrip",
-      "photo": "https://fastly.picsum.photos/id/456/180/300.jpg"
+      "photo": "https://picsum.photos/id/456/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson17.jpeg",
       "username": "Sophia Brown",
       "storytext": "Gardening day 🌱 #gardening",
-      "photo": "https://fastly.picsum.photos/id/789/180/300.jpg"
+      "photo": "https://picsum.photos/id/789/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson18.jpeg",
       "username": "Jackson Wilson",
       "storytext": "Family dinner time 🍽️ #family",
-      "photo": "https://fastly.picsum.photos/id/101/180/300.jpg"
+      "photo": "https://picsum.photos/id/101/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson19.jpeg",
       "username": "Ava Garcia",
       "storytext": "Sunset at the beach 🌅 #sunset",
-      "photo": "https://fastly.picsum.photos/id/234/180/300.jpg"
+      "photo": "https://picsum.photos/id/234/180/300.jpg"
     },
     {
-      "pp": "https://thispersondoesnotexist.com",
+      "pp": "src/assets/FakePeople/fakeperson20.jpeg",
       "username": "William Martinez",
       "storytext": "Picnic in the park 🍉 #picnic",
-      "photo": "https://fastly.picsum.photos/id/567/180/300.jpg"
+      "photo": "https://picsum.photos/id/567/180/300.jpg"
     }
   ]
 }

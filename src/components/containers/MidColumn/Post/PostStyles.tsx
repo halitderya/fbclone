@@ -140,11 +140,14 @@ export const Dialog = styled.dialog<{ $show: boolean }>`
   overflow: auto;
 `;
 
-export const ReactionWindow = styled.dialog`
-  display: flex;
+export const ReactionWindow = styled.dialog<{ $show: boolean }>`
   flex-direction: column;
   height: 500px;
   width: 500px;
+  top: 10%;
+
+  display: ${(props) => (props.$show ? "flex" : "none")};
+  position: ${(props) => (props.$show ? "fixed" : "absolute")};
   background-color: rgba(255, 255, 255);
   border: none;
   border-radius: 10px;

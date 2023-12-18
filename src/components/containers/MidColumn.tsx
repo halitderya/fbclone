@@ -4,6 +4,12 @@ import StoryContainer from "./MidColumn/Story/StoryContainer";
 import { useEffect, useState } from "react";
 import PostsData, { Post } from "../../../public/FakeAPI/Post/PostType";
 import ComPost from "./MidColumn/Post/Post";
+const PostCreator = styled.div`
+  height: 100px;
+  border: 1px red solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+`;
 
 const MidColumn = styled.div`
   width: 50%;
@@ -56,6 +62,7 @@ export default function MidColumnComponent() {
   return (
     <MidColumn id="MidColumn" className="MidColumn">
       <StoryContainer></StoryContainer>
+      <PostCreator></PostCreator>
       <PostsCollection></PostsCollection>
     </MidColumn>
   );

@@ -37,6 +37,7 @@ function PostFooterCommentCountFC(props: PostFooterCommentProps) {
 
 function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
+  console.log("PostFooterReactionsComponent: ", props);
   const ReactionComponents = Array.from(uniqueReactions).map((reactionType) => (
     <style.PostFooterReactions className="Reaction" key={reactionType}>
       <StringtoSvg size="small" path={iconMap[reactionType as keyof typeof iconMap].toString()}></StringtoSvg>

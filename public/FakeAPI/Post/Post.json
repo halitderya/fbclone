@@ -1,7 +1,7 @@
 {
     "Posts": [
         {
-      "ID": 0,
+            "ID": 0,
             "Poster": {
                 "name": "Alice Williams",
                 "photo": "src/assets/post-files/randomperson1.jpeg"
@@ -11,19 +11,21 @@
             "PostImage": "https://picsum.photos/id/54/800/600",
             "PostFooterText": "So excited to begin this new journey. Wish me luck! ❤️",
             "Comments": [
-                {"Commentor": {"name": "Robert Johnson", "photo": ""}, "CommentText": "Amazing!"},
-                {"Commentor": {"name": "Ryan Walker", "photo": ""}, "CommentText": "This is so inspiring!"}
+                {"Commentor": {"name": "Sarah Johnson", "photo": "src/assets/FakePeople/fakeperson7.jpeg"}, "CommentText": "Amazing!"},
+                {"Commentor": {"name": "Emily Walker", "photo": "src/assets/FakePeople/fakeperson12.jpeg"}, "CommentText": "This is so inspiring!"},
+                {"Commentor": {"name": "Grace Smith", "photo": "src/assets/FakePeople/fakeperson23.jpeg"}, "CommentText": "Wow, congratulations!"}
             ],
             "Reactions": [
-
-                 {"Reactor": {"name": "Leonardo da Vinci", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 1},
-                 {"Reactor": {"name": "Michelangelo Buonarroti", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 2},
-                {"Reactor": {"name": "Rembrandt van Rijn", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 1},
-                {"Reactor": {"name": "Johannes Vermeer", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 2},
-                {"Reactor": {"name": "Gustav Klimt", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 1},
-                {"Reactor": {"name": "Edgar Degas", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 3},
-                {"Reactor": {"name": "Pablo Picasso", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 3},
-                {"Reactor": {"name": "Frida Kahlo", "photo": "src/assets/post-files/randomperson1.jpeg"}, "Reaction": 3}
+                {"Reactor": {"name": "Leonardo da Vinci", "photo": "src/assets/FakePeople/fakeperson4.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Michelangelo Buonarroti", "photo": "src/assets/FakePeople/fakeperson5.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Rembrandt van Rijn", "photo": "src/assets/FakePeople/fakeperson6.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Johannes Vermeer", "photo": "src/assets/FakePeople/fakeperson7.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Olivia Davis", "photo": "src/assets/FakePeople/fakeperson15.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Emma Miller", "photo": "src/assets/FakePeople/fakeperson16.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Sophia Wilson", "photo": "src/assets/FakePeople/fakeperson17.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Ava Martinez", "photo": "src/assets/FakePeople/fakeperson18.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Liam Thompson", "photo": "src/assets/FakePeople/fakeperson19.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "Noah Taylor", "photo": "src/assets/FakePeople/fakeperson20.jpeg"}, "Reaction": 2}
             ],
             "ReactionToggleView": "function"
         },
@@ -47,6 +49,7 @@
             ],
             "Reactions": [
                 {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}
+                
             ],
             "ReactionToggleView": "function"
         },

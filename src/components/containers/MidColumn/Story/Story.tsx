@@ -4,6 +4,7 @@ export interface StoryType {
   text?: string;
   storyimage?: string;
   ppimage?: string;
+  username?: string;
 }
 
 const StoryMain = styled.div`
@@ -12,7 +13,7 @@ const StoryMain = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  //border: 1px red dotted;
+  border: 1px red dotted;
   border-radius: 10px;
   background-size: cover;
 
@@ -37,20 +38,21 @@ const StoryBG = styled.div<{ $storyimage?: string }>`
 
 const StoryText = styled.label`
   display: flex;
-  font-weight: 400;
+
+  font-weight: 600;
   word-wrap: break-word;
   flex-wrap: wrap;
-  color: #ffffffc3;
+  color: #ffffffcc;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
-export function Story(props: StoryType) {
+export default function Story(props: StoryType) {
   return (
     <StoryMain>
       <StoryBG $storyimage={props.storyimage}>
         <PPCircle ppimage={props.ppimage}></PPCircle>
-        <StoryText>{props.text}</StoryText>
+        <StoryText>{props.username}</StoryText>
       </StoryBG>
     </StoryMain>
   );
