@@ -27,7 +27,7 @@ function PostFooterCommentCountFC(props: PostFooterCommentProps) {
     <style.PostFooterCommentCount onClick={() => handleClick(true)} className="PostFooterCommentCount">
       <style.Text $weight={400} $colour="darkgray" $fontsize="16px">
         <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
-          {props.Post.Comments?.length.toString()} Comments
+          {props.Post.Comments?.length.toString()} {props.Post.Comments ? "Comments" : ""}
         </a>
         <Tooltip id="my-tooltip-multiline"></Tooltip>
       </style.Text>
@@ -37,7 +37,6 @@ function PostFooterCommentCountFC(props: PostFooterCommentProps) {
 
 function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) {
   const uniqueReactions = new Set(props.Post.Reactions?.map((reaction) => reaction.Reaction));
-  console.log("PostFooterReactionsComponent: ", props);
   const ReactionComponents = Array.from(uniqueReactions).map((reactionType) => (
     <style.PostFooterReactions className="Reaction" key={reactionType}>
       <StringtoSvg size="small" path={iconMap[reactionType as keyof typeof iconMap].toString()}></StringtoSvg>
@@ -73,9 +72,9 @@ export default function ComPost(props: ComPostProps) {
             <style.FirstLine className="FirstLine">
               <PPCircle ppimage={props.post.Poster.photo} />
               <style.PostHeaderFirstBox className="PostHeaderFirstBox">
-                <style.PostPoster>{props.post.Poster.name}</style.PostPoster>
-                <style.PostTimeStampContainer>
-                  <style.PostTimeStamp>{CalculateSince(props.post.PostDate)} ago </style.PostTimeStamp>
+                <style.PostPoster className="PostPoster">{props.post.Poster.name}</style.PostPoster>
+                <style.PostTimeStampContainer className="PostTimeStampContainer">
+                  <style.PostTimeStamp className="PostTimeStamp">{CalculateSince(props.post.PostDate)} ago </style.PostTimeStamp>
                   <style.PostTimeStampIcon className="PostTimeStampIcon" $icon={reactionicons.worldicon}></style.PostTimeStampIcon>
                 </style.PostTimeStampContainer>
               </style.PostHeaderFirstBox>

@@ -25,7 +25,6 @@ export interface PostFooterReactionsComponentProps {
 export default function ReactionWindowFC(props: ReactionWindowFCProps) {
   const reactiondialogRef = useRef<HTMLDialogElement>(null);
 
-  console.log("ReactionWindowFC called");
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (reactiondialogRef.current && !reactiondialogRef.current.contains(event.target as Node)) {

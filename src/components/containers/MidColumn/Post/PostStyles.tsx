@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../../../assets/theme";
 
 export const PostMainDiv = styled.div`
   width: 100%;
@@ -9,6 +10,7 @@ export const PostMainDiv = styled.div`
   margin-top: 10px;
   margin-bottom: 20px;
   height: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 ///PostHeader
@@ -25,11 +27,13 @@ export const PostHeaderFirstBox = styled.div`
   padding-left: 10px;
   padding-bottom: 3px;
   padding-top: 3px;
+  color: ${theme.black};
   justify-content: space-between;
 `;
 export const PostTimeStampContainer = styled.div`
   display: flex;
   align-items: center;
+  color: ${theme.darkgray};
 `;
 export const PostTimeStampIcon = styled.div<{ $icon: string }>`
   background-image: url(${(props) => props.$icon});
@@ -43,7 +47,7 @@ export const PostTimeStamp = styled.label`
   color: ${(props) => props.theme.darkgray};
   font-family: sans-serif;
 
-  font-size: 14px;
+  font-size: 15px;
 `;
 export const PostHeaderLeftContainer = styled.div`
   display: flex;
@@ -54,10 +58,9 @@ export const PostHeaderRightContainer = styled.div`
   flex-direction: column;
 `;
 export const PostHeaderText = styled.div`
-  font-weight: 200;
-  font-style: normal;
-
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: ${theme.darkgray};
 `;
 export const PostHeaderControls = styled.div``;
 export const SeeMore = styled.button`
@@ -70,7 +73,7 @@ export const SeeMore = styled.button`
 
 export const PostExit = styled(SeeMore)``;
 export const PostPoster = styled.label`
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   font-weight: 600;
 `;
 export const FirstLine = styled.div`

@@ -10,6 +10,7 @@ const StoryContainer = styled.div`
   min-width: 0;
   overflow-x: auto;
   flex-wrap: nowrap;
+  border-radius: 10px;
 `;
 
 export interface StoryData {

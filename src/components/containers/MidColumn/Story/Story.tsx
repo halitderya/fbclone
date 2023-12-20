@@ -13,7 +13,6 @@ const StoryMain = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border: 1px red dotted;
   border-radius: 10px;
   background-size: cover;
 
@@ -38,7 +37,7 @@ const StoryBG = styled.div<{ $storyimage?: string }>`
 
 const StoryText = styled.label`
   display: flex;
-
+  user-select: none;
   font-weight: 600;
   word-wrap: break-word;
   flex-wrap: wrap;
@@ -51,7 +50,7 @@ export default function Story(props: StoryType) {
   return (
     <StoryMain>
       <StoryBG $storyimage={props.storyimage}>
-        <PPCircle ppimage={props.ppimage}></PPCircle>
+        <PPCircle isprofile={true} ppimage={props.ppimage}></PPCircle>
         <StoryText>{props.username}</StoryText>
       </StoryBG>
     </StoryMain>
