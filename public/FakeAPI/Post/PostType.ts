@@ -1,5 +1,5 @@
-interface User{
-    name:string;
+export interface User{
+    name:string ;
     photo:string;
 }
 
@@ -22,7 +22,7 @@ PostDate:string;
 
 
 export interface Post{
-    ID:number;
+    ID:string;
     Poster:User;
 PostHeaderText:string;
 PostDate:string;

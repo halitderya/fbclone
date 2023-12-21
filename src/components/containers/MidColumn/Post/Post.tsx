@@ -3,13 +3,14 @@ import ReactionWindowFC, { PostFooterReactionsComponentProps, iconMap } from "./
 import PPCircle from "../../../particles/PPCircle";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import * as reactionicons from "../../../../assets/post-files/index";
 import * as style from "./PostStyles";
 import StringtoSvg from "./StringtoSvg";
 import PostModalFC from "./PostModal";
 import { v1 as uuidv1 } from "uuid";
 import ScrollBarToggle from "./ScrollBarToggle";
+import PostMediareactionModalMainFC from "./PostMediaReactionModal";
 
 ////PostFooterEnds
 interface PostFooterCommentProps {
@@ -61,12 +62,22 @@ interface ComPostProps {
 export default function ComPost(props: ComPostProps) {
   const [showReactionDialog, setShowReactionDialog] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showPost, setShowPost] = useState<boolean>(true);
+  const [showReactionModal, setshowReactionModal] = useState<boolean>(false);
+
+  function HidePost(): void {
+    setShowPost(false);
+  }
+
+  function HandleMediaLike(): void {
+    setshowReactionModal(!showReactionModal);
+  }
 
   return (
     <>
       <ReactionWindowFC post={props.post} setShow={setShowReactionDialog} show={showReactionDialog} />
       <PostModalFC Post={props.post} setShow={setShowModal} show={showModal} />
-      <style.PostMainDiv className="PostMainDiv">
+      <style.PostMainDiv $show={showPost} className={props.post.ID}>
         <style.PostHeaderComponent className="headercomponent">
           <style.PostHeaderLeftContainer className="PostHeaderLeftContainer">
             <style.FirstLine className="FirstLine">
@@ -85,8 +96,7 @@ export default function ComPost(props: ComPostProps) {
 
           <style.PostHeaderRightContainer>
             <style.PostHeaderControls>
-              <style.SeeMore>...</style.SeeMore>
-              <style.PostExit>x</style.PostExit>
+              <style.PostExit onClick={HidePost}>X</style.PostExit>
             </style.PostHeaderControls>
           </style.PostHeaderRightContainer>
         </style.PostHeaderComponent>
@@ -103,8 +113,24 @@ export default function ComPost(props: ComPostProps) {
         <style.PostFooterContainer className="footercontainer">
           {!props.isModalView ? (
             <>
-              <style.PostFooterLine></style.PostFooterLine>
-              <style.PostFooterMediaControls></style.PostFooterMediaControls>
+              {/* here */}
+              <PostMediareactionModalMainFC setShow={setshowReactionModal} post={props.post} show={showReactionModal}></PostMediareactionModalMainFC>
+
+              <style.PostFooterLine />
+              <style.PostFooterMediaControls className="PostFooterMediaControls">
+                <style.PostReactionButtonContainer onClick={HandleMediaLike} className="ReactionContainer">
+                  <style.PostLikeButton id="PostLikeButton" className="ReactionContainer" />
+                  <style.Text $colour="darkgray" $weight={500} $fontsize="18px">
+                    Like
+                  </style.Text>
+                </style.PostReactionButtonContainer>
+                <style.PostReactionButtonContainer className="ReactionContainer">
+                  <style.PostCommentButton />
+                  <style.Text $colour="darkgray" $weight={500} $fontsize="18px">
+                    Comment
+                  </style.Text>
+                </style.PostReactionButtonContainer>
+              </style.PostFooterMediaControls>
             </>
           ) : (
             <div className="comments-wrapper">

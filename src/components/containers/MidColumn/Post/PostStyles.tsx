@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../../../assets/theme";
+import * as reactionicons from "../../../../assets/post-files/index";
 
-export const PostMainDiv = styled.div`
+export const PostMainDiv = styled.div<{ $show: boolean }>`
   width: 100%;
-  background-color: ${(props) => props.theme.white};
+  background-color: ${theme.white};
+
+  display: ${(props) => (props.$show ? "block" : "none")};
+
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -100,6 +104,7 @@ export const PostImage = styled.img`
 export const PostFooterContainer = styled.div`
   height: auto;
   padding: 10px;
+  position: relative;
   display: flex;
   flex-direction: column;
 `;
@@ -118,10 +123,6 @@ export const ReactionContainer = styled.div`
 export const PostFooterReactions = styled.div`
   font-size: 20px;
   pointer-events: none;
-`;
-
-export const PostFooterMediaControls = styled.div`
-  height: 30px;
 `;
 
 export const PostFooterLine = styled.hr`
@@ -154,6 +155,8 @@ export const ReactionWindow = styled.dialog<{ $show: boolean }>`
   background-color: rgba(255, 255, 255);
   border: none;
   border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 export const ReactionWindowHeader = styled.div`
   flex-direction: row;
@@ -263,4 +266,46 @@ export const CommentBubble = styled.div`
   border-radius: 10px;
   width: 80%;
   background-color: ${(props) => props.theme.lightgray};
+`;
+export const PostFooterMediaControls = styled.div`
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+export const PostReactionMediaButton = styled.button`
+  background-color: ${theme.white};
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 28px;
+  height: 28px;
+  background-size: 100%;
+  border: none;
+  margin-left: 10px;
+`;
+export const PostLikeButton = styled(PostReactionMediaButton)`
+  background-image: url(${reactionicons.emptylike});
+`;
+export const PostCommentButton = styled(PostReactionMediaButton)`
+  background-image: url(${reactionicons.emptycomment});
+`;
+
+export const PostMediaModalReactionLikeButton = styled(PostReactionMediaButton)`
+  background-image: url(${reactionicons.like});
+`;
+export const PostMediaModalReactionLoveButton = styled(PostReactionMediaButton)`
+  background-image: url(${reactionicons.love});
+`;
+export const PostMediaModalReactionCareButton = styled(PostReactionMediaButton)`
+  background-image: url(${reactionicons.care});
+`;
+export const PostMediaModalReactionAngryButton = styled(PostReactionMediaButton)`
+  background-image: url(${reactionicons.angry});
+`;
+
+export const PostReactionButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import StoryContainer from "./MidColumn/Story/StoryContainer";
-import { SyntheticEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PostsData, { Post } from "../../../public/FakeAPI/Post/PostType";
 import ComPost from "./MidColumn/Post/Post";
 import { auth } from "../../Auth/firebase";
@@ -114,7 +114,7 @@ const PostCreatorButton = styled.button`
 
 const MidColumn = styled.div`
   width: 50%;
-  height: 100vh;
+  height: 90vh;
   padding-left: 5%;
   padding-right: 5%;
   overflow: auto;
@@ -170,9 +170,10 @@ export default function MidColumnComponent() {
       .catch((err) => console.log(err));
   }, [setPagePosts]);
 
-  const AddPost = (e: SyntheticEvent) => {
+  const AddPost = () => {
+    const GeneratedID: string = uuidv1();
     const newPost: Post = {
-      ID: Number(uuidv1()),
+      ID: GeneratedID,
       Poster: {
         name: capitalizeFirstLetter(currentuser?.displayName) ?? "",
         photo: currentuser?.photoURL ?? "",
@@ -182,7 +183,6 @@ export default function MidColumnComponent() {
       PostImage: new URL(addPostURL).toString(),
       PostFooterText: "",
     };
-
     setPagePosts((prevState) => ({
       Posts: [...prevState.Posts, newPost],
     }));
