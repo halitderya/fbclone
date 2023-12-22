@@ -48,7 +48,17 @@
                 {"Commentor": {"name": "Chloe White", "photo": ""}, "CommentText": "A moment captured perfectly."}
             ],
             "Reactions": [
-                {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}
+                {"Reactor": {"name": "Timothy Adams", "photo": "src/assets/FakePeople/fakeperson40.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "Kimberly Anderson", "photo": "src/assets/FakePeople/fakeperson28.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "William Thompson", "photo": "src/assets/FakePeople/fakeperson47.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Karen Lopez", "photo": "src/assets/FakePeople/fakeperson11.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Andrew Lee", "photo": "src/assets/FakePeople/fakeperson47.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Sandra Roberts", "photo": "src/assets/FakePeople/fakeperson24.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Ryan Robinson", "photo": "src/assets/FakePeople/fakeperson44.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "Richard Jackson", "photo": "src/assets/FakePeople/fakeperson1.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Deborah Perez", "photo": "src/assets/FakePeople/fakeperson43.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Timothy Campbell", "photo": "src/assets/FakePeople/fakeperson25.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Margaret Hall", "photo": "src/assets/FakePeople/fakeperson49.jpeg"}, "Reaction": 2}
                 
             ],
             "ReactionToggleView": "function"
@@ -74,8 +84,20 @@
         {"Commentor": {"name": "Benjamin Taylor", "photo": ""}, "CommentText": "Simply stunning!"}
     ],
     "Reactions": [
-        {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}
-    ],
+        {"Reactor": {"name": "Ronald Hernandez", "photo": "src/assets/FakePeople/fakeperson38.jpeg"}, "Reaction": 3},
+        {"Reactor": {"name": "Elizabeth Gonzalez", "photo": "src/assets/FakePeople/fakeperson34.jpeg"}, "Reaction": 2},
+        {"Reactor": {"name": "Laura Allen", "photo": "src/assets/FakePeople/fakeperson47.jpeg"}, "Reaction": 1},
+        {"Reactor": {"name": "Andrew Davis", "photo": "src/assets/FakePeople/fakeperson6.jpeg"}, "Reaction": 1},
+        {"Reactor": {"name": "Michelle White", "photo": "src/assets/FakePeople/fakeperson41.jpeg"}, "Reaction": 3},
+        {"Reactor": {"name": "Stephanie Garcia", "photo": "src/assets/FakePeople/fakeperson6.jpeg"}, "Reaction": 3},
+        {"Reactor": {"name": "Barbara Lopez", "photo": "src/assets/FakePeople/fakeperson8.jpeg"}, "Reaction": 1},
+        {"Reactor": {"name": "George Anderson", "photo": "src/assets/FakePeople/fakeperson17.jpeg"}, "Reaction": 3},
+        {"Reactor": {"name": "Elizabeth Baker", "photo": "src/assets/FakePeople/fakeperson5.jpeg"}, "Reaction": 2},
+        {"Reactor": {"name": "Joshua Hill", "photo": "src/assets/FakePeople/fakeperson32.jpeg"}, "Reaction": 1},
+        {"Reactor": {"name": "Thomas Hernandez", "photo": "src/assets/FakePeople/fakeperson12.jpeg"}, "Reaction": 2},
+        {"Reactor": {"name": "Karen Sanchez", "photo": "src/assets/FakePeople/fakeperson38.jpeg"}, "Reaction": 3},
+        {"Reactor": {"name": "Rebecca Rivera", "photo": "src/assets/FakePeople/fakeperson36.jpeg"}, "Reaction": 1},
+        {"Reactor": {"name": "Nancy Brown", "photo": "src/assets/FakePeople/fakeperson43.jpeg"}, "Reaction": 3}    ],
     "ReactionToggleView": "function"
         },
         {
@@ -97,8 +119,23 @@
                 {"Commentor": {"name": "William Robinson", "photo": ""}, "CommentText": "This brings back memories."}
             ],
             "Reactions": [
-                {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 2}
-            ],
+                {"Reactor": {"name": "Mary Torres", "photo": "src/assets/FakePeople/fakeperson46.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Mary Lopez", "photo": "src/assets/FakePeople/fakeperson19.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Susan Baker", "photo": "src/assets/FakePeople/fakeperson19.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "George Perez", "photo": "src/assets/FakePeople/fakeperson33.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Joshua Green", "photo": "src/assets/FakePeople/fakeperson32.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Jennifer Green", "photo": "src/assets/FakePeople/fakeperson18.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Thomas Rodriguez", "photo": "src/assets/FakePeople/fakeperson8.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Karen Johnson", "photo": "src/assets/FakePeople/fakeperson40.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Brian Baker", "photo": "src/assets/FakePeople/fakeperson2.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Helen Scott", "photo": "src/assets/FakePeople/fakeperson16.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Robert Brown", "photo": "src/assets/FakePeople/fakeperson14.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "Karen Lewis", "photo": "src/assets/FakePeople/fakeperson30.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Matthew Lopez", "photo": "src/assets/FakePeople/fakeperson14.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Joseph Martin", "photo": "src/assets/FakePeople/fakeperson50.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Charles Gonzalez", "photo": "src/assets/FakePeople/fakeperson15.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Mark Thompson", "photo": "src/assets/FakePeople/fakeperson50.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "Nancy White", "photo": "src/assets/FakePeople/fakeperson21.jpeg"}, "Reaction": 2}            ],
             "ReactionToggleView": "function"
         },
         {
@@ -121,8 +158,14 @@
                 {"Commentor": {"name": "Sophia Lee", "photo": ""}, "CommentText": "That's a breathtaking view!"}
             ],
             "Reactions": [
-                {"Reactor": {"name": "User Name", "photo": ""}, "Reaction": 1}
-            ],
+                {"Reactor": {"name": "Jessica Baker", "photo": "src/assets/FakePeople/fakeperson9.jpeg"}, "Reaction": 4},
+                {"Reactor": {"name": "David Wilson", "photo": "src/assets/FakePeople/fakeperson48.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Donald Martinez", "photo": "src/assets/FakePeople/fakeperson3.jpeg"}, "Reaction": 3},
+                {"Reactor": {"name": "Steven Harris", "photo": "src/assets/FakePeople/fakeperson20.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Paul Rodriguez", "photo": "src/assets/FakePeople/fakeperson29.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Joshua Hill", "photo": "src/assets/FakePeople/fakeperson32.jpeg"}, "Reaction": 1},
+                {"Reactor": {"name": "Thomas Hernandez", "photo": "src/assets/FakePeople/fakeperson12.jpeg"}, "Reaction": 2},
+                {"Reactor": {"name": "Karen Sanchez", "photo": "src/assets/FakePeople/fakeperson38.jpeg"}, "Reaction": 3}            ],
             "ReactionToggleView": "function"
 
 

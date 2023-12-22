@@ -149,7 +149,7 @@ export const ReactionWindow = styled.dialog<{ $show: boolean }>`
   height: 500px;
   width: 500px;
   top: 10%;
-
+  z-index: 10;
   display: ${(props) => (props.$show ? "flex" : "none")};
   position: ${(props) => (props.$show ? "fixed" : "absolute")};
   background-color: rgba(255, 255, 255);

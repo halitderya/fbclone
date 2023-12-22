@@ -3,7 +3,7 @@ import ReactionWindowFC, { PostFooterReactionsComponentProps, iconMap } from "./
 import PPCircle from "../../../particles/PPCircle";
 import { Tooltip } from "react-tooltip";
 import CalculateSince from "../../../particles/CalculateSince";
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import * as reactionicons from "../../../../assets/post-files/index";
 import * as style from "./PostStyles";
 import StringtoSvg from "./StringtoSvg";

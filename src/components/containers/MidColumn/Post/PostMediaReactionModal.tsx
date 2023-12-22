@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import * as style from "./PostStyles";
-import { SyntheticEvent, useEffect } from "react";
+import { SyntheticEvent } from "react";
 import { theme } from "../../../../assets/theme";
 import { Reaction as ReactionType, Post, User } from "../../../../../public/FakeAPI/Post/PostType";
 import { auth } from "../../../../Auth/firebase";
@@ -40,21 +40,12 @@ export default function PostMediareactionModalMainFC(props: { show: boolean; set
       Reactor: ReactedUser,
     };
 
-    const OldReaction = post.Reactions?.find((x) => {
-      x.Reactor.name == capitalizeFirstLetter(currentuser?.displayName);
-    });
+    const oldReactionIndex = Number(post.Reactions?.findIndex((x) => x.Reactor.name === capitalizeFirstLetter(currentuser?.displayName)));
 
-    if (post.Reactions) {
-      if (!OldReaction) {
-        post.Reactions?.splice(
-          post.Reactions.findIndex((x) => x.Reactor.name === capitalizeFirstLetter(currentuser?.displayName)),
-          1
-        );
-        post.Reactions?.push(ReactionToAdd);
-      } else {
-        console.log("oldreaction here", OldReaction);
-        post.Reactions?.push(ReactionToAdd);
-      }
+    if (oldReactionIndex !== -1) {
+      post.Reactions?.splice(oldReactionIndex, 1, ReactionToAdd);
+    } else {
+      post.Reactions?.push(ReactionToAdd);
     }
 
     props.setShow(false);

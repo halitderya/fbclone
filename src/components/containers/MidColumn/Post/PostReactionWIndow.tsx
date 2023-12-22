@@ -10,6 +10,8 @@ export const iconMap = {
   2: reactionicons.angry,
   3: reactionicons.care,
   4: reactionicons.love,
+  5: reactionicons.laugh,
+  6: reactionicons.cry,
 };
 
 interface ReactionWindowFCProps {
