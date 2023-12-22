@@ -179,6 +179,7 @@ export default function MidColumnComponent() {
         name: capitalizeFirstLetter(currentuser?.displayName) ?? "",
         photo: currentuser?.photoURL ?? "",
       },
+      Reactions: [],
       PostHeaderText: addPosttext,
       PostDate: new Date().toString(),
       PostImage: new URL(addPostURL).toString(),

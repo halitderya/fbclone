@@ -47,6 +47,7 @@ export default function PostMediareactionModalMainFC(props: { show: boolean; set
     } else {
       post.Reactions?.push(ReactionToAdd);
     }
+    console.log("post", post, "Reaction To Add,", ReactionToAdd);
 
     props.setShow(false);
   }

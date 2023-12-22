@@ -11,6 +11,7 @@ import PostModalFC from "./PostModal";
 import { v1 as uuidv1 } from "uuid";
 import ScrollBarToggle from "./ScrollBarToggle";
 import PostMediareactionModalMainFC from "./PostMediaReactionModal";
+import PostMediacommentModalMainFC from "./PostMediaCommentModal";
 
 ////PostFooterEnds
 interface PostFooterCommentProps {
@@ -48,7 +49,7 @@ function PostFooterReactionsComponent(props: PostFooterReactionsComponentProps) 
     <style.ReactionContainer id={props.Post.ID.toString()} onClick={() => props.onToggleReaction(true)} className="ReactionContainer">
       {ReactionComponents}{" "}
       <style.Text $weight={400} $colour="darkgray" $fontsize="16px">
-        {props.Post.Reactions?.length}
+        {props.Post.Reactions?.length ? props.Post.Reactions.length : ""}
       </style.Text>
     </style.ReactionContainer>
   );
@@ -64,6 +65,7 @@ export default function ComPost(props: ComPostProps) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showPost, setShowPost] = useState<boolean>(true);
   const [showReactionModal, setshowReactionModal] = useState<boolean>(false);
+  const [showCommentModal, setshowCommentModal] = useState<boolean>(false);
 
   function HidePost(): void {
     setShowPost(false);
@@ -71,6 +73,9 @@ export default function ComPost(props: ComPostProps) {
 
   function HandleMediaLike(): void {
     setshowReactionModal(!showReactionModal);
+  }
+  function HandleMediaComment(): void {
+    setshowCommentModal(!showCommentModal);
   }
 
   return (
@@ -115,6 +120,7 @@ export default function ComPost(props: ComPostProps) {
             <>
               {/* here */}
               <PostMediareactionModalMainFC setShow={setshowReactionModal} post={props.post} show={showReactionModal}></PostMediareactionModalMainFC>
+              <PostMediacommentModalMainFC setShow={setshowCommentModal} post={props.post} show={showCommentModal}></PostMediacommentModalMainFC>
 
               <style.PostFooterLine />
               <style.PostFooterMediaControls className="PostFooterMediaControls">
@@ -124,7 +130,7 @@ export default function ComPost(props: ComPostProps) {
                     Like
                   </style.Text>
                 </style.PostReactionButtonContainer>
-                <style.PostReactionButtonContainer className="ReactionContainer">
+                <style.PostReactionButtonContainer onClick={HandleMediaComment} className="ReactionContainer">
                   <style.PostCommentButton />
                   <style.Text $colour="darkgray" $weight={500} $fontsize="18px">
                     Comment
