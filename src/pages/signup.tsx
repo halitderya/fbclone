@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ChangeEvent, SyntheticEvent, useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, storage } from "../Auth/firebase";
