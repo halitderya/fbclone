@@ -75,7 +75,9 @@ export const SeeMore = styled.button`
   color: gray;
 `;
 
-export const PostExit = styled(SeeMore)``;
+export const PostExit = styled(SeeMore)`
+  cursor: pointer;
+`;
 export const PostPoster = styled.label`
   font-size: 16px;
   font-weight: 600;
@@ -132,7 +134,10 @@ export const PostFooterLine = styled.hr`
 export const PostFooterCommentCount = styled.div``;
 export const Dialog = styled.dialog<{ $show: boolean }>`
   height: 600px;
-  width: 600px;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  width: 700px;
+  max-width: 90%;
   display: ${(props) => (props.$show ? "flex" : "none")};
   position: ${(props) => (props.$show ? "fixed" : "absolute")};
   width: ${(props) => (props.$show ? "700px" : "600px")};
@@ -146,9 +151,12 @@ export const Dialog = styled.dialog<{ $show: boolean }>`
 
 export const ReactionWindow = styled.dialog<{ $show: boolean }>`
   flex-direction: column;
-  height: 500px;
+  height: fit-content;
+  min-height: 200px;
+  max-height: 500px;
+
   width: 500px;
-  top: 10%;
+  top: 20%;
   z-index: 10;
   display: ${(props) => (props.$show ? "flex" : "none")};
   position: ${(props) => (props.$show ? "fixed" : "absolute")};
@@ -156,12 +164,15 @@ export const ReactionWindow = styled.dialog<{ $show: boolean }>`
   border: none;
   border-radius: 10px;
   overflow-y: auto;
+  background-color: ${theme.white};
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+
   overflow-x: hidden;
 `;
 export const ReactionWindowHeader = styled.div`
   flex-direction: row;
   display: flex;
-  height: 70px;
+  height: 30px;
   justify-content: flex-start;
   align-items: center;
   font-size: 24px;

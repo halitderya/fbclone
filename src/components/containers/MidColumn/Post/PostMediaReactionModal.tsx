@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import * as style from "./PostStyles";
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, useEffect, useRef } from "react";
 import { theme } from "../../../../assets/theme";
 import { Reaction as ReactionType, Post, User } from "../../../../../public/FakeAPI/Post/PostType";
 import { auth } from "../../../../Auth/firebase";
@@ -12,6 +12,7 @@ const PostMediareactionModalMain = styled.div<{ $show: boolean }>`
   border-radius: 5px;
   background-color: ${theme.white};
   height: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 
   overflow: hidden;
   z-index: 10;
@@ -27,6 +28,21 @@ export const iconMap = {
   love: 4,
 };
 export default function PostMediareactionModalMainFC(props: { show: boolean; setShow: React.Dispatch<React.SetStateAction<boolean>>; post: Post }) {
+  const ModalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    function handleClickOutsideComment(event: MouseEvent) {
+      if (props.show && ModalRef.current && !ModalRef.current.contains(event.target as Node)) {
+        props.setShow(false);
+      }
+    }
+
+    window.addEventListener("mousedown", handleClickOutsideComment);
+
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutsideComment);
+    };
+  }, [props.show]);
+
   const currentuser = auth.currentUser;
 
   const ReactedUser: User = {
@@ -47,12 +63,11 @@ export default function PostMediareactionModalMainFC(props: { show: boolean; set
     } else {
       post.Reactions?.push(ReactionToAdd);
     }
-    console.log("post", post, "Reaction To Add,", ReactionToAdd);
 
     props.setShow(false);
   }
   return (
-    <PostMediareactionModalMain className="PostMediareactionModalMain" $show={props.show}>
+    <PostMediareactionModalMain ref={ModalRef} className="PostMediareactionModalMain" $show={props.show}>
       <style.PostMediaModalReactionLikeButton
         id="like"
         onClick={(e) => {

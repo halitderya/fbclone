@@ -5,7 +5,7 @@ interface PPCircletype {
   isprofile?: boolean;
 }
 
-const PPCirclestyle = styled.div<{ $ppimage?: string; $isprofile?: boolean }>`
+export const PPCirclestyle = styled.div<{ $ppimage?: string; $isprofile?: boolean }>`
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -14,10 +14,13 @@ const PPCirclestyle = styled.div<{ $ppimage?: string; $isprofile?: boolean }>`
   background-image: url(${(props) => props.$ppimage});
   background-size: 100%;
   border: ${(props) => (props.$isprofile ? `6px solid ${theme.borderblue}` : "none")};
+  position: ${(props) => (props.$isprofile ? `absolute` : "static")};
+  top: ${(props) => (props.$isprofile ? `10px` : "")};
+  left: ${(props) => (props.$isprofile ? `2px` : "")};
 `;
 
 export default function PPCircle(props?: PPCircletype) {
-  return <PPCirclestyle $isprofile={props?.isprofile} $ppimage={props?.ppimage}></PPCirclestyle>;
+  return <PPCirclestyle className="PPCircle" $isprofile={props?.isprofile} $ppimage={props?.ppimage}></PPCirclestyle>;
 }
 
 //

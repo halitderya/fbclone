@@ -29,7 +29,7 @@ function PostFooterCommentCountFC(props: PostFooterCommentProps) {
     <style.PostFooterCommentCount onClick={() => handleClick(true)} className="PostFooterCommentCount">
       <style.Text $weight={400} $colour="darkgray" $fontsize="16px">
         <a data-tooltip-id="my-tooltip-multiline" data-tooltip-html={props.Post.Comments?.map((m) => m.Commentor.name).join("<br/>")}>
-          {props.Post.Comments?.length.toString()} {props.Post.Comments ? "Comments" : ""}
+          {props.Post.Comments && props.Post.Comments.length > 0 && <>{props.Post.Comments.length} Comments</>}
         </a>
         <Tooltip id="my-tooltip-multiline"></Tooltip>
       </style.Text>

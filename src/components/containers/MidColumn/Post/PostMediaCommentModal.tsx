@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FormEventHandler, SyntheticEvent, useEffect, useRef, useState } from "react";
+import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { theme } from "../../../../assets/theme";
 import { Comment as commentType, Post, User } from "../../../../../public/FakeAPI/Post/PostType";
 import { auth } from "../../../../Auth/firebase";
@@ -8,6 +8,7 @@ import { capitalizeFirstLetter } from "../../../particles/CapitalizeFirstLetter"
 const PostMediacommentModalMain = styled.div<{ $show: boolean }>`
   padding: 10px;
   width: 90%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   height: fit-content;
   max-height: 300px;
   overflow: auto;
@@ -24,6 +25,14 @@ const PostMediacommentform = styled.form`
   overflow: none;
   position: relative;
   min-height: 140px;
+`;
+const PostMediaCommentFormHeader = styled.div`
+  height: 50px;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: ${theme.darkgray};
+  margin-left: 2%;
+  margin-right: 2%;
 `;
 
 const PostMediacommentBubble = styled.input`
@@ -65,12 +74,7 @@ export default function PostMediacommentModalMainFC(props: { show: boolean; setS
 
   useEffect(() => {
     function handleClickOutsideComment(event: MouseEvent) {
-      console.log("triggered1");
-      console.log(props.show);
-      console.log(commentDivRef.current);
       if (props.show && commentDivRef.current && !commentDivRef.current.contains(event.target as Node)) {
-        console.log("triggered2");
-
         props.setShow(false);
       }
     }
@@ -109,6 +113,7 @@ export default function PostMediacommentModalMainFC(props: { show: boolean; setS
 
   return (
     <PostMediacommentModalMain ref={commentDivRef} className="PostMediacommentModalMain" $show={props.show}>
+      <PostMediaCommentFormHeader>Add a comment</PostMediaCommentFormHeader>
       <PostMediacommentform onSubmit={handleSubmit}>
         <PostMediacommentBubble required={true} value={comment} onChange={handleCommentChange} type="input"></PostMediacommentBubble>
         <PostMediacommentSubmit value={"Post Comment"} type="submit"></PostMediacommentSubmit>

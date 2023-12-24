@@ -8,3 +8,4 @@ export {default as friendsicon} from "../topmenu-icons/friends-icon.svg";
 export {default as videoicon} from "../topmenu-icons/video-icon.svg";
 export {default as groupsicon} from "../topmenu-icons/groups-icon.svg";
 export {default as gaminicon} from "../topmenu-icons/gaming-icon.svg";
+export {default as logout} from "../topmenu-icons/logout.svg"

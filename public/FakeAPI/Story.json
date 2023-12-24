@@ -89,36 +89,7 @@
       "username": "Olivia Smith",
       "storytext": "Day at the museum 🏛️ #art",
       "photo": "https://picsum.photos/id/123/180/300.jpg"
-    },
-    {
-      "pp": "src/assets/FakePeople/fakeperson16.jpeg",
-      "username": "Lucas Johnson",
-      "storytext": "Road trip adventure 🚗 #roadtrip",
-      "photo": "https://picsum.photos/id/456/180/300.jpg"
-    },
-    {
-      "pp": "src/assets/FakePeople/fakeperson17.jpeg",
-      "username": "Sophia Brown",
-      "storytext": "Gardening day 🌱 #gardening",
-      "photo": "https://picsum.photos/id/789/180/300.jpg"
-    },
-    {
-      "pp": "src/assets/FakePeople/fakeperson18.jpeg",
-      "username": "Jackson Wilson",
-      "storytext": "Family dinner time 🍽️ #family",
-      "photo": "https://picsum.photos/id/101/180/300.jpg"
-    },
-    {
-      "pp": "src/assets/FakePeople/fakeperson19.jpeg",
-      "username": "Ava Garcia",
-      "storytext": "Sunset at the beach 🌅 #sunset",
-      "photo": "https://picsum.photos/id/234/180/300.jpg"
-    },
-    {
-      "pp": "src/assets/FakePeople/fakeperson20.jpeg",
-      "username": "William Martinez",
-      "storytext": "Picnic in the park 🍉 #picnic",
-      "photo": "https://picsum.photos/id/567/180/300.jpg"
     }
+
   ]
 }

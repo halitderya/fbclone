@@ -3,11 +3,15 @@ import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../../components/p
 import Searchbar from "../particles/Inputs";
 import * as topmenuicons from "../../assets/topmenu-icons/index";
 import { handleLogout } from "../../Auth/logout";
+import { theme } from "../../assets/theme";
 import { ShortCutIcon } from "./Shortcuts";
 import { auth } from "../../Auth/firebase";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
+import { Text } from "./MidColumn/Post/PostStyles";
+import { capitalizeFirstLetter } from "../particles/CapitalizeFirstLetter";
+
 const TopMenu = styled.div`
   background-color: ${(props) => props.theme.white};
   padding-top: 5px;
@@ -27,11 +31,85 @@ const FirstDiv = styled.div`
   align-items: center;
 `;
 const SecondDiv = styled(FirstDiv)``;
-const ThirdDiv = styled(FirstDiv)``;
+const ThirdDiv = styled(FirstDiv)`
+  position: relative;
+`;
+const Profile = styled.div<{ $show: boolean }>`
+  width: 400px;
+  flex-direction: column;
+  display: flex;
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")};
+  transition: opacity 0.2s, visibility 0.2s;
+
+  height: fit-content;
+  overflow: hidden;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: ${theme.shadowstrong};
+  background-color: ${theme.white};
+  position: absolute;
+  top: 70px;
+  right: 10px;
+`;
+const ProfileSecondDiv = styled.div`
+  height: auto;
+`;
+const ProfileFirstDiv = styled.div`
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+const LogoutButton = styled.button`
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  font-weight: 600;
+  box-sizing: border-box;
+  color: ${theme.darkgray};
+  background-color: ${theme.lightgray};
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: none;
+  align-items: center;
+  border: 2px solid transparent;
+  &:hover {
+    background-color: ${theme.hovergray};
+    border: 2px ${theme.borderblue} solid;
+    box-sizing: border-box;
+  }
+`;
+const LogoutImage = styled.img`
+  margin-right: 10px;
+`;
 const currentuser = auth;
 
 function TopMenuFunction() {
   const [profilepicture, setProfilePicture] = useState<string | undefined>(currentuser.currentUser?.photoURL?.toString());
+  const [profileOpen, setProfileOpen] = useState<boolean>(false);
+
+  const profileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutsideComment(event: MouseEvent) {
+      if (profileOpen && profileRef.current && !profileRef.current.contains(event.target as Node)) {
+        setProfileOpen(false);
+      }
+    }
+
+    window.addEventListener("mousedown", handleClickOutsideComment);
+
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutsideComment);
+    };
+  }, [profileOpen]);
+  const HandleProfileOpen = () => {
+    setProfileOpen(!profileOpen);
+  };
+
   useEffect(() => {
     setProfilePicture(currentuser.currentUser?.photoURL?.toString());
   }, [currentuser.currentUser?.photoURL?.toString()]);
@@ -39,6 +117,7 @@ function TopMenuFunction() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    setProfileOpen(false);
     signOut(auth)
       .then(() => {
         navigate("/");
@@ -64,7 +143,24 @@ function TopMenuFunction() {
         <ButtonCircle to="#" $image={topmenuicons.logomessenger}></ButtonCircle>
         <ButtonCircle to="#" $image={topmenuicons.bellicon}></ButtonCircle>
         <ButtonCircle to="#" $image={topmenuicons.ninedotsicon}></ButtonCircle>
-        <ShortCutIcon $isprofile={true} id="profilepicture" onClick={handleLogout} $image={profilepicture}></ShortCutIcon>
+        <Profile ref={profileRef} $show={profileOpen}>
+          <ProfileFirstDiv>
+            <ShortCutIcon $isprofile={true} id="profilepicture" onClick={handleLogout} $image={profilepicture}></ShortCutIcon>
+
+            <Text style={{ marginLeft: "20px" }} $fontsize="18px" $weight={600} $colour="darkgray">
+              {capitalizeFirstLetter(currentuser.currentUser?.displayName)}
+            </Text>
+          </ProfileFirstDiv>
+
+          <ProfileSecondDiv>
+            <LogoutButton onClick={handleLogout}>
+              <LogoutImage src={topmenuicons.logout}></LogoutImage>
+              Logout
+            </LogoutButton>
+          </ProfileSecondDiv>
+        </Profile>
+
+        <ShortCutIcon onClick={HandleProfileOpen} $isprofile={true} id="profilepicture" $image={profilepicture}></ShortCutIcon>
       </ThirdDiv>
     </TopMenu>
   );

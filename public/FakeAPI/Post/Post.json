@@ -40,13 +40,15 @@
             "PostImage": "https://picsum.photos/id/46/800/600",
             "PostFooterText": "Nature's beauty never fails to amaze me! 🌅",
             "Comments": [
-                {"Commentor": {"name": "Liam White", "photo": ""}, "CommentText": "That view is breathtaking!"},
-                {"Commentor": {"name": "Lily Wilson", "photo": ""}, "CommentText": "Great capture!"},
-                {"Commentor": {"name": "Logan Lewis", "photo": ""}, "CommentText": "Art at its finest."},
-                {"Commentor": {"name": "Zoe Jackson", "photo": ""}, "CommentText": "Absolutely love it!"},
-                {"Commentor": {"name": "Jack Anderson", "photo": ""}, "CommentText": "The colors are so vibrant!"},
-                {"Commentor": {"name": "Chloe White", "photo": ""}, "CommentText": "A moment captured perfectly."}
-            ],
+                {"Commentor": {"name": "John Smith", "photo": "src/assets/FakePeople/fakeperson12.jpeg"}, "CommentText": "Wow, this is incredible!"},
+{"Commentor": {"name": "Emily Davis", "photo": "src/assets/FakePeople/fakeperson23.jpeg"}, "CommentText": "Absolutely stunning! 😍"},
+{"Commentor": {"name": "Michael Lee", "photo": "src/assets/FakePeople/fakeperson36.jpeg"}, "CommentText": "I'm in awe of this beauty."},
+{"Commentor": {"name": "Olivia Martinez", "photo": "src/assets/FakePeople/fakeperson5.jpeg"}, "CommentText": "Brilliant work! 👏"},
+{"Commentor": {"name": "Daniel Anderson", "photo": "src/assets/FakePeople/fakeperson47.jpeg"}, "CommentText": "This is art at its finest."},
+{"Commentor": {"name": "Sophia Wilson", "photo": "src/assets/FakePeople/fakeperson9.jpeg"}, "CommentText": "I can't get enough of this!"},
+{"Commentor": {"name": "James Clark", "photo": "src/assets/FakePeople/fakeperson18.jpeg"}, "CommentText": "Mesmerizing! ✨"},
+{"Commentor": {"name": "Emma Taylor", "photo": "src/assets/FakePeople/fakeperson31.jpeg"}, "CommentText": "Speechless, just speechless."}
+               ],
             "Reactions": [
                 {"Reactor": {"name": "Timothy Adams", "photo": "src/assets/FakePeople/fakeperson40.jpeg"}, "Reaction": 4},
                 {"Reactor": {"name": "Kimberly Anderson", "photo": "src/assets/FakePeople/fakeperson28.jpeg"}, "Reaction": 3},
@@ -76,12 +78,15 @@
     "PostImage": "https://picsum.photos/id/24/800/600",
     "PostFooterText": "Baking therapy. Who wants the recipe? 🧁",
     "Comments": [
-        {"Commentor": {"name": "Lucas Walker", "photo": ""}, "CommentText": "Looks delicious!"},
-        {"Commentor": {"name": "Oliver Martin", "photo": ""}, "CommentText": "Such a serene place."},
-        {"Commentor": {"name": "Isabella Davis", "photo": ""}, "CommentText": "A masterpiece indeed!"},
-        {"Commentor": {"name": "Lucas Thompson", "photo": ""}, "CommentText": "I'm in love with this picture."},
-        {"Commentor": {"name": "Mia Scott", "photo": ""}, "CommentText": "What a fantastic day it must have been!"},
-        {"Commentor": {"name": "Benjamin Taylor", "photo": ""}, "CommentText": "Simply stunning!"}
+        {"Commentor": {"name": "Liam White", "photo": "src/assets/FakePeople/fakeperson42.jpeg"}, "CommentText": "A true masterpiece."},
+        {"Commentor": {"name": "Ava Brown", "photo": "src/assets/FakePeople/fakeperson14.jpeg"}, "CommentText": "I'm blown away by this talent."},
+        {"Commentor": {"name": "William Harris", "photo": "src/assets/FakePeople/fakeperson25.jpeg"}, "CommentText": "Absolutely breathtaking!"},
+        {"Commentor": {"name": "Mia Turner", "photo": "src/assets/FakePeople/fakeperson40.jpeg"}, "CommentText": "Incredible work of art!"},
+        {"Commentor": {"name": "Ethan Lewis", "photo": "src/assets/FakePeople/fakeperson2.jpeg"}, "CommentText": "I'm lost for words, just wow."},
+        {"Commentor": {"name": "Isabella King", "photo": "src/assets/FakePeople/fakeperson49.jpeg"}, "CommentText": "This is pure genius."},
+        {"Commentor": {"name": "Noah Garcia", "photo": "src/assets/FakePeople/fakeperson19.jpeg"}, "CommentText": "I wish I had your talent!"},
+        {"Commentor": {"name": "Grace Miller", "photo": "src/assets/FakePeople/fakeperson8.jpeg"}, "CommentText": "A work of art that speaks to the soul."},
+        {"Commentor": {"name": "Benjamin Brown", "photo": "src/assets/FakePeople/fakeperson37.jpeg"}, "CommentText": "I'm absolutely enchanted by this."}
     ],
     "Reactions": [
         {"Reactor": {"name": "Ronald Hernandez", "photo": "src/assets/FakePeople/fakeperson38.jpeg"}, "Reaction": 3},
@@ -111,12 +116,14 @@
             "PostImage": "https://picsum.photos/id/123/800/600",
             "PostFooterText": "The mountains are calling, and I must go. ⛰️",
             "Comments": [
-                {"Commentor": {"name": "Ethan Moore", "photo": ""}, "CommentText": "Wow, that's a dream destination!"},
-                {"Commentor": {"name": "James Harris", "photo": ""}, "CommentText": "Thanks for sharing this!"},
-                {"Commentor": {"name": "Charlotte Clark", "photo": ""}, "CommentText": "Wish I was there!"},
-                {"Commentor": {"name": "Ethan Evans", "photo": ""}, "CommentText": "Art is truly an expression of the soul."},
-                {"Commentor": {"name": "Ava Moore", "photo": ""}, "CommentText": "Keep up the good work!"},
-                {"Commentor": {"name": "William Robinson", "photo": ""}, "CommentText": "This brings back memories."}
+                {"Commentor": {"name": "Chloe Wilson", "photo": "src/assets/FakePeople/fakeperson17.jpeg"}, "CommentText": "This is beyond amazing!"},
+                {"Commentor": {"name": "Alexander Davis", "photo": "src/assets/FakePeople/fakeperson48.jpeg"}, "CommentText": "I'm left in awe of your talent."},
+                {"Commentor": {"name": "Nora Johnson", "photo": "src/assets/FakePeople/fakeperson10.jpeg"}, "CommentText": "I can't stop admiring this masterpiece."},
+                {"Commentor": {"name": "Samuel Parker", "photo": "src/assets/FakePeople/fakeperson29.jpeg"}, "CommentText": "This is nothing short of perfection!"},
+                {"Commentor": {"name": "Avery Mitchell", "photo": "src/assets/FakePeople/fakeperson13.jpeg"}, "CommentText": "I'm completely mesmerized by this artwork."},
+                {"Commentor": {"name": "Natalie Scott", "photo": "src/assets/FakePeople/fakeperson44.jpeg"}, "CommentText": "I wish I had your talent, it's mind-blowing!"},
+                {"Commentor": {"name": "Elijah Turner", "photo": "src/assets/FakePeople/fakeperson22.jpeg"}, "CommentText": "A true testament to your creativity."},
+                {"Commentor": {"name": "Aria Adams", "photo": "src/assets/FakePeople/fakeperson33.jpeg"}, "CommentText": "This is artistry at its finest!"}
             ],
             "Reactions": [
                 {"Reactor": {"name": "Mary Torres", "photo": "src/assets/FakePeople/fakeperson46.jpeg"}, "Reaction": 3},
@@ -150,12 +157,21 @@
             "PostImage": "https://picsum.photos/id/125/800/600",
             "PostFooterText": "Immersed in the world of colors and imagination. 🎨",
             "Comments": [
-                {"Commentor": {"name": "Logan Garcia", "photo": ""}, "CommentText": "Art is life."},
-                {"Commentor": {"name": "Alice Johnson", "photo": ""}, "CommentText": "Amazing photo!"},
-                {"Commentor": {"name": "Michael Brown", "photo": ""}, "CommentText": "Congratulations on the achievement!"},
-                {"Commentor": {"name": "Emma Wilson", "photo": ""}, "CommentText": "Looks delicious!"},
-                {"Commentor": {"name": "David Smith", "photo": ""}, "CommentText": "Nature is truly mesmerizing."},
-                {"Commentor": {"name": "Sophia Lee", "photo": ""}, "CommentText": "That's a breathtaking view!"}
+                {"Commentor": {"name": "Lucas Walker", "photo": "src/assets/FakePeople/fakeperson15.jpeg"}, "CommentText": "I'm in love with every detail!"},
+                {"Commentor": {"name": "Zoe Roberts", "photo": "src/assets/FakePeople/fakeperson46.jpeg"}, "CommentText": "This deserves all the recognition!"},
+                {"Commentor": {"name": "Henry Evans", "photo": "src/assets/FakePeople/fakeperson30.jpeg"}, "CommentText": "I'm genuinely impressed!"},
+                {"Commentor": {"name": "Lily Turner", "photo": "src/assets/FakePeople/fakeperson20.jpeg"}, "CommentText": "You have a true gift."},
+                {"Commentor": {"name": "Jackson Harris", "photo": "src/assets/FakePeople/fakeperson45.jpeg"}, "CommentText": "This is a masterpiece, no doubt!"},
+                {"Commentor": {"name": "Sofia Garcia", "photo": "src/assets/FakePeople/fakeperson3.jpeg"}, "CommentText": "I'm in awe of your talent!"},
+                {"Commentor": {"name": "Dylan White", "photo": "src/assets/FakePeople/fakeperson21.jpeg"}, "CommentText": "This is simply breathtaking!"},
+                {"Commentor": {"name": "Aiden Miller", "photo": "src/assets/FakePeople/fakeperson38.jpeg"}, "CommentText": "I can't stop admiring this."},
+                {"Commentor": {"name": "Aubrey Clark", "photo": "src/assets/FakePeople/fakeperson11.jpeg"}, "CommentText": "You're a true artist!"},
+                {"Commentor": {"name": "Eva King", "photo": "src/assets/FakePeople/fakeperson27.jpeg"}, "CommentText": "This is the definition of beauty."},
+                {"Commentor": {"name": "Mason Davis", "photo": "src/assets/FakePeople/fakeperson35.jpeg"}, "CommentText": "I'm absolutely enchanted!"},
+                {"Commentor": {"name": "Luna Martinez", "photo": "src/assets/FakePeople/fakeperson4.jpeg"}, "CommentText": "You've outdone yourself!"},
+                {"Commentor": {"name": "Carter Wilson", "photo": "src/assets/FakePeople/fakeperson28.jpeg"}, "CommentText": "I'm speechless, it's so good!"},
+                {"Commentor": {"name": "Scarlett Johnson", "photo": "src/assets/FakePeople/fakeperson50.jpeg"}, "CommentText": "This is a work of genius."},
+                {"Commentor": {"name": "Owen Anderson", "photo": "src/assets/FakePeople/fakeperson16.jpeg"}, "CommentText": "A masterpiece like no other!"}
             ],
             "Reactions": [
                 {"Reactor": {"name": "Jessica Baker", "photo": "src/assets/FakePeople/fakeperson9.jpeg"}, "Reaction": 4},

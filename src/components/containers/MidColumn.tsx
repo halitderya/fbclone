@@ -81,6 +81,7 @@ const PostImageUploadLabel = styled.label`
 
   user-select: none;
   transition: background-color 0.3s;
+  border: 3px solid transparent;
 
   &:hover {
     background-color: ${theme.lightgray};
@@ -104,17 +105,22 @@ const PostCreatorButton = styled.button`
   display: inline-block;
   font-size: 16px;
   font-weight: 600;
+  user-select: none;
   height: auto;
   transition: background-color 0.3s;
 
   &:hover {
     background-color: ${theme.borderblue};
   }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: ${theme.lightgray};
+  }
 `;
 
 const MidColumn = styled.div`
   width: 50%;
-  max-width: 800px;
+  max-width: 680px;
   height: 90vh;
   padding-left: 5%;
   padding-right: 5%;
@@ -160,6 +166,7 @@ export default function MidColumnComponent() {
   const [PagePosts, setPagePosts] = useState<PostsData>({ Posts: [] });
   const [addPosttext, setAddPosttext] = useState<string>("");
   const [addPostURL, setaddPostURL] = useState<string>("");
+  const [buttonActive, setButtonActive] = useState<boolean>(false);
   const currentuser = auth.currentUser;
 
   useEffect(() => {
@@ -180,6 +187,7 @@ export default function MidColumnComponent() {
         photo: currentuser?.photoURL ?? "",
       },
       Reactions: [],
+      Comments: [],
       PostHeaderText: addPosttext,
       PostDate: new Date().toString(),
       PostImage: new URL(addPostURL).toString(),
@@ -190,6 +198,7 @@ export default function MidColumnComponent() {
     }));
     setAddPosttext("");
     setaddPostURL("");
+    setButtonActive(false);
   };
 
   return (
@@ -216,6 +225,7 @@ export default function MidColumnComponent() {
                 const file = e.target.files[0];
                 const fileUrl = URL.createObjectURL(file);
                 setaddPostURL(fileUrl);
+                setButtonActive(true);
               }
             }}
             id="file-upload"
@@ -223,7 +233,9 @@ export default function MidColumnComponent() {
             type="file"
             accept="image/*"
           ></PostImageUploader>
-          <PostCreatorButton onClick={AddPost}>Post</PostCreatorButton>
+          <PostCreatorButton disabled={!buttonActive} onClick={AddPost}>
+            Post
+          </PostCreatorButton>
         </PostCreatorSecondRow>
       </PostCreator>
       <PostsCollection posts={PagePosts.Posts} />

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PPCircle from "./../../../particles/PPCircle";
 export interface StoryType {
   text?: string;
-  storyimage?: string;
+  storyimage: string;
   ppimage?: string;
   username?: string;
 }
@@ -15,6 +15,7 @@ const StoryMain = styled.div`
   flex-direction: column;
   border-radius: 10px;
   background-size: cover;
+  position: relative;
 
   min-width: 180px;
   min-height: 300px;
@@ -25,34 +26,33 @@ const StoryMain = styled.div`
   width: max-content;
 `;
 
-const StoryBG = styled.div<{ $storyimage?: string }>`
-  background-image: url(${(props) => props.$storyimage});
-  padding: 5px;
-  display: flex;
-  height: 100%;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
 const StoryText = styled.label`
   display: flex;
   user-select: none;
   font-weight: 600;
   word-wrap: break-word;
   flex-wrap: wrap;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   color: #ffffffcc;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
+const StoryImage = styled.img`
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+`;
+
 export default function Story(props: StoryType) {
   return (
     <StoryMain>
-      <StoryBG $storyimage={props.storyimage}>
-        <PPCircle isprofile={true} ppimage={props.ppimage}></PPCircle>
-        <StoryText>{props.username}</StoryText>
-      </StoryBG>
+      <StoryImage loading="lazy" src={props.storyimage} alt="Story image" />
+      <PPCircle isprofile={true} ppimage={props.ppimage} />
+      <StoryText>{props.username}</StoryText>
     </StoryMain>
   );
 }
