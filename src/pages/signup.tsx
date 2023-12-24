@@ -1,11 +1,17 @@
 import styled from "styled-components";
-import { SyntheticEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, storage } from "../Auth/firebase";
 import { updateProfile } from "firebase/auth";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { theme } from "../assets/theme";
+import Logout from "../assets/topmenu-icons/logout.svg";
 
+const FormHeader = styled.h2`
+  font-family: Arial, Helvetica, sans-serif;
+  color: ${theme.darkgray};
+`;
 const SignupPage = styled.div`
   display: flex;
   flex-direction: row;
@@ -13,24 +19,114 @@ const SignupPage = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-color: #f5f5f5;
+  background-color: ${theme.lightgray};
 `;
 const SignupForm = styled.form`
+  height: 50vh;
+  width: 50vh;
+  background-color: ${theme.white};
+  border-radius: 10px;
+  box-shadow: ${theme.shadowstrong};
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+const InputsContainerDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const SignupInput = styled.input``;
-const SignupButton = styled.button``;
-const SignupLabel = styled.label``;
+const SignupInput = styled.input`
+  background-color: ${theme.lightgray};
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  color: ${theme.darkgray};
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  &:focus {
+    background-color: ${theme.hovergray};
+  }
+`;
+const SignupButton = styled.button`
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: ${theme.skyblue};
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  border: none;
+  color: ${theme.darkgray};
+  border: 3px solid transparent;
 
+  &:hover {
+    background-color: ${theme.lightgray};
+    border: 3px solid ${theme.borderblue};
+    border-radius: 10px;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: ${theme.lightgray};
+  }
+`;
+const PostImageUploadLabel = styled.label`
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: ${theme.darkgray};
+  background-color: ${theme.lightgray};
+  display: inline-block;
+  padding: 10px 50px;
+  background-position: left center;
+  background-position-x: 10px;
+  background-image: url(${Logout});
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+  height: auto;
+
+  user-select: none;
+  transition: background-color 0.3s;
+  border: 3px solid transparent;
+
+  &:hover {
+    background-color: ${theme.lightgray};
+    border: 3px solid ${theme.borderblue};
+    border-radius: 10px;
+  }
+`;
+
+const PostImageUploader = styled.input`
+  display: none;
+`;
 export default function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
-
   const [ppimage, setPpimage] = useState<File>();
+  const [submitActive, setSubmitActive] = useState<boolean>(false);
+
+  useEffect(() => {
+    checkSubmitActive();
+  }, [email, password, name, surname, ppimage]);
+
+  const checkSubmitActive = () => {
+    if (email !== "" && password !== "" && name !== "" && surname !== "" && ppimage !== undefined) {
+      setSubmitActive(true);
+    } else {
+      setSubmitActive(false);
+    }
+  };
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -52,7 +148,7 @@ export default function Signup() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error: any) {
-      console.log(error);
+      console.error(error);
     }
   };
   function handleUpload(userid: string) {
@@ -82,26 +178,69 @@ export default function Signup() {
       );
     });
   }
-  function handleChange(event: any) {
-    setPpimage(event.target.files[0]);
+  function handleFileUpload(event: React.ChangeEvent<HTMLInputElement>) {
+    if (event.target.files && event.target.files[0] !== null) {
+      setPpimage(event.target.files[0]);
+    }
   }
   return (
     <SignupPage>
       <SignupForm>
-        <SignupLabel htmlFor="name">Name</SignupLabel>
-        <SignupInput value={name} onChange={(e) => setName(e.target.value)} type="text" id="name" />
-
-        <SignupLabel htmlFor="surname">Surname</SignupLabel>
-        <SignupInput value={surname} onChange={(e) => setSurname(e.target.value)} type="text" id="surname" />
-
-        <SignupLabel htmlFor="email">Email</SignupLabel>
-        <SignupInput value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="username" />
-        <SignupLabel htmlFor="password">Password</SignupLabel>
-        <SignupInput autoComplete="on" value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" />
-        <SignupLabel htmlFor="ppimage">Profile Picture</SignupLabel>
-
-        <SignupInput accept="image/*" onChange={handleChange} type="file" id="ppimage" />
-        <SignupButton onClick={onSubmit} type="submit">
+        <FormHeader> Complete the below fields to register</FormHeader>
+        <InputsContainerDiv>
+          <SignupInput
+            placeholder="Name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            type="text"
+            id="name"
+          />
+          <SignupInput
+            placeholder="Surname"
+            value={surname}
+            onChange={(e) => {
+              setSurname(e.target.value);
+            }}
+            type="text"
+            id="surname"
+          />
+          <SignupInput
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            type="text"
+            id="username"
+          />
+          <SignupInput
+            placeholder="Password"
+            autoComplete="on"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            type="password"
+            id="password"
+          />
+          <PostImageUploadLabel className="PostImageUploadLabel" htmlFor="file-upload">
+            Profile Picture
+          </PostImageUploadLabel>
+          <PostImageUploader
+            onChange={(e) => {
+              if (e.target.files && e.target.files[0]) {
+                handleFileUpload(e);
+              }
+            }}
+            id="file-upload"
+            className="PostImageUploader"
+            type="file"
+            accept="image/*"
+          ></PostImageUploader>{" "}
+        </InputsContainerDiv>
+        <SignupButton disabled={!submitActive} onClick={onSubmit} type="submit">
           Signup
         </SignupButton>
       </SignupForm>
