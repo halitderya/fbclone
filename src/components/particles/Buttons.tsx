@@ -33,6 +33,9 @@ const ButtonCircle = styled(ButtonCircleFull)<{ $image: string }>`
   box-sizing: border-box;
   margin-left: auto;
   display: flex;
+  @media (max-width: 899px) {
+    display: none;
+  }
 `;
 const MiddleButton = styled.button<{ $image: string }>`
   width: 100px;

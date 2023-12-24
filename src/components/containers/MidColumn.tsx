@@ -121,6 +121,7 @@ const PostCreatorButton = styled.button`
 const MidColumn = styled.div`
   width: 50%;
   max-width: 680px;
+
   height: 90vh;
   padding-left: 5%;
   padding-right: 5%;

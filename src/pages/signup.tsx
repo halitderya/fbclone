@@ -7,9 +7,19 @@ import { updateProfile } from "firebase/auth";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { theme } from "../assets/theme";
 import Logout from "../assets/topmenu-icons/logout.svg";
+import Facebooklogo from "../assets/topmenu-icons/facebook-logo.svg";
 
-const FormHeader = styled.h2`
+export const FormHeader = styled.label`
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: ${theme.darkgray};
+`;
+const FormHr = styled.hr`
+  width: 100%;
+  margin-top: 20px;
   color: ${theme.darkgray};
 `;
 const SignupPage = styled.div`
@@ -21,9 +31,26 @@ const SignupPage = styled.div`
   width: 100vw;
   background-color: ${theme.lightgray};
 `;
+const BrandHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+const BrandHeaderImage = styled.img``;
+const BrandHeaderText = styled.label`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin-left: 10px;
+  color: ${theme.darkgray};
+`;
 const SignupForm = styled.form`
-  height: 50vh;
-  width: 50vh;
+  height: auto;
+  width: 40vw;
+  min-width: 330px;
+  max-width: 550px;
+  overflow: hidden;
   background-color: ${theme.white};
   border-radius: 10px;
   box-shadow: ${theme.shadowstrong};
@@ -49,6 +76,29 @@ const SignupInput = styled.input`
   border: none;
   &:focus {
     background-color: ${theme.hovergray};
+  }
+`;
+const ButtonContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const HasAccountButton = styled.button`
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: ${theme.lightgray};
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  border: none;
+  color: ${theme.darkgray};
+  border: 3px solid transparent;
+
+  &:hover {
+    background-color: ${theme.lightgray};
+    border: 3px solid ${theme.borderblue};
+    border-radius: 10px;
   }
 `;
 const SignupButton = styled.button`
@@ -107,6 +157,17 @@ const PostImageUploadLabel = styled.label`
 const PostImageUploader = styled.input`
   display: none;
 `;
+export function BrandHeaderFunc() {
+  return (
+    <>
+      <BrandHeader>
+        <BrandHeaderImage src={Facebooklogo} />
+        <BrandHeaderText>Facebook Clone by Halit</BrandHeaderText>
+      </BrandHeader>
+      <FormHr />
+    </>
+  );
+}
 export default function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -132,7 +193,6 @@ export default function Signup() {
     e.preventDefault();
 
     if (!email || !password || !name || !surname || !ppimage) {
-      alert("Please fill all the fields");
       return;
     }
     try {
@@ -186,7 +246,9 @@ export default function Signup() {
   return (
     <SignupPage>
       <SignupForm>
+        <BrandHeaderFunc></BrandHeaderFunc>
         <FormHeader> Complete the below fields to register</FormHeader>
+
         <InputsContainerDiv>
           <SignupInput
             placeholder="Name"
@@ -240,9 +302,19 @@ export default function Signup() {
             accept="image/*"
           ></PostImageUploader>{" "}
         </InputsContainerDiv>
-        <SignupButton disabled={!submitActive} onClick={onSubmit} type="submit">
-          Signup
-        </SignupButton>
+        <ButtonContainerDiv>
+          <HasAccountButton
+            type="button"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Already have an account? Login.
+          </HasAccountButton>
+          <SignupButton disabled={!submitActive} onClick={onSubmit} type="submit">
+            Signup
+          </SignupButton>
+        </ButtonContainerDiv>
       </SignupForm>
     </SignupPage>
   );

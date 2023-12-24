@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ButtonCircle, ButtonCircleFull, MiddleButton } from "../../components/particles/Buttons";
 import Searchbar from "../particles/Inputs";
 import * as topmenuicons from "../../assets/topmenu-icons/index";
-import { handleLogout } from "../../Auth/logout";
 import { theme } from "../../assets/theme";
 import { ShortCutIcon } from "./Shortcuts";
 import { auth } from "../../Auth/firebase";
@@ -30,7 +29,11 @@ const FirstDiv = styled.div`
   flex-direction: row;
   align-items: center;
 `;
-const SecondDiv = styled(FirstDiv)``;
+const SecondDiv = styled(FirstDiv)`
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
 const ThirdDiv = styled(FirstDiv)`
   position: relative;
 `;
