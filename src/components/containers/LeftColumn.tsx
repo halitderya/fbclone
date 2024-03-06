@@ -7,11 +7,13 @@ import { auth } from "../../Auth/firebase";
 
 const ShortCutsContainer = styled.div``;
 const Footer = styled.div`
-  height: 60px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: red;
   font-weight: 600;
+  width: 100%;
+  text-align: start;
+  align-content: start;
 `;
 const LeftColumn = styled.div`
   width: 25%;
@@ -20,6 +22,7 @@ const LeftColumn = styled.div`
   justify-content: space-between;
   flex-direction: column;
   padding-top: 10px;
+  overflow: auto;
   @media (max-width: 1080px) {
     display: none;
   }

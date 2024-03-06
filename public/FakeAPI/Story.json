@@ -1,95 +1,94 @@
 {
   "stories": [
     {
-      "pp": "src/assets/FakePeople/fakeperson1.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=1",
       "username": "John Doe",
       "storytext": "Just enjoying a beautiful day! 🌞 #sunnyday",
       "photo": "https://picsum.photos/id/123/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson2.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=2",
       "username": "Alice Smith",
       "storytext": "Exploring new places 🌍 #travel",
       "photo": "https://picsum.photos/id/456/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson3.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=3",
       "username": "Emily Johnson",
       "storytext": "Sunday brunch with friends! 🍳 #brunch",
       "photo": "https://picsum.photos/id/789/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson4.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=4",
       "username": "Michael Brown",
       "storytext": "Chilling at the beach 🏖️ #beachlife",
       "photo": "https://picsum.photos/id/101/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson5.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=5",
       "username": "Sophia Garcia",
       "storytext": "Cooking up a storm in the kitchen! 🍳 #cooking",
       "photo": "https://picsum.photos/id/234/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson6.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=6",
       "username": "Liam Martinez",
       "storytext": "Hiking in the mountains 🏔️ #hiking",
       "photo": "https://picsum.photos/id/567/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson7.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=7",
       "username": "Olivia Taylor",
       "storytext": "Movie night with popcorn! 🍿 #movienight",
       "photo": "https://picsum.photos/id/890/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson8.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=8",
       "username": "Noah Wilson",
       "storytext": "Admiring the city skyline 🌆 #cityview",
       "photo": "https://picsum.photos/id/123/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson9.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=9",
       "username": "Emma Davis",
       "storytext": "Gym time 💪 #workout",
       "photo": "https://picsum.photos/id/456/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson10.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=10",
       "username": "William Anderson",
       "storytext": "Reading my favorite book 📖 #bookworm",
       "photo": "https://picsum.photos/id/789/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson11.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=11",
       "username": "Ava Wilson",
       "storytext": "Coffee time with a view ☕ #coffee",
       "photo": "https://picsum.photos/id/101/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson12.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=12",
       "username": "James Smith",
       "storytext": "Playing guitar 🎸 #music",
       "photo": "https://picsum.photos/id/234/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson13.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=13",
       "username": "Mia Martinez",
       "storytext": "Baking cookies 🍪 #baking",
       "photo": "https://picsum.photos/id/567/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson14.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=14",
       "username": "Ethan Davis",
       "storytext": "Soccer match ⚽ #soccer",
       "photo": "https://picsum.photos/id/890/180/300.jpg"
     },
     {
-      "pp": "src/assets/FakePeople/fakeperson15.jpeg",
+      "pp": "https://i.pravatar.cc/150?img=15",
       "username": "Olivia Smith",
       "storytext": "Day at the museum 🏛️ #art",
       "photo": "https://picsum.photos/id/123/180/300.jpg"
     }
-
   ]
 }
