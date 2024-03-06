@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import StoryContainer from "./MidColumn/Story/StoryContainer";
 import { useEffect, useState } from "react";
-import PostsData, { Post } from "../../../public/FakeAPI/Post/PostType";
+import PostsData, { Post } from "../../types/PostType";
 import ComPost from "./MidColumn/Post/Post";
 import { auth } from "../../Auth/firebase";
 import { v1 as uuidv1 } from "uuid";
@@ -171,7 +171,7 @@ export default function MidColumnComponent() {
   const currentuser = auth.currentUser;
 
   useEffect(() => {
-    fetch("../../../public/FakeAPI/Post/Post.json")
+    fetch("FakeAPI/Post.json")
       .then((res) => res.json())
       .then((data) => {
         setPagePosts(data);

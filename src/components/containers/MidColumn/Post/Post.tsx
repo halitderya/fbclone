@@ -1,4 +1,4 @@
-import { Post } from "../../../../../public/FakeAPI/Post/PostType";
+import { Post } from "../../../../types/PostType";
 import ReactionWindowFC, { PostFooterReactionsComponentProps, iconMap } from "./PostReactionWIndow";
 import PPCircle from "../../../particles/PPCircle";
 import { Tooltip } from "react-tooltip";

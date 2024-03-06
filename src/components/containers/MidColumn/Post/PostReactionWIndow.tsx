@@ -1,4 +1,4 @@
-import { Post, Reaction } from "../../../../../public/FakeAPI/Post/PostType";
+import { Post, Reaction } from "../../../../types/PostType";
 import PPCircle from "../../../particles/PPCircle";
 import { useEffect, useRef } from "react";
 import { v1 as uuidv1 } from "uuid";

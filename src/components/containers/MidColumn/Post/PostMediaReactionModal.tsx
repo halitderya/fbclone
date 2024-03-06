@@ -2,7 +2,7 @@ import styled from "styled-components";
 import * as style from "./PostStyles";
 import { SyntheticEvent, useEffect, useRef } from "react";
 import { theme } from "../../../../assets/theme";
-import { Reaction as ReactionType, Post, User } from "../../../../../public/FakeAPI/Post/PostType";
+import { Reaction as ReactionType, Post, User } from "../../../../types/PostType";
 import { auth } from "../../../../Auth/firebase";
 import { capitalizeFirstLetter } from "../../../particles/CapitalizeFirstLetter";
 

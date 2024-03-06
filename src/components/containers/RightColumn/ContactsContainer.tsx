@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import IPeople from "../../../../public/FakeAPI/People/People";
+import IPeople from "../../../types/People";
 import styled from "styled-components";
 import ShortCut from "../Shortcuts";
 

@@ -23,7 +23,7 @@ export interface StoryData {
 function FetchStories() {
   const [stories, setStories] = useState<StoryData[]>([]);
   useEffect(() => {
-    fetch("../../../../../public/fakeapi/story.json")
+    fetch("FakeAPI/Story.json")
       .then((res) => res.json())
       .then((data) => {
         setStories(data.stories);

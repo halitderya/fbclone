@@ -1,4 +1,4 @@
-import { Post } from "../../../../../public/FakeAPI/Post/PostType";
+import { Post } from "../../../../types/PostType";
 import { useEffect, useRef } from "react";
 import ComPost from "./Post";
 import ScrollBarToggle from "./ScrollBarToggle";

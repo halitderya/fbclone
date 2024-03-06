@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { theme } from "../../../../assets/theme";
-import { Comment as commentType, Post, User } from "../../../../../public/FakeAPI/Post/PostType";
+import { Comment as commentType, Post, User } from "../../../../types/PostType";
 import { auth } from "../../../../Auth/firebase";
 import { capitalizeFirstLetter } from "../../../particles/CapitalizeFirstLetter";
 
