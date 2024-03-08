@@ -6,25 +6,22 @@ import { SyntheticEvent, useState } from "react";
 import { auth } from "../../Auth/firebase";
 
 const ShortCutsContainer = styled.div``;
-const Footer = styled.div`
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  color: red;
-  font-weight: 600;
-  width: 100%;
-  text-align: start;
-  align-content: start;
-`;
+
 const LeftColumn = styled.div`
   width: 25%;
   float: left;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  max-width: 400px;
+  /* display: flex; */
+  border: 3px dotted red;
+  /* justify-content: space-between; */
+  /* flex-direction: column; */
   padding-top: 10px;
   overflow: auto;
   @media (max-width: 1080px) {
     display: none;
+  }
+  @media (max-width: 1920px) {
+    max-width: none;
   }
 `;
 
@@ -63,7 +60,6 @@ function LeftColumnComponent() {
           </>
         )}
       </ShortCutsContainer>
-      <Footer>A software engineering student coded this Social Media App clone for educational purposes only to demonstrate his coding skills. 2023.</Footer>
     </LeftColumn>
   );
 }

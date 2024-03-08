@@ -7,5 +7,8 @@ const Body = styled.div`
   //border: 3px dashed gray;
   min-height: 400px;
   padding: 0px;
+
+  /* border: 1px dotted red; */
+  //align-items: flex-start;
 `;
 export default Body;

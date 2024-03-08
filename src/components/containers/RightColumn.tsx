@@ -3,7 +3,8 @@ import ContactsContainer from "../containers/RightColumn/ContactsContainer";
 const RightColumn = styled.div`
   width: 25%;
   max-width: 450px;
-  float: right;
+  border: 3px dotted red;
+  justify-content: space-around;
   margin-left: 20px;
   @media (max-width: 899px) {
     display: none;
