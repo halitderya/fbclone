@@ -109,6 +109,8 @@ const PostCreatorButton = styled.button`
   height: auto;
   transition: background-color 0.3s;
 
+  border: 1px dotted red;
+
   &:hover {
     background-color: ${theme.borderblue};
   }
@@ -121,11 +123,12 @@ const PostCreatorButton = styled.button`
 const MidColumn = styled.div`
   width: 50%;
   max-width: 680px;
-
   height: 90vh;
   padding-left: 5%;
   padding-right: 5%;
   overflow: auto;
+
+  border: 3px dotted red;
 
   scrollbar-width: none;
   &::-webkit-scrollbar {
