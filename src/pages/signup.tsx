@@ -27,9 +27,16 @@ const SignupPage = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: ${theme.lightgray};
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  min-width: min-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  //background-color: ${theme.lightgray};
 `;
 const BrandHeader = styled.div`
   display: flex;

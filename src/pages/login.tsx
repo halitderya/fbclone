@@ -7,19 +7,28 @@ import { theme } from "../assets/theme";
 import { BrandHeaderFunc, FormHeader } from "./signup";
 
 const LoginPage = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  max-width: 400px; */
+
+  // padding: 10px;
+  //width: 90%;
+  max-width: 400px;
+  min-width: min-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: ${theme.lightgray};
 `;
 const LoginForm = styled.form`
   height: auto;
-  width: 40vw;
   min-width: 330px;
-  max-width: 550px;
+  max-width: 400px;
   overflow: hidden;
   background-color: ${theme.white};
   border-radius: 10px;
