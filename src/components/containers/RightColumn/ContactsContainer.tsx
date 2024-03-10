@@ -5,8 +5,8 @@ import ShortCut from "../Shortcuts";
 
 const ContactsContainer = styled.div`
   font-weight: 400;
-  width: inherit;
-  position: absolute;
+  // width: inherit;
+  //position: absolute;
   height: 70%;
   overflow-y: auto;
 `;

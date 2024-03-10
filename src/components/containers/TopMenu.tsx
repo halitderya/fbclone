@@ -38,7 +38,9 @@ const ThirdDiv = styled(FirstDiv)`
   position: relative;
 `;
 const Profile = styled.div<{ $show: boolean }>`
-  width: 400px;
+  max-width: 400px;
+  width: 90vw;
+  min-width: fit-content;
   flex-direction: column;
   display: flex;
   visibility: ${(props) => (props.$show ? "visible" : "hidden")};
@@ -51,7 +53,7 @@ const Profile = styled.div<{ $show: boolean }>`
   border-radius: 10px;
   box-shadow: ${theme.shadowstrong};
   background-color: ${theme.white};
-  position: absolute;
+  position: fixed;
   top: 70px;
   right: 10px;
 `;

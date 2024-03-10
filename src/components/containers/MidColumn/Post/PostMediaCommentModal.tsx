@@ -8,6 +8,18 @@ import { capitalizeFirstLetter } from "../../../particles/CapitalizeFirstLetter"
 const PostMediacommentModalMain = styled.div<{ $show: boolean }>`
   padding: 10px;
   width: 90%;
+  max-width: 500px;
+  min-width: min-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media (max-width: 1080px) {
+    transform: translate(-75%, -75%);
+  }
+  @media (max-width: 899px) {
+    transform: translate(-50%, -50%);
+  }
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   height: fit-content;
   max-height: 300px;
@@ -15,9 +27,7 @@ const PostMediacommentModalMain = styled.div<{ $show: boolean }>`
   border-radius: 5px;
   background-color: ${theme.white};
   z-index: 10;
-  position: absolute;
-  bottom: 200px;
-  right: 20px;
+
   display: ${(props) => (props.$show ? "block" : "none")};
 `;
 const PostMediacommentform = styled.form`
@@ -28,11 +38,12 @@ const PostMediacommentform = styled.form`
 `;
 const PostMediaCommentFormHeader = styled.div`
   height: 50px;
-  font-size: 24px;
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: ${theme.darkgray};
   margin-left: 2%;
   margin-right: 2%;
+  font-weight: 600;
 `;
 
 const PostMediacommentBubble = styled.input`
@@ -46,14 +57,14 @@ const PostMediacommentBubble = styled.input`
   font-family: Arial, Helvetica, sans-serif;
   color: ${theme.darkgray};
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
 
-  height: 60px;
+  height: 50px;
 `;
 const PostMediacommentSubmit = styled.input`
   height: auto;
   width: 160px;
-  padding: 10px;
+  padding: 8px;
   margin-top: 20px;
   cursor: pointer;
   margin-bottom: 2%;
@@ -66,7 +77,7 @@ const PostMediacommentSubmit = styled.input`
   background-color: ${theme.skyblue};
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
 `;
 export default function PostMediacommentModalMainFC(props: { show: boolean; setShow: React.Dispatch<React.SetStateAction<boolean>>; post: Post }) {

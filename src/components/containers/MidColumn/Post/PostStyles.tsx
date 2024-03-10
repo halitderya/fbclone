@@ -155,7 +155,9 @@ export const ReactionWindow = styled.dialog<{ $show: boolean }>`
   min-height: 200px;
   max-height: 500px;
 
-  width: 500px;
+  max-width: 500px;
+  width: 90vw;
+  min-width: min-content;
   top: 20%;
   z-index: 10;
   display: ${(props) => (props.$show ? "flex" : "none")};

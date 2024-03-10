@@ -7,7 +7,6 @@ import { auth } from "../../../../Auth/firebase";
 import { capitalizeFirstLetter } from "../../../particles/CapitalizeFirstLetter";
 
 const PostMediareactionModalMain = styled.div<{ $show: boolean }>`
-  width: fit-content;
   padding: 10px;
   border-radius: 5px;
   background-color: ${theme.white};

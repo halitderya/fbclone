@@ -10,9 +10,10 @@ const ShortCutsContainer = styled.div``;
 const LeftColumn = styled.div`
   width: 25%;
   float: left;
-  max-width: 400px;
+  max-width: 300px;
+
   /* display: flex; */
-  border: 3px dotted red;
+  /* border: 3px dotted red; */
   /* justify-content: space-between; */
   /* flex-direction: column; */
   padding-top: 10px;
@@ -20,8 +21,8 @@ const LeftColumn = styled.div`
   @media (max-width: 1080px) {
     display: none;
   }
-  @media (max-width: 1920px) {
-    max-width: none;
+  @media (min-width: 1920px) {
+    margin-left: auto;
   }
 `;
 

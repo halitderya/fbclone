@@ -11,6 +11,35 @@ import PPCircle from "../particles/PPCircle";
 import { theme } from "../../assets/theme";
 import imgupload from "../../assets/midcolumn-icons/img-upload.png";
 
+const MidColumn = styled.div`
+  width: 680px;
+  height: 90vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  /* flex-shrink: 0; */
+  overflow: auto;
+
+  /* border: 3px dotted red; */
+
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media (max-width: 1080px) {
+    width: 70%;
+  }
+  @media (max-width: 899px) {
+    width: 100%;
+  }
+`;
 const PostCreator = styled.div`
   height: 120px;
   padding-top: 5px;
@@ -109,44 +138,12 @@ const PostCreatorButton = styled.button`
   height: auto;
   transition: background-color 0.3s;
 
-  border: 1px dotted red;
-
   &:hover {
     background-color: ${theme.borderblue};
   }
   &:disabled {
     cursor: not-allowed;
     background-color: ${theme.lightgray};
-  }
-`;
-
-const MidColumn = styled.div`
-  width: 50%;
-  max-width: 680px;
-  height: 90vh;
-  padding-left: 5%;
-  padding-right: 5%;
-  overflow: auto;
-
-  border: 3px dotted red;
-
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  &.no-scroll {
-    overflow: hidden;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  @media (max-width: 1080px) {
-    width: 70%;
-  }
-  @media (max-width: 899px) {
-    width: 100%;
   }
 `;
 
