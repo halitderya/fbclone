@@ -101,7 +101,13 @@ export default function ComPost(props: ComPostProps) {
 
           <style.PostHeaderRightContainer>
             <style.PostHeaderControls>
-              <style.PostExit onClick={HidePost}>X</style.PostExit>
+              {props.isModalView ? (
+                <style.PostExit id="hidemodal" onClick={HidePost}>
+                  X
+                </style.PostExit>
+              ) : (
+                <style.PostExit onClick={HidePost}>X</style.PostExit>
+              )}
             </style.PostHeaderControls>
           </style.PostHeaderRightContainer>
         </style.PostHeaderComponent>

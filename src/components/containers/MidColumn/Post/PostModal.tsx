@@ -15,7 +15,7 @@ export default function PostModalFC(props: PostModalProps) {
 
   useEffect(() => {
     function handleClickOutsideComment(event: MouseEvent) {
-      if (modaldialogRef.current && !modaldialogRef.current.contains(event.target as Node)) {
+      if (event.target && modaldialogRef.current && (!modaldialogRef.current.contains(event.target as Node) || (event.target as HTMLElement).id === "hidemodal")) {
         props.setShow(false);
         ScrollBarToggle();
       }
