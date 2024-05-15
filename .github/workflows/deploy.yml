@@ -14,41 +14,40 @@ jobs:
 
       - name: Set app version
         id: set_version
-        run: echo "appver=$(node -e 'console.log(require(\"./package.json").version)')" >> $GITHUB_ENV
+        run: echo "::set-output name=appver::$(node -e 'console.log(require("./package.json").version)')"
 
-      - name: Login to Docker Hub
+      - name: login to hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_TOKEN}}
 
-      - name: Build and push Docker image
+      - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: halitderya/fbclone:${{ env.appver }}-64
+          tags: halitderya/fbclone:${{ steps.set_version.outputs.appver }}-64
           platforms: linux/amd64
           file: ./Dockerfile
-          build-args: |
-            VITE_API_KEY=${{ secrets.VITE_API_KEY }}
-            VITE_AUTH_DOMAIN=${{ secrets.VITE_AUTH_DOMAIN }}
-            VITE_PROJECT_ID=${{ secrets.VITE_PROJECT_ID }}
-            VITE_STORAGE_BUCKET=${{ secrets.VITE_STORAGE_BUCKET }}
-            VITE_MESSAGING_SENDER_ID=${{ secrets.VITE_MESSAGING_SENDER_ID }}
-            VITE_APP_ID=${{ secrets.VITE_APP_ID }}
-            VITE_MEASUREMENT_ID=${{ secrets.VITE_MEASUREMENT_ID }}
+          build-args: VITE_API_KEY=${{secrets.VITE_API_KEY}}
+            VITE_AUTH_DOMAIN=${{secrets.VITE_AUTH_DOMAIN}}
+            VITE_PROJECT_ID=${{secrets.VITE_PROJECT_ID}}
+            VITE_STORAGE_BUCKET=${{secrets.VITE_STORAGE_BUCKET}}
+            VITE_MESSAGING_SENDER_ID=${{secrets.VITE_MESSAGING_SENDER_ID}}
+            VITE_APP_ID=${{secrets.VITE_APP_ID}}
+            VITE_MEASUREMENT_ID=${{secrets.VITE_MEASUREMENT_ID}}
 
-      - name: Deploy
+      - name: deploying
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
             docker container stop fbclone
             docker container rm fbclone
             docker rmi $(docker images halitderya/fbclone -aq) --force
-            docker image pull halitderya/fbclone:${{ env.appver }}-64
-            docker container run -d --name fbclone -p 3001:80 halitderya/fbclone:${{ env.appver }}-64
+            docker image pull halitderya/fbclone:${{ steps.set_version.outputs.appver }}-64
+            docker container run -d --name fbclone -p 3001:80 halitderya/fbclone:${{ steps.set_version.outputs.appver }}-64
