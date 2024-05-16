@@ -8,6 +8,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { theme } from "../assets/theme";
 import Logout from "../assets/topmenu-icons/logout.svg";
 import Facebooklogo from "../assets/topmenu-icons/facebook-logo.svg";
+import defaultProfilePicURL from "../assets/defaultuser.jpg";
 
 export const FormHeader = styled.label`
   font-family: Arial, Helvetica, sans-serif;
@@ -221,7 +222,8 @@ export default function Signup() {
   function handleUpload(userid: string) {
     return new Promise<string>((resolve, reject) => {
       if (!ppimage) {
-        reject("No file selected");
+        resolve(defaultProfilePicURL);
+
         return;
       }
 
