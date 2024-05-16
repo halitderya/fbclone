@@ -30,7 +30,8 @@ jobs:
           tags: halitderya/fbclone:${{ steps.set_version.outputs.appver }}-64
           platforms: linux/amd64
           file: ./Dockerfile
-          build-args: VITE_API_KEY=${{ secrets.VITE_API_KEY }},
+          build-args: |
+            VITE_API_KEY=${{ secrets.VITE_API_KEY }},
             VITE_AUTH_DOMAIN=${{ secrets.VITE_AUTH_DOMAIN }},
             VITE_PROJECT_ID=${{ secrets.VITE_PROJECT_ID }},
             VITE_STORAGE_BUCKET=${{ secrets.VITE_STORAGE_BUCKET }},
