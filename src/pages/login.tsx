@@ -156,6 +156,7 @@ export default function Login() {
         <InputsContainerDiv>
           <LoginInput placeholder="Email" onChange={(e) => setEmail(e.target.value)} type="text" id="email" />
           <LoginInput placeholder="Password" autoComplete="on" onChange={(e) => setPassword(e.target.value)} type="password" id="password" />
+          <div>Dummy username/password for convenient login: "john.doe@gmail.com" "Doe123" </div>
           <LoginError $show={showError}>Username or password is incorrect.</LoginError>
         </InputsContainerDiv>
         <ButtonContainerDiv>

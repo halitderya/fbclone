@@ -8,7 +8,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { theme } from "../assets/theme";
 import Logout from "../assets/topmenu-icons/logout.svg";
 import Facebooklogo from "../assets/topmenu-icons/facebook-logo.svg";
-import defaultProfilePicURL from "../assets/defaultuser.jpg";
+import defaultProfilePicURL from "../assets/shortcut-icons/user_avatar.jpg";
 
 export const FormHeader = styled.label`
   font-family: Arial, Helvetica, sans-serif;
